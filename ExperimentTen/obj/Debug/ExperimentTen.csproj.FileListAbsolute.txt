@@ -1,0 +1,74 @@
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\obj\Debug\ExperimentTen.csprojResolveAssemblyReference.cache
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\ApplicationInsights.config
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\csc.exe
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\System.Collections.Immutable.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\vbc.exe
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\VBCSCompiler.exe
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\roslyn\VBCSCompiler.exe.config
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\ExperimentTen.dll.config
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\ExperimentTen.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\ExperimentTen.pdb
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\FineUI.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.Web.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.WindowsServer.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.ApplicationInsights.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Newtonsoft.Json.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\FineUI.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.Web.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.AI.WindowsServer.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.ApplicationInsights.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\bin\Newtonsoft.Json.xml
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\obj\Debug\ExperimentTen.dll
+c:\users\0000000\documents\visual studio 2015\Projects\ExperimentTen\ExperimentTen\obj\Debug\ExperimentTen.pdb
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\ApplicationInsights.config
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\csc.exe
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\vbc.exe
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\VBCSCompiler.exe
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\ExperimentTen.dll.config
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\ExperimentTen.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\ExperimentTen.pdb
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.Web.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Newtonsoft.Json.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.Web.xml
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\obj\Debug\ExperimentTen.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\obj\Debug\ExperimentTen.pdb
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\obj\Debug\ExperimentTen.csprojResolveAssemblyReference.cache
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\Newtonsoft.Json.xml
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\FineUI.dll
+C:\Users\Wong Jianming\Desktop\实验十+数据库\ExperimentTen\ExperimentTen\bin\FineUI.xml
