@@ -24,7 +24,7 @@ namespace WHMS.Infor_Data
                 bind();
                 btnSearch.OnClientClick = Grid1.GetNoSelectionAlertReference("请选择要查看的学号","警告",MessageBoxIcon.Warning);
                 btnadd.OnClientClick = window1.GetShowReference("AddStu.aspx","添加学生");
-                btnAddClass.OnClientClick = window2.GetShowReference("AddClass.aspx","添加班级");
+            
                 btnImport.OnClientClick = window3.GetShowReference("StuImport.aspx","导入学生名单");
             }
       
@@ -165,8 +165,7 @@ namespace WHMS.Infor_Data
             // 3.绑定到Grid
             Grid1.DataSource = dt;
             Grid1.DataBind();
-            Grid1.Visible = true;
-            Grid3.Visible = false;
+          
         }
         #region 数据库分页处理
         /// <summary>
@@ -208,15 +207,7 @@ namespace WHMS.Infor_Data
 
         #region 班级查询
         //查询选中年级包含的班级
-        public void BindGrid3()
-        {
-            string sqlstr = "select Class,Grade from Class where Grade = '"+grade+"'";
-            DataTable dt = Common.datatable(sqlstr);
-            // DataSet ds = Common.dataSet(sqlstr);
-            Grid3.DataSource = dt;
-            Grid3.DataBind();
-        
-        }
+       
         #endregion
 
 
@@ -253,14 +244,14 @@ namespace WHMS.Infor_Data
                 grade = e.Node.Text;//查找年级
                 string SqlStr = "select StuID,StuName,Class,Grade from Student where Grade= '" + grade + "' order by Class,StuID";
                 BindGrid1(SqlStr);
-                BindGrid3();
+          
             }
             else
             {
                 Class1 = e.Node.Text;//查找班级
                 string SqlStr = "select StuID,StuName,Class,Grade from Student where Class= '" + Class1 + "' order by StuID";
                 BindGrid1(SqlStr);
-               // BindGrid3();
+             
             }
 
         }
@@ -294,23 +285,7 @@ namespace WHMS.Infor_Data
             BindGrid1(SqlStr);
         }
         //删除一条班级记录
-        protected void btnDeleteClass_Click(object sender, EventArgs e)
-        {
-            if (Grid3.SelectedRowIndex < 0)
-            {
-                Alert.Show("请选择一项进行删除", "警告", MessageBoxIcon.Warning);
-            }
-            else
-            {
-                string id = Grid3.SelectedRow.Values[1].ToString();//选中行的第二列数据为ID
-                string sqlStr = "delete from Class where Class= '" + id + " '";
-                Common.ExecuteSql(sqlStr);
-                Tree1.Nodes[0].Expanded = false;
-                BindGrid3();
-                Alert.ShowInTop("删除成功", "信息", MessageBoxIcon.Information);
-
-            }
-        }
+      
         #endregion
         //页面编号处理
         protected void Grid1_PageIndexChange(object sender, GridPageEventArgs e)
@@ -324,12 +299,7 @@ namespace WHMS.Infor_Data
             BindGrid1(SqlStr);
         }
 
-        protected void window2_Close(object sender, WindowCloseEventArgs e)
-        {
-            BindGrid3();
-            Tree1.Nodes[0].Expanded = false;
-       //     bind();
-        }
+     
 
         protected void Tree1_Expand(object sender, EventArgs e)
         {

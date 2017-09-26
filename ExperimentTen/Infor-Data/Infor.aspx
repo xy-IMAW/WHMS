@@ -54,36 +54,14 @@
                             </Columns>
                         </f:Grid> 
                                 </f:ContentPanel>
-                        
-                                <f:ContentPanel ID="CP2" runat="server" EnableCollapse="false" Title="班级">
-                      <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true">
-                            <Toolbars >
-                                <f:Toolbar ID="toolbar2" runat="server">
-                                    <Items>                                    
-                                        <f:Button ID="btnAddClass" Icon="Add" runat="server" Text="新增"></f:Button>
-                                        <f:Button ID="btnDeleteClass" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDeleteClass_Click"></f:Button>
-                                    </Items>
-                                </f:Toolbar>
-                            </Toolbars>
-                                 <Columns>
-                                <f:TemplateField Width="60px">
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label3" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                                    </ItemTemplate>
-                                </f:TemplateField>
-                                <f:BoundField Width ="100px" DataField="Class" HeaderText="班级" TextAlign="Center" />
-                                <f:BoundField Width="100px"  DataField="Grade" HeaderText="年级" TextAlign="Center" />
-                            </Columns>
-                        </f:Grid>    
-                                </f:ContentPanel>
+                    
                                                
                        </Items>
                      </f:Panel>
                          <f:Window ID="window1" Title="增加学生"  EnableCollapse="true" Hidden="true" EnableIFrame="true"  CloseAction="HidePostBack" EnableMaximize="true"
             EnableResize="true" EnableClose="true" Target="Top" OnClose="window1_Close" IsModal="true" Width="550px" Height="450px" runat="server">
         </f:Window>
-                        <f:Window ID="window2" Title="添加班级" EnableCollapse="true" Hidden="true" EnableIFrame="true"  CloseAction="HidePostBack" EnableMaximize="true"
-            EnableResize="true" EnableClose="true" Target="Top" OnClose="window2_Close" IsModal="true" Width="550px" Height="450px" runat="server"></f:Window>
+                        
                         <f:Window ID="window3" Title="导入学生名单" EnableCollapse="true" Hidden="true" EnableIFrame="true"  CloseAction="HidePostBack" EnableMaximize="true"
             EnableResize="true" EnableClose="true" Target="Top" OnClose="window3_Close" IsModal="true" Width="800px" Height="600px" runat="server"></f:Window>
                     </Items>           

@@ -7,8 +7,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using AspNet = System.Web.UI.WebControls;
 using System.IO;
 using System.Text;
 
@@ -45,32 +43,48 @@ namespace WHMS.Infor_Data
 
         }
 
-        /*  下拉列表框自动获取，待实现protected void BindGrid3()
+        //学期下拉框绑定
+        protected void BindGrid3()
          
         {
-            
-            
-            string sqlStr = "select distinct SySe1=substring(SySe,1,9) from [Working-hoursInfor] where StuID='"+Common.ID+"' order by SySe1 ";
-        
-            DL1.Items.Add("全部","1");
-            Common.Open();
-            SqlDataReader reader = Common.ExecuteRead(sqlStr);
-            
-            while (reader.Read())
-            {
-                DL1.Items.Add(reader.GetString(reader.GetOrdinal("SySe1")),"1");
-            }
-            DL1.DataSource = reader;
-          //  DL1.DataBind();
-            Common.close();
-            DL2.Items.Add("全部","");
-            DL2.Items.Add("1","");
-            DL2.Items.Add("2","");
-           
-         
 
-        }*/
-        protected void BindGrid3()
+            //学期绑定。九月为分界
+            int year = DateTime.Now.Year;
+            int year2 = DateTime.Now.Year - 1;
+            if (DateTime.Now.Month < 9)
+            {
+                List<string> list = new List<string>();
+
+                for (int i = 1; i < 5; i++)
+                {
+                    ListItem li = new ListItem();
+                    li.Text = li.Value =(--year).ToString()+"-"+(--year2).ToString();
+                    DL1.Items.Add(li);
+                }
+            }
+            else
+            {
+                List<string> list = new List<string>();
+
+                for (int i = 1; i < 5; i++)
+                {
+                    ListItem li = new ListItem();
+                    li.Text = li.Value = (year--).ToString()+"-"+(year2--).ToString();
+                    DL1.Items.Add(li);
+                }
+            }
+
+
+            List<string> list2 = new List<string>();
+            list2.Add("全部");
+            list2.Add("1");
+            list2.Add("2");
+
+            DL2.DataSource = list2;
+            DL2.DataBind();
+
+        }
+      /*  protected void BindGrid3()
         {
            
           
@@ -94,7 +108,7 @@ namespace WHMS.Infor_Data
             DL2.DataSource = list2;
             DL2.DataBind();
         }
-
+        */
         protected void btnDelete_Click3(object sender, EventArgs e)
         {
           

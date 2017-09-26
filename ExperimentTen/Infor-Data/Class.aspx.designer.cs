@@ -10,7 +10,7 @@
 namespace WHMS.Infor_Data {
     
     
-    public partial class Infor {
+    public partial class Class {
         
         /// <summary>
         /// form1 控件。
@@ -31,40 +31,58 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
-        /// RegionPanel1 控件。
+        /// panel1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.RegionPanel RegionPanel1;
+        protected global::FineUI.Panel panel1;
         
         /// <summary>
-        /// Region1 控件。
+        /// panel11 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Region Region1;
+        protected global::FineUI.Panel panel11;
         
         /// <summary>
-        /// Tree1 控件。
+        /// form11 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Tree Tree1;
+        protected global::FineUI.Form form11;
         
         /// <summary>
-        /// Region2 控件。
+        /// txtClassName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Region Region2;
+        protected global::FineUI.TextBox txtClassName;
+        
+        /// <summary>
+        /// txtGrade 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextBox txtGrade;
+        
+        /// <summary>
+        /// btnAddClass 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnAddClass;
         
         /// <summary>
         /// panel2 控件。
@@ -76,24 +94,6 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Panel panel2;
         
         /// <summary>
-        /// CP1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.ContentPanel CP1;
-        
-        /// <summary>
-        /// Grid1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Grid Grid1;
-        
-        /// <summary>
         /// toolbar1 控件。
         /// </summary>
         /// <remarks>
@@ -101,6 +101,24 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Toolbar toolbar1;
+        
+        /// <summary>
+        /// btnDeleteClass 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnDeleteClass;
+        
+        /// <summary>
+        /// SelectGrade 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DropDownList SelectGrade;
         
         /// <summary>
         /// btnSearch 控件。
@@ -112,49 +130,13 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Button btnSearch;
         
         /// <summary>
-        /// btnadd 控件。
+        /// Grid3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button btnadd;
-        
-        /// <summary>
-        /// btnImport 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnImport;
-        
-        /// <summary>
-        /// btnDelet 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnDelet;
-        
-        /// <summary>
-        /// txtStuID 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextBox txtStuID;
-        
-        /// <summary>
-        /// btnStuSerach 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnStuSerach;
+        protected global::FineUI.Grid Grid3;
         
         /// <summary>
         /// Label1 控件。
@@ -164,23 +146,5 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// window1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Window window1;
-        
-        /// <summary>
-        /// window3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Window window3;
     }
 }

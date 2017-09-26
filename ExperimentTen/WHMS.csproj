@@ -3387,6 +3387,7 @@
     <Content Include="image\login.jpg" />
     <Content Include="Infor-Data\AddClass.aspx" />
     <Content Include="Infor-Data\AddStu.aspx" />
+    <Content Include="Infor-Data\Class.aspx" />
     <Content Include="Infor-Data\Data.aspx" />
     <Content Include="Infor-Data\Infor.aspx" />
     <Content Include="Infor-Data\Program.aspx" />
@@ -5192,6 +5193,13 @@
     </Compile>
     <Compile Include="Infor-Data\AddStu.aspx.designer.cs">
       <DependentUpon>AddStu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\Class.aspx.cs">
+      <DependentUpon>Class.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\Class.aspx.designer.cs">
+      <DependentUpon>Class.aspx</DependentUpon>
     </Compile>
     <Compile Include="Infor-Data\Data.aspx.cs">
       <DependentUpon>Data.aspx</DependentUpon>
