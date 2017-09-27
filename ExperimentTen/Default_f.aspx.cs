@@ -39,41 +39,44 @@ namespace WHMS
             TreeNode node2 = new TreeNode();//学生信息管理 0,1,2
             TreeNode node3 = new TreeNode();//工时查询 0,1,2
             TreeNode node4 = new TreeNode();//活动管理 0
+            TreeNode node5 = new TreeNode();//班级管理0,1
+
+            node1.Text = "权限管理";
+            node1.NavigateUrl = "~/Account/Account.aspx";
+
+            node2.Text = "学生信息管理";
+            node2.NavigateUrl = "~/Infor-Data/Infor.aspx";
+
+            node3.Text = "工时管理";
+            node3.NavigateUrl = "~/Infor-Data/Data.aspx";
+
+            node4.Text = "活动管理";
+            node4.NavigateUrl = "~/Infor-Data/Program.aspx";
+
+            node5.Text = "班级管理";
+            node5.NavigateUrl = "~/Infor-Data/Class.aspx";
+
             if (Common.State == "超级管理员")
             {
-                node1.Text = "权限管理";
-                node1.NavigateUrl = "~/Account/Account.aspx";
+               
 
-                node2.Text = "学生信息管理";
-                node2.NavigateUrl = "~/Infor-Data/Infor.aspx";
-
-                node3.Text = "工时管理";
-                node3.NavigateUrl = "~/Infor-Data/Data.aspx";
-
-                node4.Text = "活动管理";
-                node4.NavigateUrl = "~/Infor-Data/Program.aspx";
                 leftMenuTree.Nodes.Add(node1);
                 leftMenuTree.Nodes.Add(node2);
                 leftMenuTree.Nodes.Add(node3);
                 leftMenuTree.Nodes.Add(node4);
-
+                leftMenuTree.Nodes.Add(node5);
              
 
                 // leftMenuTree.Nodes[0].Nodes[2].NavigateUrl = "~/Account/Account.aspx";
             }
             else if (Common.State == "管理员")
             {
-                node2.Text = "学生信息管理";
-                node2.NavigateUrl = "~/Infor-Data/Infor.aspx";
-
-                node3.Text = "工时管理";
-                node3.NavigateUrl = "~/Infor-Data/Data.aspx";
-                node4.Text = "活动管理";
-                node4.NavigateUrl = "~/Infor-Data/Program.aspx";
+         
 
                 leftMenuTree.Nodes.Add(node2);
                 leftMenuTree.Nodes.Add(node3);
                 leftMenuTree.Nodes.Add(node4);
+                leftMenuTree.Nodes.Add(node5);
                 //  leftMenuTree.Nodes[0].Nodes[2].NavigateUrl = "";
                 // leftMenuTree.Nodes[0].Nodes[2].ToolTip = "没有访问权限！";
             }

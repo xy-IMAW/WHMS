@@ -197,7 +197,9 @@ namespace WHMS
                 if (fs != null)
                 {
                     fs.Close();
+                    throw ex;
                 }
+              
                 return false;
             }
         }

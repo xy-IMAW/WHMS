@@ -26,7 +26,7 @@
                 </f:Form>
                 <f:Panel ID="panel1" runat="server">
                     <Items>
-                        <f:Grid ID="grid2" Title="" ShowBorder="true" ShowHeader="false"
+                        <f:Grid ID="grid2" Title="" ShowBorder="false" ShowHeader="false"
                     DataKeyNames="StuID" EnableCollapse="false" EnableCheckBoxSelect="true" 
                     EnableMultiSelect="false"  runat="server" Height="200px">
                             <Columns>

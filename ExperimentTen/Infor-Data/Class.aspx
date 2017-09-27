@@ -10,40 +10,35 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" />
-        <f:Panel ID="panel1" runat="server" EnableCollapse="true">
+        <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" EnableFStateValidation="false" />
+        <f:Panel ID="panel1" runat="server" EnableCollapse="true" ShowHeader="false">
             <Items>
-                <f:Panel ID="panel11" runat="server" BodyPadding="5px" Title="班级添加" ShowHeader="true" ShowBorder="true">
-                  <Items>
-                      <f:Form ID="form11" runat="server">
-                          <Rows>
-                              <f:FormRow>
-                                  <Items>
-                                      <f:TextBox ID="txtClassName" runat="server" Label="班级" Text="" ShowRedStar="true" Width="80px"></f:TextBox>
-                                     <f:TextBox ID="txtGrade" runat="server" Label="年级" Text="" ShowRedStar="true" Width="80px"></f:TextBox>
-                                  </Items>
-                              </f:FormRow>
-                          </Rows>
-                          <Rows>
-                              <f:FormRow>
-                                  <Items>
-                                        <f:Button ID="btnAddClass" Icon="Add" runat="server" Text="新增" Width="30px" OnClick="btnAddClass_Click"></f:Button>
-                                  </Items>
-                              </f:FormRow>
-                          </Rows>
-                      </f:Form>
-                  </Items>
+                <f:Panel ID="panel11" runat="server" Title="班级添加" ShowHeader="true" ShowBorder="true">
+                    <Toolbars>
+                        <f:Toolbar ID="tool1" runat="server">
+                            <Items>                                
+                                   <f:TextBox ID="txtClassName" runat="server" Label="班级" Text="" ShowRedStar="true" Required="true" Width="300px"></f:TextBox>                                    
+                            </Items>  
+                              <Items>
+                                 <f:TextBox ID="txtGrade" runat="server" Label="年级" Text="" ShowRedStar="true" Required="true" Width="300px"></f:TextBox>
+                            </Items>                         
+                        </f:Toolbar>
+                        <f:Toolbar ID="tool2" runat="server">
+                            <Items>
+                                  <f:Button ID="btnAddClass" Icon="Add" runat="server" Text="新增" OnClick="btnAddClass_Click"></f:Button>
+                            </Items>
+                        </f:Toolbar>
+                    </Toolbars>
                 </f:Panel>
             </Items>
         </f:Panel>
-        <f:Panel ID="panel2" runat="server" EnableCollapse="true" Title="班级信息" ShowHeader="true" ShowBorder="true">
-            
+        <f:Panel ID="panel2" runat="server" EnableCollapse="false" Title="班级信息" ShowHeader="true" ShowBorder="true">            
                  <Toolbars >
                                 <f:Toolbar ID="toolbar1" runat="server">
                                     <Items>                                                                          
-                                        <f:Button ID="btnDeleteClass" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDeleteClass_Click" Width="30px"></f:Button>
-                                   <f:DropDownList ID="SelectGrade" runat="server" Label="年级" LabelAlign="Right" Width="50px" ></f:DropDownList>
-                                        <f:Button ID="btnSearch" runat="server" Text="查找" Icon="Zoom" OnClick="btnSearch_Click" Width="35ox"></f:Button>
+                                        <f:Button ID="btnDeleteClass" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDeleteClass_Click"></f:Button>
+                                   <f:DropDownList ID="SelectGrade" runat="server" Label="年级" LabelAlign="Right" ></f:DropDownList>
+                                        <f:Button ID="btnSearch" runat="server" Text="查找" Icon="Zoom" OnClick="btnSearch_Click"></f:Button>
                                      </Items>
                                 </f:Toolbar>
                     </Toolbars>

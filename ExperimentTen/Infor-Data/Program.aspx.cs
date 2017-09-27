@@ -13,12 +13,13 @@ namespace WHMS.Infor_Data
             BindDDL();//学期下拉框
         }
 
+        #region DataBind
         //学期绑定到两个下拉框
         public void BindDDL()
         {
             int year = DateTime.Now.Year;
             int year2 = DateTime.Now.Year - 1;
-            if (DateTime.Now.Month <9)
+            if (DateTime.Now.Month < 9)
             {
                 List<string> list = new List<string>();
 
@@ -26,7 +27,7 @@ namespace WHMS.Infor_Data
                 {
                     ListItem li = new ListItem();
                     li.Text = li.Value = (--year).ToString() + "-" + (--year2).ToString();
-                   DDL.Items.Add(li);
+                    DDL.Items.Add(li);
                     selectSy.Items.Add(li);
                 }
             }
@@ -48,24 +49,43 @@ namespace WHMS.Infor_Data
             list2.Add("2");
             selectSe.DataSource = list2;
             selectSe.DataBind();
+
         }
+        //活动总表数据绑定，活动下拉框数据
+        protected void bind()
+        {
+            string sqlstr = "select Program from ProgramSummary";
+            DataTable dt = Common.datatable(sqlstr);
+            Grid1.DataSource = dt;
+            Grid1.DataBind();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                ListItem li = new ListItem();
+                li.Text = li.Value = dr.ToString();
+                selectPro.Items.Add(li);
+            }
+        }
+        public void Bind()
+        {
+            string year = DDL.SelectedItem.Value;
+            string sqlstr = "select Program,SySe,Data from Program where SySe='" + selectSy.SelectedItem.Text + "'";
+            DataTable dt = Common.datatable(sqlstr);
+            gridExample.DataSource = dt;
+            gridExample.DataBind();
+        }
+        #endregion
+     
+
+
+
+
+
+        #region event
         //查询某学期的活动
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             Bind();
-        }
-        public void Bind()
-        {
-
-
-            string year = DDL.SelectedItem.Value;
-            string sqlstr = "select Program,SySe,Data from Program where SySe='" +selectSy.SelectedItem.Text+"'";
-            DataTable dt = Common.datatable(sqlstr);
-            gridExample.DataSource = dt;
-            gridExample.DataBind();
-
-
-            
         }
         //页面编号
         protected void gridExample_PageIndexChange(object sender, GridPageEventArgs e)
@@ -76,60 +96,87 @@ namespace WHMS.Infor_Data
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             //查重
-            bool flag = true;//标志是否账号已存在
-            if (txtProgram.Text == "")
-            {
-                Alert.Show("请填写需要添加的活动信息", "提示", MessageBoxIcon.Warning);
-            }
-            else
-            {
-                string sqlstr = "select Program from Program where SySe='"+selectSy.SelectedItem.Text+"'";
+            bool flag = true;//标志是否重复
+        
+                string sqlstr = "select Program from Program where SySe like '" + selectSy.SelectedItem.Text + "%'";
                 Common.Open();
                 SqlDataReader reader = Common.ExecuteRead(sqlstr);
-                while (flag)
+            while (flag)
+            {
+                int a = 0;//标志是否进行了下面的循环
+                while (reader.Read())
                 {
-                    int a = 0;//标志是否进行了下面的循环
-                    while (reader.Read())
+                    string name = reader.GetString(reader.GetOrdinal("Program"));
+                    if (name == selectPro.SelectedItem.Text)
                     {
-                        string name = reader.GetString(reader.GetOrdinal("Program"));
-                        if (name == txtProgram.Text)
-                        {
 
-                            Common.close();
-                            flag = false;//该班级已存在
-                            txtProgram.Text = "";
-                            txtProgram.Focus();
-                            break;
-                        }
-                        a++;
-                    }
-                    if (a == 0)
-                    {
+                        Common.close();
+                        flag = false;//该学年有重复
+                        Alert.Show("该活动已存在！", "错误", MessageBoxIcon.Error);
                         break;
                     }
+                    a++;
                 }
-                if (flag)
+                if (a == 0)
+                {
+                    break;//没有重复
+                }
+            }
+                if (flag)//不重复
                 {
                     Common.close();
-                    string sqlstr2 = "insert into Program (Program,SySe,Date) values ('" + txtProgram.Text + "','" + selectSy.SelectedItem.Text+"','"+date.SelectedDate.Value + "')";
+                    string sqlstr2 = "insert into Program (Program,SySe,Date) values ('" + selectPro.SelectedItem.Text + "','" + selectSy.SelectedItem.Text + "-" + selectSe.SelectedItem.Text + "','" + date.SelectedDate.Value + "')";
                     Common.ExecuteSql(sqlstr2);
                     Alert.Show("添加成功", "提示信息", MessageBoxIcon.Information);
                 }
-                else
+                else//重复
                 {
                     Common.close();//任何情况结束后都要关闭连接
                     Alert.Show("该活动已在活动表中", "错误", MessageBoxIcon.Error);
                 }
-            }
+            
         }
         //删除活动
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            string sqlstr = "delete from Program where Program='"+gridExample.SelectedRow.Values[1]+"'and Date='"+gridExample.SelectedRow.Values[3]+"'";
+            string sqlstr = "delete from Program where Program='" + gridExample.SelectedRow.Values[1] + "'and Date='" + gridExample.SelectedRow.Values[3] + "'";
             Common.ExecuteSql(sqlstr);
             Alert.Show("删除成功", "信息", MessageBoxIcon.Information);
         }
-
-      
+        //添加活动到总表
+        protected void btnAddProgram_Click(object sender, EventArgs e)
+        {
+            bool flag = false;
+            string sqlstr = "select Program from ProgramSummary";
+            DataTable dt = Common.datatable(sqlstr);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr.ToString() == txtProgram.Text)
+                {
+                    flag = true;
+                }
+                else
+                { }
+            }
+            if (flag)
+            {
+                Alert.Show("该活动已在表中", "错误", MessageBoxIcon.Error);
+            }
+            else
+            {
+                string sqlstr2 = "insert into Program (Program) values ('" + txtProgram.Text + "')";
+                Common.ExecuteSql(sqlstr2);
+                Alert.Show("添加成功", "提示", MessageBoxIcon.Information);
+                bind();
+            }
+        }
+        //从总表删除
+        protected void btnDeleteProgram_Click(object sender, EventArgs e)
+        {
+            string sqlstr = "delete from Program where Program='" + Grid1.SelectedRow.Values[1] + "'";
+            Common.ExecuteSql(sqlstr);
+            Alert.Show("删除成功", "信息", MessageBoxIcon.Information);
+        }
+        #endregion
     }
 }

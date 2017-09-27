@@ -9,21 +9,57 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <f:PageManager ID="PageManager_01" AutoSizePanelID="panelMain" runat="server" />
-        <f:Panel ID="panel1" runat="server" ShowBorder="true" ShowHeader="true" EnableCollapse="true" Title="活动添加">
-            <Items>
-                <f:Form ID="form2" runat="server" BodyPadding="5px">
+    <f:PageManager ID="PageManager_01" AutoSizePanelID="panelMain" runat="server" EnableFStateValidation="false" />
+        <f:RegionPanel ID="leftregion" runat="server" ShowBorder="false" RegionPosition="Left" Width="200px">
+            <Regions>
+                <f:Region ID="Region1" ShowBorder="false" ShowHeader="false"
+                    Width="200px" RegionPosition="Left" Layout="Fit" Title="活动总表"
+                    runat="server">   
+                    <Toolbars>
+                        <f:Toolbar ID="tool1" runat="server" >
+                            <Items>
+                                <f:TextBox ID="txtProgram" runat="server" Label="活动名" LabelAlign="Right" Width="100px"></f:TextBox>
+                            </Items>
+                          </f:Toolbar>
+                        <f:Toolbar ID="tool2" runat="server">  
+                            <Items>
+                                <f:Button ID="btnAddProgram" runat="server" Text="添加" Width="50px" Icon="Add" OnClick="btnAddProgram_Click"></f:Button>
+                             <f:Button ID="btnDeleteProgram" runat="server" Text="删除" Width="50px" Icon="Add" OnClick="btnDeleteProgram_Click"></f:Button>
+                            </Items>
+                        </f:Toolbar>
+                    </Toolbars>
+                    <Items>
+                        <f:Grid ID="Grid1" runat="server" ShowBorder="false" ShowHeader="false" >
+                            <Columns>
+                                <f:TemplateField>
+                                    <ItemTemplate>
+                                          <asp:Label ID="Label2" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+                                    </ItemTemplate>
+                                </f:TemplateField>
+                             <f:BoundField Width="100px" ColumnID="Program" SortField="Program" DataField="Program"
+                                    TextAlign="Center" HeaderText="活动"></f:BoundField>
+                            </Columns>
+                        </f:Grid>
+                    </Items>
+                </f:Region>
+                <f:Region ID="Region2" ShowBorder="true" ShowHeader="true" Position="Center" Title=""
+                    Layout="VBox" BoxConfigAlign="Stretch" BoxConfigPosition="Left" runat="server">
+                    <Items>
+                          <f:Panel ID="panel1" runat="server" ShowBorder="true" ShowHeader="true" EnableCollapse="true" Title="本学期活动添加">
+                     <Items>
+                <f:Form ID="form2" runat="server">
                     <Rows>
                         <f:FormRow>
                             <Items>
-                                <f:TextBox ID="txtProgram" Text="" Label="活动名" LabelAlign="Right" runat="server" Required="true" Width="80px"></f:TextBox>
+                            
+                                <f:DropDownList ID="selectPro" Text="" Label="活动选择" LabelAlign="Right" runat="server" Required="true" Width="100px"></f:DropDownList>
                                 <f:DropDownList ID="selectSy" Label="学年" LabelAlign="Right" runat="server" Required="true" Width="100px"></f:DropDownList>
                                   <f:DropDownList ID="selectSe" Label="学期" LabelAlign="Right" runat="server" Required="true" Width="100px"></f:DropDownList>
                             </Items>
                         </f:FormRow>
                         <f:FormRow>
                             <Items>
-                                <f:DatePicker ID="date" Label="日期" LabelAlign="Right" runat="server" Required="true"></f:DatePicker>
+                                <f:DatePicker ID="date" Label="日期" LabelAlign="Right" runat="server" Required="true" Width="150px"></f:DatePicker>
                             </Items> 
                         </f:FormRow>
                         <f:FormRow>
@@ -40,13 +76,9 @@
               <Toolbars>
                         <f:Toolbar ID="toolbar_01" runat="server">
                             <Items>
-                                <f:DropDownList ID="DDL" runat="server" Label="学期" LabelAlign="Right" Width="80px" >
-                                    
-                                </f:DropDownList>
-                                <f:Button ID="btnSearch" Text="查看" Icon="Zoom" runat="server" OnClick="btnSearch_Click"></f:Button>
-                               
-                                <f:Button ID="btnDelete" Text="删除" Icon="Delete" runat="server" OnClick="btnDelete_Click">
-                                </f:Button>                                                       
+                                <f:DropDownList ID="DDL" runat="server" Label="学期" LabelAlign="Right" Width="180px" LabelWidth="50px"></f:DropDownList>
+                                <f:Button ID="btnSearch" Text="查看" Icon="Zoom" runat="server" OnClick="btnSearch_Click"></f:Button>                               
+                                <f:Button ID="btnDelete" Text="删除" Icon="Delete" runat="server" OnClick="btnDelete_Click"></f:Button>                                                       
                             </Items>
                         </f:Toolbar>
                     </Toolbars>
@@ -72,6 +104,12 @@
                 </f:Grid>
             </Items>
         </f:Panel>
+                    </Items>
+                </f:Region>
+            </Regions>
+        </f:RegionPanel>
+        
+      
         
     </form>
 </body>

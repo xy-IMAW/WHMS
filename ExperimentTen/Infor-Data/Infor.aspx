@@ -25,10 +25,9 @@
                     Layout="VBox" BoxConfigAlign="Stretch" BoxConfigPosition="Left" runat="server">
                     <Items>
                            <f:Panel ID="panel2" ShowBorder="false" ShowHeader="false" runat="server" >
-                            <Items>
-                                <f:ContentPanel ID="CP1" runat="server" EnableCollapse="true" Title="学生">
-                                         <f:Grid ID="Grid1" Height="550px" BoxFlex="1" ShowBorder="false" runat="server" ShowGridHeader="true"
-                                  DataKeyNames="Id,Name" EnableRowClickEvent="true" AllowPaging="true" PageSize="40" PageIndex="0" OnPageIndexChange="Grid1_PageIndexChange">
+                            <Items>                              
+                             <f:Grid ID="Grid1" Height="570px" BoxFlex="1" ShowBorder="false" runat="server" ShowGridHeader="true"
+                                  DataKeyNames="Id,Name" EnableRowClickEvent="true" AllowPaging="true" PageSize="40" PageIndex="0" OnPageIndexChange="Grid1_PageIndexChange" EnableCollapse="true">
                             <Toolbars >
                                 <f:Toolbar ID="toolbar1" runat="server">
                                     <Items>
@@ -52,10 +51,7 @@
                                 <f:BoundField Width ="100px" DataField="Class" HeaderText="班级" TextAlign="Center" />
                                 <f:BoundField Width="100px"  DataField="Grade" HeaderText="年级" TextAlign="Center" />
                             </Columns>
-                        </f:Grid> 
-                                </f:ContentPanel>
-                    
-                                               
+                        </f:Grid>                     
                        </Items>
                      </f:Panel>
                          <f:Window ID="window1" Title="增加学生"  EnableCollapse="true" Hidden="true" EnableIFrame="true"  CloseAction="HidePostBack" EnableMaximize="true"

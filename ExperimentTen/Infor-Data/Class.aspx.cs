@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-
 using FineUI;
 using System.Data;
 using System.Data.SqlClient;
@@ -52,11 +51,9 @@ namespace WHMS.Infor_Data
                 Alert.Show("请选择一项进行删除", "警告", MessageBoxIcon.Warning);
             }
             else
-            {
-              
-                string sqlStr = "delete from Class where Class= '" + txtClassName.Text + " 'and Grade ='"+txtGrade.Text+"'";
-                Common.ExecuteSql(sqlStr);
-          
+            {              
+                string sqlStr = "delete from Class where Class= '" + Grid3.SelectedRow.Values[1].ToString()+"'";
+                Common.ExecuteSql(sqlStr);          
                 BindGrid3();
                 Alert.ShowInTop("删除成功", "信息", MessageBoxIcon.Information);
 
@@ -88,14 +85,14 @@ namespace WHMS.Infor_Data
         protected void btnAddClass_Click(object sender, EventArgs e)
         {
             //查重
-            bool flag = true;//标志是否账号已存在
+            bool flag = true;//标志
             if (txtClassName.Text == "" || txtGrade.Text == "")
             {
                 Alert.Show("请填写需要添加的班级信息", "提示", MessageBoxIcon.Warning);
             }
             else
             {
-                string sqlstr = "select Class from Student";
+                string sqlstr = "select Class from Class";
                 Common.Open();
                 SqlDataReader reader = Common.ExecuteRead(sqlstr);
                 while (flag)

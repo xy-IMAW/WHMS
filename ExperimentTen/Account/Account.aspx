@@ -37,7 +37,7 @@
                                     TextAlign="Center" HeaderText="班级"></f:BoundField>
                         <f:BoundField Width="120px" ColumnID="Grade" SortField="Grade" DataField="Grade" 
                                     TextAlign="Center" HeaderText="年级"></f:BoundField>
-                         <f:BoundField Width="120px" ColumnID="State" SortField="State" DataField="Grade" 
+                         <f:BoundField Width="120px" ColumnID="State" SortField="State" DataField="State" 
                                     TextAlign="Center" HeaderText="状态"></f:BoundField>
                     </Columns>
                 </f:Grid>

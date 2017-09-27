@@ -73,7 +73,7 @@ namespace WHMS.Account
                     }
                     if (a == 0)
                     {
-                        break;
+                        break;//账户没有被设置
                     }
                 }
                 if (flag)
