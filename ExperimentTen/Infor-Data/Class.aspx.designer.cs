@@ -76,15 +76,6 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.TextBox txtGrade;
         
         /// <summary>
-        /// tool2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Toolbar tool2;
-        
-        /// <summary>
         /// btnAddClass 控件。
         /// </summary>
         /// <remarks>
@@ -92,6 +83,33 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Button btnAddClass;
+        
+        /// <summary>
+        /// toolbar2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Toolbar toolbar2;
+        
+        /// <summary>
+        /// DownLoad 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button DownLoad;
+        
+        /// <summary>
+        /// Import 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Import;
         
         /// <summary>
         /// panel2 控件。
@@ -112,15 +130,6 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Toolbar toolbar1;
         
         /// <summary>
-        /// btnDeleteClass 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnDeleteClass;
-        
-        /// <summary>
         /// SelectGrade 控件。
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Button btnSearch;
+        
+        /// <summary>
+        /// btnDeleteClass 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnDeleteClass;
         
         /// <summary>
         /// Grid3 控件。

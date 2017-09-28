@@ -58,7 +58,7 @@ namespace WHMS.Infor_Data
                 for (int i = 1; i < 5; i++)
                 {
                     ListItem li = new ListItem();
-                    li.Text = li.Value =(--year).ToString()+"-"+(--year2).ToString();
+                    li.Text = li.Value =(--year2).ToString() + "-"+ (--year).ToString();
                     DL1.Items.Add(li);
                 }
             }
@@ -69,7 +69,7 @@ namespace WHMS.Infor_Data
                 for (int i = 1; i < 5; i++)
                 {
                     ListItem li = new ListItem();
-                    li.Text = li.Value = (year--).ToString()+"-"+(year2--).ToString();
+                    li.Text = li.Value = (year2--).ToString() + "-"+ (year--).ToString();
                     DL1.Items.Add(li);
                 }
             }

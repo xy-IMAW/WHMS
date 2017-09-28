@@ -14,7 +14,11 @@ namespace WHMS.Infor_Data
         string grade;
         protected void Page_Load(object sender, EventArgs e)
         {
-            GradeBind();
+            if (!IsPostBack)
+            {
+                GradeBind();
+            }
+         
         }
         //年级下拉框绑定
         protected void GradeBind()
@@ -46,13 +50,14 @@ namespace WHMS.Infor_Data
         //删除班级
         protected void btnDeleteClass_Click(object sender, EventArgs e)
         {
+            
             if (Grid3.SelectedRowIndex < 0)
             {
                 Alert.Show("请选择一项进行删除", "警告", MessageBoxIcon.Warning);
             }
             else
             {              
-                string sqlStr = "delete from Class where Class= '" + Grid3.SelectedRow.Values[1].ToString()+"'";
+                string sqlStr = "delete from Class where Class= '" + Grid3.SelectedRow.Values[2].ToString()+"'";
                 Common.ExecuteSql(sqlStr);          
                 BindGrid3();
                 Alert.ShowInTop("删除成功", "信息", MessageBoxIcon.Information);
@@ -63,6 +68,7 @@ namespace WHMS.Infor_Data
         //班级表单数据绑定
         public void BindGrid3()
         {
+            grade = SelectGrade.SelectedItem.Text;
             string sqlstr = "select Class,Grade from Class where Grade = '" + grade + "'";
             DataTable dt = Common.datatable(sqlstr);
             // DataSet ds = Common.dataSet(sqlstr);
@@ -131,6 +137,16 @@ namespace WHMS.Infor_Data
                 }
             }
 
+
+        }
+
+        protected void DownLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Import_Click(object sender, EventArgs e)
+        {
 
         }
     }
