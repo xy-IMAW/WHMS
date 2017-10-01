@@ -13,7 +13,7 @@ namespace WHMS.Infor_Data
         protected void btnImport_Click(object sender, EventArgs e)
         {
          //   DataTable dt = new DataTable();
-            NPOI_EXCEL.UploadtoDataTable(FL1, Gridview);
+      //      NPOI_EXCEL.UploadtoDataTable(FL1, Gridview);
 
          //   Gridview.DataSource = dt;
            // Gridview.DataBind();

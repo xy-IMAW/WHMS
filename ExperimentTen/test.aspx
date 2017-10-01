@@ -10,10 +10,11 @@
 <body>
     <form id="form1" runat="server">
     <div>
-             <asp:FileUpload ID="FileUpload1" runat="server" />
+              <asp:FileUpload ID="FileUpload1" runat="server" />
                 <asp:Button ID="Button1" runat="server" OnClick="btnupload_Click" Text="上传" />
-
-               <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <br />
+                <br />
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 <br />
                 <asp:Image ID="Image1" runat="server" Visible="False" />
                 <asp:Label ID="fileUrl" runat="server" Text="Label" Visible="false"></asp:Label>

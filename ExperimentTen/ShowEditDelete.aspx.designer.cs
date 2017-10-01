@@ -22,57 +22,75 @@ namespace WHMS {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// FileUpload1 控件。
+        /// PageManager1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
-        /// Button1 控件。
+        /// panel1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::FineUI.Panel panel1;
         
         /// <summary>
-        /// Label1 控件。
+        /// tool1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::FineUI.Toolbar tool1;
         
         /// <summary>
-        /// Label2 控件。
+        /// download 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::FineUI.Button download;
         
         /// <summary>
-        /// Button2 控件。
+        /// tool2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::FineUI.Toolbar tool2;
         
         /// <summary>
-        /// GridView1 控件。
+        /// FileLoad 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::FineUI.FileUpload FileLoad;
+        
+        /// <summary>
+        /// Import 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Import;
+        
+        /// <summary>
+        /// gridview 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridview;
     }
 }

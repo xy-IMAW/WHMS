@@ -10,17 +10,31 @@
 <body>
     <form id="form1" runat="server">
     <div>
-             <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="上传" />
+        <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" EnableFStateValidation="false" />
+        <f:Panel ID="panel1" runat="server" >
 
-               <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                <br />
-      
-                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-    </div>
-        <asp:Button ID="Button2" runat="server" Text="下载模板" OnClick="Button2_Click" />
-        <asp:GridView ID="GridView1" runat="server" BorderStyle="Solid" BorderColor="Silver" ToolTip="132" >
-        </asp:GridView>
+            <Toolbars>
+                <f:Toolbar ID="tool1" runat="server">
+                    <Items>
+                        <f:Button ID="download" Icon="Accept" OnClick="Button2_Click" runat="server"></f:Button>
+                      
+                    </Items>
+                </f:Toolbar>
+                <f:Toolbar ID="tool2" runat="server">
+                    <Items>
+                     
+                        <f:FileUpload ID="FileLoad" runat="server"></f:FileUpload>
+                          <f:Button ID="Import" Icon="PageWhiteExcel" OnClick="Button1_Click" runat="server"></f:Button>
+                    </Items>
+                </f:Toolbar>
+            </Toolbars>
+        </f:Panel>
+       
+    </div>      
+        <div>
+             <asp:GridView ID="gridview" runat="server"></asp:GridView>
+        </div>
     </form>
+
 </body>
 </html>

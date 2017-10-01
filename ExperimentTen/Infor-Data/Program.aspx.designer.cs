@@ -31,22 +31,22 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.PageManager PageManager_01;
         
         /// <summary>
-        /// leftregion 控件。
+        /// RegionPanel1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.RegionPanel leftregion;
+        protected global::FineUI.RegionPanel RegionPanel1;
         
         /// <summary>
-        /// Region1 控件。
+        /// LeftRegion1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Region Region1;
+        protected global::FineUI.Region LeftRegion1;
         
         /// <summary>
         /// tool1 控件。
@@ -139,13 +139,13 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Form form2;
         
         /// <summary>
-        /// selectPro 控件。
+        /// toolbar1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList selectPro;
+        protected global::FineUI.Toolbar toolbar1;
         
         /// <summary>
         /// selectSy 控件。
@@ -166,6 +166,24 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.DropDownList selectSe;
         
         /// <summary>
+        /// toolbar2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Toolbar toolbar2;
+        
+        /// <summary>
+        /// selectPro 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DropDownList selectPro;
+        
+        /// <summary>
         /// date 控件。
         /// </summary>
         /// <remarks>
@@ -173,6 +191,15 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.DatePicker date;
+        
+        /// <summary>
+        /// toolbar3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Toolbar toolbar3;
         
         /// <summary>
         /// btnAdd 控件。

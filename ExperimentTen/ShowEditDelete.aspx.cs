@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using FineUI;
 
 namespace WHMS
 {
@@ -16,8 +17,9 @@ namespace WHMS
         protected void Button1_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-      //    dt =  NPOI_EXCEL.UploadtoDataTable(FileUpload1);
-            GridView1.DataSource = dt;
+            //   NPOI_EXCEL.UploadtoDataTable(fileupload,GridView);
+            NPOI_EXCEL.upload(FileLoad, gridview);
+         /*   GridView.DataSource = dt;
             string name = dt.Rows[0][1].ToString();
             foreach (DataRow dr in dt.Rows)
             {
@@ -26,8 +28,8 @@ namespace WHMS
                     
                 }
             }
-            GridView1.DataBind();
-
+            GridView.DataBind();
+            */
         }
 
         protected void Button2_Click(object sender, EventArgs e)
