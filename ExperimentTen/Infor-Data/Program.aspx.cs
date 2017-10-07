@@ -12,6 +12,7 @@ namespace WHMS.Infor_Data
         {
             if (!IsPostBack)
             {
+                Common.checklogin("../login.aspx");
                 BindDDL();//学期下拉框
                 bind();
             }

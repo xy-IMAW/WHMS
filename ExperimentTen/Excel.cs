@@ -343,9 +343,6 @@ namespace WHMS
             }
         }
 
-        
-
-
         public static void upload(System.Web.UI.WebControls.FileUpload FileUpload1, GridView GridView1)
         {
             bool fileOK = true;
@@ -456,36 +453,256 @@ namespace WHMS
             }
         }
 
-       /* public bool ImportExcel(string form)
+
+        public static void upload(System.Web.UI.WebControls.FileUpload FileUpload1,FineUI.Grid grid )
         {
-            string UserID = Session["UserID"].ToString();
+            bool fileOK = true;
 
-            string size = System.Web.HttpContext.Current.Request.Files[0].ContentLength.ToString();//文件大小
-            string type = System.Web.HttpContext.Current.Request.Files[0].ContentType;//文件类型
-            string _name = System.Web.HttpContext.Current.Request.Files[0].FileName;//原文件名
-            string name = UserID + "_" + DateTime.Now.ToString("yyyyMMdd") + "_" + _name.Substring(_name.LastIndexOf("."));//文件名字
-            string path = Server.MapPath("~/Areas/Import/res/Import/") + name; //服务器端保存路径
-            if (Convert.ToInt32(size) > 2097152)
+
+            //文件的上传路径
+            string path = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/Import/");
+
+
+            //判断上传文件夹是否存在，若不存在，则创建
+            if (!Directory.Exists(path))
             {
-                //ViewBag.msg = "上传失败文件大于2m";
-                Alert.Show("上传失败。文件大于2M");
-                return View();//上传失败页面
+                //创建文件夹 
+                Directory.CreateDirectory(path);
             }
-
-            if (type == "application/vnd.ms-excel" || type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+            if (FileUpload1.HasFile)
             {
-                HttpPostedFileBase files = Request.Files[0];
-                files.SaveAs(path);
 
-                //处理Excel 返回DateTable
-                //ImportExcelToDataTable(name);
-                return PartialView("_StudentInfo", DateTableToList(ImportExcelToDataTable(name)));
+
+                //允许上传的类型
+                //string[] allowExtesions = { ".doc", ".xls", ".rar", ".zip", ".ppt" };
+                //for (int i = 0; i < allowExtesions.Length; i++)
+                //{
+                //    if (fileExtesion == allowExtesions[i])
+                //    {
+                //        //文件格式正确 允许上传
+                //        fileOK = true;
+                //    }
+                //}
+
+
+                string name = FileUpload1.FileName;// 获得上传文件的名字.
+                int size = FileUpload1.PostedFile.ContentLength;// 文件大小.
+                if (size > (1000000 * 1024))
+                {
+                    fileOK = false;
+                    //   Label2.Text = "文件过大";
+                }
+                string type = FileUpload1.PostedFile.ContentType;// 文件类型.
+
+
+                // 获取上传文件的类型(后缀)
+                string fileExtesion = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+
+
+                //string type2 = name.Substring(name.LastIndexOf(".") + 1);// LastIndexOf()最后一个索引位置匹配.Substring()里面的+1是重载.
+                if (fileOK)
+                {
+                    try
+                    {
+                        Random ranNum = new Random();
+
+
+                        // 在1和1000之间的随机正整数
+                        //  int num = ranNum.Next(1, 1000);
+                        // 获取当前时间
+                        string newname = System.DateTime.Now.ToString("yyyyMMddHHmm");
+                        // 声明文件名，防止重复
+                        newname = newname + name + fileExtesion;
+
+                        string ipath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/Import/") + "\\" + newname; // 取得根目录下面的upimg目录的路径.
+                        string fpath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/Import/") + "\\" + newname;
+                        string wpath = "~/ExperimentTen/res/Import/\\" + newname; // 获得虚拟路径
+                        if (fileExtesion == ".jpg" || fileExtesion == ".gif" || fileExtesion == ".bmp" || fileExtesion == ".png")
+                        {
+                            FileUpload1.SaveAs(ipath); // 保存方法,参数是一个地址字符串.
+                                                       //  Image1.ImageUrl = wpath;
+                                                       //  Label1.Text = "你传的文件名是:" + name + "<br>文件大小为:" + size + "字节<br>文件类型是:" + type +
+                                                       //     "<br>后缀是:" + fileExtesion + "<br>实际路径是:" + ipath + "<br>虚拟路径是:" + fpath;
+                                                       //  Image1.Visible = true;
+                                                       // fileUrl.Text = ipath;
+                        }
+                        else
+                        {
+                            //   Image1.Visible = false;
+                            FileUpload1.SaveAs(fpath);
+                            //   Label1.Text = "你传的文件名是:" + name + "<br>文件大小为:" + size + "字节<br>文件类型是:" + type +
+                            //     "<br>后缀是:" + fileExtesion + "<br>实际路径是:" + ipath + "<br>虚拟路径是:" + fpath;
+                            //   fileUrl.Text = fpath;
+                        }
+                        // FileUpload1.PostedFile.SaveAs(path + newname);
+
+
+                        //Session["filename"] = newname;
+                        //     Label2.Text = "上传成功";
+                        //   fileName.Text = name;
+                        //  filesize.Text = size.ToString();
+                        DataTable dt = new DataTable();
+                        dt = NPOI_EXCEL.ExcelToDataTable(ipath, true);
+                        grid.DataSource = dt;
+                        grid.DataBind();
+                        //lab_upload.Text = "上传成功";
+                    }
+                    catch (Exception ex)
+                    {
+
+
+                        //   Label2.Text = "上传失败";
+                        throw ex;
+                    }
+                }
             }
             else
             {
-                return null;
+                //尚未选择文件
+                //  Label2.Text = "尚未选择任何文件，请选择文件";
+                return;
             }
         }
-        */
+
+        public static void upload(FineUI.FileUpload FileUpload1, FineUI.Grid grid)
+        {
+            bool fileOK = true;
+
+
+            //文件的上传路径
+            string path = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/Import/");
+
+
+            //判断上传文件夹是否存在，若不存在，则创建
+            if (!Directory.Exists(path))
+            {
+                //创建文件夹 
+                Directory.CreateDirectory(path);
+            }
+            if (FileUpload1.HasFile)
+            {
+
+
+                //允许上传的类型
+                //string[] allowExtesions = { ".doc", ".xls", ".rar", ".zip", ".ppt" };
+                //for (int i = 0; i < allowExtesions.Length; i++)
+                //{
+                //    if (fileExtesion == allowExtesions[i])
+                //    {
+                //        //文件格式正确 允许上传
+                //        fileOK = true;
+                //    }
+                //}
+
+
+                string name = FileUpload1.FileName;// 获得上传文件的名字.
+                int size = FileUpload1.PostedFile.ContentLength;// 文件大小.
+                if (size > (1000000 * 1024))
+                {
+                    fileOK = false;
+                    //   Label2.Text = "文件过大";
+                }
+                string type = FileUpload1.PostedFile.ContentType;// 文件类型.
+
+
+                // 获取上传文件的类型(后缀)
+                string fileExtesion = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+
+
+                //string type2 = name.Substring(name.LastIndexOf(".") + 1);// LastIndexOf()最后一个索引位置匹配.Substring()里面的+1是重载.
+                if (fileOK)
+                {
+                    try
+                    {
+                        Random ranNum = new Random();
+
+
+                        // 在1和1000之间的随机正整数
+                        //  int num = ranNum.Next(1, 1000);
+                        // 获取当前时间
+                        string newname = System.DateTime.Now.ToString("yyyyMMddHHmm");
+                        // 声明文件名，防止重复
+                        newname = newname + name + fileExtesion;
+
+                        string ipath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/Import/") + "\\" + newname; // 取得根目录下面的upimg目录的路径.
+                        string fpath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/Import/") + "\\" + newname;
+                        string wpath = "~/ExperimentTen/res/Import/\\" + newname; // 获得虚拟路径
+                        if (fileExtesion == ".jpg" || fileExtesion == ".gif" || fileExtesion == ".bmp" || fileExtesion == ".png")
+                        {
+                            FileUpload1.SaveAs(ipath); // 保存方法,参数是一个地址字符串.
+                                                       //  Image1.ImageUrl = wpath;
+                                                       //  Label1.Text = "你传的文件名是:" + name + "<br>文件大小为:" + size + "字节<br>文件类型是:" + type +
+                                                       //     "<br>后缀是:" + fileExtesion + "<br>实际路径是:" + ipath + "<br>虚拟路径是:" + fpath;
+                                                       //  Image1.Visible = true;
+                                                       // fileUrl.Text = ipath;
+                        }
+                        else
+                        {
+                            //   Image1.Visible = false;
+                            FileUpload1.SaveAs(fpath);
+                            //   Label1.Text = "你传的文件名是:" + name + "<br>文件大小为:" + size + "字节<br>文件类型是:" + type +
+                            //     "<br>后缀是:" + fileExtesion + "<br>实际路径是:" + ipath + "<br>虚拟路径是:" + fpath;
+                            //   fileUrl.Text = fpath;
+                        }
+                        // FileUpload1.PostedFile.SaveAs(path + newname);
+
+
+                        //Session["filename"] = newname;
+                        //     Label2.Text = "上传成功";
+                        //   fileName.Text = name;
+                        //  filesize.Text = size.ToString();
+                        DataTable dt = new DataTable();
+                        dt = NPOI_EXCEL.ExcelToDataTable(ipath, true);
+                        grid.DataSource = dt;
+                        grid.DataBind();
+                        //lab_upload.Text = "上传成功";
+                    }
+                    catch (Exception ex)
+                    {
+
+
+                        //   Label2.Text = "上传失败";
+                        throw ex;
+                    }
+                }
+            }
+            else
+            {
+                //尚未选择文件
+                //  Label2.Text = "尚未选择任何文件，请选择文件";
+                return;
+            }
+        }
+        /* public bool ImportExcel(string form)
+         {
+             string UserID = Session["UserID"].ToString();
+
+             string size = System.Web.HttpContext.Current.Request.Files[0].ContentLength.ToString();//文件大小
+             string type = System.Web.HttpContext.Current.Request.Files[0].ContentType;//文件类型
+             string _name = System.Web.HttpContext.Current.Request.Files[0].FileName;//原文件名
+             string name = UserID + "_" + DateTime.Now.ToString("yyyyMMdd") + "_" + _name.Substring(_name.LastIndexOf("."));//文件名字
+             string path = Server.MapPath("~/Areas/Import/res/Import/") + name; //服务器端保存路径
+             if (Convert.ToInt32(size) > 2097152)
+             {
+                 //ViewBag.msg = "上传失败文件大于2m";
+                 Alert.Show("上传失败。文件大于2M");
+                 return View();//上传失败页面
+             }
+
+             if (type == "application/vnd.ms-excel" || type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+             {
+                 HttpPostedFileBase files = Request.Files[0];
+                 files.SaveAs(path);
+
+                 //处理Excel 返回DateTable
+                 //ImportExcelToDataTable(name);
+                 return PartialView("_StudentInfo", DateTableToList(ImportExcelToDataTable(name)));
+             }
+             else
+             {
+                 return null;
+             }
+         }
+         */
     }
 }

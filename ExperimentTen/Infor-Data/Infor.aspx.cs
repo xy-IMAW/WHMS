@@ -15,7 +15,7 @@ namespace WHMS.Infor_Data
         {
             if (!IsPostBack)
             {
-                
+                Common.checklogin("../login.aspx");
                 Common.Sid = "";
                 Common.checklogin("../Login.aspx");
                 grade = "";

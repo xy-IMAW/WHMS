@@ -14,28 +14,29 @@ namespace WHMS
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+     
+
+   
+
+        protected void Button1_Click1(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            //   NPOI_EXCEL.UploadtoDataTable(fileupload,GridView);
-            NPOI_EXCEL.upload(FileLoad, gridview);
-         /*   GridView.DataSource = dt;
-            string name = dt.Rows[0][1].ToString();
-            foreach (DataRow dr in dt.Rows)
-            {
-                foreach (DataColumn dc in dt.Columns)
-                {
-                    
-                }
-            }
-            GridView.DataBind();
-            */
+            NPOI_EXCEL.upload(FileUpload,GridView1);
+         //   NPOI_EXCEL.upload(FileUpload, gridview);
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btn1_Click(object sender, EventArgs e)
         {
+            NPOI_EXCEL.upload(FileUpload,GridView1);
+        }
 
-           // NPOI_EXCEL.DownLoad();
+        protected void btn2_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload,Grid1);
+        }
+
+        protected void btn3_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload,gridview);
         }
     }
 }

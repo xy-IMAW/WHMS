@@ -16,6 +16,7 @@ namespace WHMS.Infor_Data
         {
             if (!IsPostBack)
             {
+                Common.checklogin("../login.aspx");
                 GradeBind();
             }
          

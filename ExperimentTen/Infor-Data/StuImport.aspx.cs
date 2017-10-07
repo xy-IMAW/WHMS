@@ -8,7 +8,7 @@ namespace WHMS.Infor_Data
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Common.checklogin("../Login.aspx");
+            Common.checklogin("../login.aspx");
         }
         protected void btnImport_Click(object sender, EventArgs e)
         {

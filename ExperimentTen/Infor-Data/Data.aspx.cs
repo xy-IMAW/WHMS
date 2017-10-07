@@ -24,7 +24,7 @@ namespace WHMS.Infor_Data
 
             if (!Page.IsPostBack)
             {
-                Common.checklogin("../Login.aspx");
+                Common.checklogin("../login.aspx");
                 //判断是否从学生信息页面跳转过来的
                 if (Common.Sid != "")
                 {

@@ -67,7 +67,7 @@ namespace WHMS
        
         }
 
-        protected void btnupload_Click(object sender, EventArgs e)
+        protected void btnupload1_Click(object sender, EventArgs e)
         {
             NPOI_EXCEL.upload(FileUpload1,GridView1);
          /*   bool fileOK = true;
@@ -178,6 +178,37 @@ namespace WHMS
                 return;
             }
             */
+        }
+
+        protected void btnupload2_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload,grid);
+        }
+
+        protected void btnupload3_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload,GridView1);
+        }
+        protected void btnupload4_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload1,grid);
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload1, Grid2);
+        }
+        protected void btn2_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload, grid);
+        }
+        protected void btn3_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload, Grid2);
+        }
+        protected void btn4_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload1, grid);
         }
     }
 }
