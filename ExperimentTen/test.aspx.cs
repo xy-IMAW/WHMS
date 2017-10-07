@@ -210,5 +210,13 @@ namespace WHMS
         {
             NPOI_EXCEL.upload(FileUpload1, grid);
         }
+
+        public void GridToData()
+        {
+            for (int i=1;i<Grid2.Rows.Count;i++)
+            {
+                Grid2.Rows[i].Cells[0].Text;
+            }
+        }
     }
 }

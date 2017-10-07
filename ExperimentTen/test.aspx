@@ -46,7 +46,7 @@
                 </Toolbars>
                 <Items>
                     <f:ContentPanel runat="server">
-                         <asp:GridView ID="Grid2" runat="server"></asp:GridView>
+                         <asp:GridView ID="Grid2" runat="server" AllowPaging="true" PageIndex="0" PageSize="50"></asp:GridView>
                     </f:ContentPanel>
                     <f:Grid ID="grid" runat="server" ShowBorder="true" >
 
