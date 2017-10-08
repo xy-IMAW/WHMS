@@ -179,8 +179,9 @@ namespace WHMS
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
                 Alert.Show(e.Message);
+                throw new Exception(e.Message);
+              
             }
             //finally
             //{

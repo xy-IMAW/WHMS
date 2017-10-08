@@ -36,7 +36,7 @@
                 <Toolbars>
                     <f:Toolbar runat="server">
                         <Items>
-                            <f:FileUpload ID="fileupload" runat="server" Label="上传" ></f:FileUpload>
+                            <f:FileUpload ID="fileupload" runat="server" Label="上传"></f:FileUpload>
                             <f:Button ID="btn2" Text="test1" OnClick="btn1_Click" runat="server"></f:Button>
                               <f:Button ID="Button2" Text="test2" OnClick="btn2_Click" runat="server"></f:Button>
                               <f:Button ID="Button3" Text="test3" OnClick="btn3_Click" runat="server"></f:Button>
@@ -46,11 +46,9 @@
                 </Toolbars>
                 <Items>
                     <f:ContentPanel runat="server">
-                         <asp:GridView ID="Grid2" runat="server" AllowPaging="true" PageIndex="0" PageSize="50"></asp:GridView>
+                         <asp:GridView ID="Grid2" runat="server" AllowPaging="true" PageIndex="0" PageSize="50"/>
                     </f:ContentPanel>
-                    <f:Grid ID="grid" runat="server" ShowBorder="true" >
-
-                    </f:Grid>
+                    <f:Grid ID="grid" runat="server" ShowBorder="true" />
                 </Items>
             </f:Panel>
    

@@ -182,7 +182,7 @@ namespace WHMS
 
         protected void btnupload2_Click(object sender, EventArgs e)
         {
-            NPOI_EXCEL.upload(fileupload,grid);
+            NPOI_EXCEL.upload(fileupload, Grid2);
         }
 
         protected void btnupload3_Click(object sender, EventArgs e)
@@ -191,31 +191,35 @@ namespace WHMS
         }
         protected void btnupload4_Click(object sender, EventArgs e)
         {
-            NPOI_EXCEL.upload(FileUpload1,grid);
+            NPOI_EXCEL.upload(FileUpload1, Grid2);
         }
 
         protected void btn1_Click(object sender, EventArgs e)
         {
             NPOI_EXCEL.upload(FileUpload1, Grid2);
+            GridToData();
         }
         protected void btn2_Click(object sender, EventArgs e)
         {
-            NPOI_EXCEL.upload(fileupload, grid);
+            NPOI_EXCEL.upload(fileupload, Grid2);
+            GridToData();
         }
         protected void btn3_Click(object sender, EventArgs e)
         {
             NPOI_EXCEL.upload(fileupload, Grid2);
+            GridToData();
         }
         protected void btn4_Click(object sender, EventArgs e)
         {
-            NPOI_EXCEL.upload(FileUpload1, grid);
+            NPOI_EXCEL.upload(FileUpload1, Grid2);
+            GridToData();
         }
 
         public void GridToData()
         {
             for (int i=1;i<Grid2.Rows.Count;i++)
             {
-                Grid2.Rows[i].Cells[0].Text;
+                Alert.Show(Grid2.Rows[i].Cells[0].Text);
             }
         }
     }

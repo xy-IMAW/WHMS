@@ -12,33 +12,35 @@
     <div>
         <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" EnableFStateValidation="false" />
         <f:Panel ID="panel1" runat="server" >
+        
             <Toolbars>
                 <f:Toolbar runat="server">
                     <Items>
-                        <f:FileUpload ID="FileUpload" runat="server" />
-                        <f:Button ID="btn1" runat="server" Text="test1" OnClick="btn1_Click" />
-                        <f:Button ID="btn2" runat="server" Text="test2" OnClick="btn2_Click" />
-                        <f:Button ID="btn3" runat="server" Text="test3" OnClick="btn3_Click" />
+                    <%--   <f:FileUpload ID="FileUpload" runat="server" Label="文件" />--%>  
+                       
+                        
                         <f:ContentPanel runat="server">
-                             <asp:Button ID="Button1" runat="server" OnClick="btn1_Click" Text="上传1" />
-                              <asp:Button ID="Button2" runat="server" OnClick="btn2_Click" Text="上传2" />
-                              <asp:Button ID="Button3" runat="server" OnClick="btn3_Click" Text="上传3" />
+                         
+                                      
                         </f:ContentPanel>
+                        <f:CPHConnector runat="server">
+                               <asp:FileUpload runat="server" ID="fileupload" />
+                         <asp:Button ID="Button2" runat="server" OnClick="btn1_Click" Text="上传" />        
+                        </f:CPHConnector>
+                       <%--     <f:Button ID="btn" runat="server" Text="上传" OnClick="btn1_Click" />--%>    
                     </Items>
                 </f:Toolbar>               
             </Toolbars>
             <Items>
-                <f:ContentPanel runat="server" >
-                          <asp:GridView ID="GridView1" runat="server" />
-                </f:ContentPanel>         
-            <f:Grid ID="Grid1" runat="server" />
+                <f:ContentPanel runat="server" Margin="50,,50,">
+                    <div style="align-content:center; align-items:center; text-align:center">
+                           <asp:GridView ID="GridView1" runat="server" AllowPaging="true" PageIndex="0" PageSize="50" />
+                    </div>                       
+                </f:ContentPanel>               
+                <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" />   
             </Items>           
-        </f:Panel>
-       
+        </f:Panel>      
     </div>      
-        <div>
-             <asp:GridView ID="gridview" runat="server"></asp:GridView>
-        </div>
     </form>
 
 </body>
