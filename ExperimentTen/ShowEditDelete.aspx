@@ -35,9 +35,12 @@
                 <f:ContentPanel runat="server" Margin="50,,50,">
                     <div style="align-content:center; align-items:center; text-align:center">
                            <asp:GridView ID="GridView1" runat="server" AllowPaging="true" PageIndex="0" PageSize="50" />
+                        <asp:Table ID="table1" runat="server" Width="70%" GridLines="Both" CellPadding="2" />
                     </div>                       
                 </f:ContentPanel>               
                 <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" />   
+                <f:Grid ID="Grid" runat="server" />
+                
             </Items>           
         </f:Panel>      
     </div>      
