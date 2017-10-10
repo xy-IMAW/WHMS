@@ -10,7 +10,13 @@
 <body>
     <form id="form1" runat="server">
     <f:PageManager ID="PageManager_01" AutoSizePanelID="panelMain" runat="server" />
-        <f:Panel ID="panelMain" runat="server" ShowBorder="false" ShowHeader="false" EnableCollapse="true" Layout="Fit">
+        <f:TabStrip runat="server" ActiveTabIndex="0">
+            <Tabs>
+                <f:Tab ID="tab1" Title="年级工时" runat="server" IFrameUrl="GradeData.aspx"/>
+                  <f:Tab ID="tab2" Title="班级工时" runat="server" IFrameUrl="ClassData.aspx"/>
+                <f:Tab ID="tab3" Title="个人工时" runat="server">
+                    <Items>
+                         <f:Panel ID="panelMain" runat="server" ShowBorder="false" ShowHeader="false" EnableCollapse="true" Layout="Fit">
             <Items>
                 <f:Grid Height="750px" ID="gridExample" Title="工时信息" ShowBorder="false" AllowPaging="true" ShowHeader="true" IsDatabasePaging="true"
                     DataKeyNames="ID" EnableCollapse="false" EnableCheckBoxSelect="true" PageSize="20"  PageIndex="1" OnPageIndexChange="gridExample_PageIndexChange"
@@ -24,11 +30,10 @@
                             </Items>
                             <Items>
                                 <f:TextBox ID="txtId" Label="学号" runat="server"></f:TextBox>
-                                <f:Label ID="Lab1" Text="学年" runat="server"></f:Label>
-                                <f:DropDownList ID="DL1" runat="server" >
+                                
+                                <f:DropDownList ID="DL1" runat="server" Label="学年" >
                                 </f:DropDownList>
-                                <f:Label ID="Lab2" Text="学期" runat="server"></f:Label>
-                                <f:DropDownList ID="DL2" runat="server" >
+                                <f:DropDownList ID="DL2" runat="server" Label="学期" >
                                 </f:DropDownList>
                               <f:Button ID="btnSelect" Text="查询" runat="server" OnClick="btnSelect_Click" Icon="Zoom"></f:Button>
                                 <f:Button ID="btnAdd" Text="新增" Icon="Add" runat="server">
@@ -56,6 +61,11 @@
                 </f:Grid>
             </Items>
         </f:Panel>
+                    </Items>
+                </f:Tab>
+            </Tabs>
+        </f:TabStrip>
+       
         <f:Window ID="windowPop" Title="编辑"  EnableCollapse="false" Hidden="true" EnableIFrame="true" IFrameUrl="about:blank" CloseAction="HidePostBack" EnableMaximize="false"
             EnableResize="false" EnableClose="false" OnClose="windowPop_Close" Target="Top" IsModal="true" Width="850px" Height="450px" runat="server">
         </f:Window>

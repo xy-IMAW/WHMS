@@ -31,6 +31,15 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
+        /// tab1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Tab tab1;
+        
+        /// <summary>
         /// panel1 控件。
         /// </summary>
         /// <remarks>
@@ -103,15 +112,6 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Button DownLoad;
         
         /// <summary>
-        /// FileLoad 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.FileUpload FileLoad;
-        
-        /// <summary>
         /// Import 控件。
         /// </summary>
         /// <remarks>
@@ -182,5 +182,14 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// tab2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Tab tab2;
     }
 }

@@ -73,7 +73,8 @@ namespace WHMS
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                string Message = "出现系统错误：" + e.Message;
+                Alert.Show(Message);
             }
             finally
             {
@@ -100,7 +101,8 @@ namespace WHMS
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                string Message = "出现系统错误：" + e.Message;
+                Alert.Show(Message);
             }
             finally
             {

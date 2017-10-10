@@ -113,11 +113,20 @@ namespace WHMS
                                                     break;
                                                 case CellType.Numeric:
                                                     short format = cell.CellStyle.DataFormat;
-                                                    //对时间格式（2015.12.5、2015/12/5、2015-12-5等）的处理  
-                                                    if (format == 14 || format == 31 || format == 57 || format == 58)
-                                                        dataRow[j] = cell.DateCellValue;
+                                                    if (NPOI.SS.UserModel.DateUtil.IsCellDateFormatted(cell))
+                                                    {
+                                                      //  dataRow[j] = cell.DateCellValue.ToString();
+                                                        dataRow[j] = cell.DateCellValue.Date.ToString();
+                                                    }
                                                     else
-                                                        dataRow[j] = cell.NumericCellValue;
+                                                    {
+                                                        dataRow[j] = cell.NumericCellValue.ToString();
+                                                    }
+                                                    //对时间格式（2015.12.5、2015/12/5、2015-12-5等）的处理  
+                                              //      if (format == 14 || format == 31 || format == 57 || format == 58)
+                                             //           dataRow[j] = cell.DateCellValue;
+                                              //      else
+                                              //          dataRow[j] = cell.NumericCellValue;
                                                     break;
                                                 case CellType.String:
                                                     dataRow[j] = cell.StringCellValue;

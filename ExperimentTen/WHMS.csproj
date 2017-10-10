@@ -3388,7 +3388,10 @@
     <Content Include="Infor-Data\AddClass.aspx" />
     <Content Include="Infor-Data\AddStu.aspx" />
     <Content Include="Infor-Data\Class.aspx" />
+    <Content Include="Infor-Data\ClassData.aspx" />
+    <Content Include="Infor-Data\ClassImport.aspx" />
     <Content Include="Infor-Data\Data.aspx" />
+    <Content Include="Infor-Data\GradeData.aspx" />
     <Content Include="Infor-Data\Infor.aspx" />
     <Content Include="Infor-Data\Program.aspx" />
     <Content Include="Infor-Data\StuImport.aspx" />
@@ -5202,12 +5205,33 @@
     <Compile Include="Infor-Data\Class.aspx.designer.cs">
       <DependentUpon>Class.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Infor-Data\ClassData.aspx.cs">
+      <DependentUpon>ClassData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\ClassData.aspx.designer.cs">
+      <DependentUpon>ClassData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\ClassImport.aspx.cs">
+      <DependentUpon>ClassImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\ClassImport.aspx.designer.cs">
+      <DependentUpon>ClassImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Infor-Data\Data.aspx.cs">
       <DependentUpon>Data.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Infor-Data\Data.aspx.designer.cs">
       <DependentUpon>Data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\GradeData.aspx.cs">
+      <DependentUpon>GradeData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\GradeData.aspx.designer.cs">
+      <DependentUpon>GradeData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Infor-Data\Infor.aspx.cs">
       <DependentUpon>Infor.aspx</DependentUpon>

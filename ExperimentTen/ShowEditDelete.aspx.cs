@@ -12,7 +12,7 @@ namespace WHMS
         {
             if (!IsPostBack)
             {
-                bind();
+             //   bind();
             }
         }
       
@@ -85,7 +85,8 @@ namespace WHMS
         protected void btn_Click(object sender, EventArgs e)
         {
             // Updata();
-            DataControl.UpdataClass(GridView1);
+         //   DataControl.UpdataClass(GridView1);
+            DataControl.UpdataWorking_hours(GridView1);
         }
 
         public void bind()

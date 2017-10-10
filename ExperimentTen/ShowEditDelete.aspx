@@ -34,7 +34,8 @@
             <Items>
                 <f:ContentPanel runat="server" Margin="50,,50,">
                     <div style="align-content:center; align-items:center; text-align:center">
-                           <asp:GridView ID="GridView1" runat="server" AllowPaging="true" PageIndex="0" PageSize="50" />
+                           <asp:GridView ID="GridView1" runat="server" />
+                 
                         <asp:Table ID="table1" runat="server" Width="70%" GridLines="Both" CellPadding="2" />
                     </div>                       
                 </f:ContentPanel>               

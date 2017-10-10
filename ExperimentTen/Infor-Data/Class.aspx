@@ -11,7 +11,11 @@
     <form id="form1" runat="server">
     <div>
         <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" EnableFStateValidation="false" />
-        <f:Panel ID="panel1" runat="server" EnableCollapse="true" ShowHeader="false">
+        <f:TabStrip runat="server">
+            <Tabs>
+                <f:Tab ID="tab1" runat="server">
+                    <Items>
+                          <f:Panel ID="panel1" runat="server" EnableCollapse="true" ShowHeader="false">
             <Items>
                 <f:Panel ID="panel11" runat="server" Title="班级添加" ShowHeader="true" ShowBorder="true">
                     <Toolbars>
@@ -27,7 +31,6 @@
                         <f:Toolbar ID="toolbar2" runat="server">
                          <Items>
                              <f:Button ID="DownLoad" Text="下载模板" Icon="Accept" runat="server" OnClick="DownLoad_Click" ></f:Button>
-                             <f:FileUpload ID="FileLoad" Label="选择Excel表" runat="server"></f:FileUpload>
                               <f:Button ID="Import" Text="导入班级" runat="server" OnClick="Import_Click" ></f:Button>
                             
                          </Items>
@@ -63,6 +66,15 @@
             </Items>
                      
         </f:Panel>        
+                    </Items>
+                   
+                </f:Tab>
+                <f:Tab ID="tab2" Hidden="true" runat="server" IFrameUrl="ClassImport.aspx" Title="更新班级">
+
+                </f:Tab>
+            </Tabs>
+        </f:TabStrip>
+       
                                 
     </div>
     </form>

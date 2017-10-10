@@ -149,7 +149,7 @@ namespace WHMS.Infor_Data
 
         protected void Import_Click(object sender, EventArgs e)
         {
-
+            tab2.Hidden = false;
         }
     }
 }

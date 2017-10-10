@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StuImport.aspx.cs" Inherits="WHMS.Infor_Data.StuImport" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClassImport.aspx.cs" Inherits="WHMS.Infor_Data.ClassImport" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-      <style>
+    <style>
         .tool1 
         {
             text-align:center;
@@ -15,34 +15,23 @@
         }
     </style>
 </head>
+ 
 <body>
-    <form id="form1" runat="server">   
+    <form id="form1" runat="server">
     <div>
-   
-      
-        <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" />
-        <f:Panel ID="panelMain" runat="server" ShowBorder="false" ShowHeader="false" EnableCollapse="true" Layout="Fit">
-            <Items>
-               <f:Grid ID="Grid1" runat="server" ShowBorder="true" ShowHeader="true" Title="学生名单导入" AllowPaging="true" PageIndex="0" PageSize="40">
-                    
-                    <Toolbars>
-                        <f:Toolbar runat="server">
-                            <Items>
-                                <f:Button ID="btnDownLoad" runat="server" Text="下载模板" OnClick="btnDownLoad_Click"></f:Button>
-                            </Items>                             
-                        </f:Toolbar>        
-                            <f:Toolbar ID="tool1" runat="server" CssClass="tool1">
+    <f:PageManager ID="pagemanager1" runat="server" />
+        <f:Panel ID="panel1" runat="server">
+            <Toolbars>
+                <f:Toolbar ID="tool1" runat="server" CssClass="tool1">
                     <Items>
                            <f:CPHConnector runat="server" >
                                <asp:FileUpload runat="server" ID="fileupload"  CssClass="tool1"/>
                          <asp:Button ID="Button2" runat="server" OnClick="btn1_Click" Text="上传" />        
                         </f:CPHConnector>
                     </Items>
-                </f:Toolbar>               
-                    </Toolbars>       
-            </f:Grid>
-           </Items>
-                     <Items>
+                </f:Toolbar>
+            </Toolbars>
+                <Items>
                 <f:ContentPanel runat="server" Margin="50,,50,">
                     <div style="align-content:center; align-items:center; text-align:center">
                            <asp:GridView ID="GridView1" runat="server" />
@@ -53,7 +42,7 @@
                 <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" CssClass="tool1" />   
                 <f:Grid ID="Grid" runat="server" />
                 
-            </Items>   
+            </Items>     
         </f:Panel>
     </div>
     </form>
