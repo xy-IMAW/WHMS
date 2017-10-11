@@ -27,7 +27,7 @@
                         <f:Toolbar ID="toolbar2" runat="server">
                          <Items>
                              <f:Button ID="DownLoad" Text="下载模板" Icon="Accept" runat="server" OnClick="DownLoad_Click" ></f:Button>
-                             <f:Button ID="Import" Text="导入班级" runat="server" OnClick="Import_Click" ></f:Button>
+                             <f:Button ID="Import" Text="导入班级" runat="server" ></f:Button>
                          </Items>
                      </f:Toolbar>  
                     </Toolbars>
@@ -61,6 +61,7 @@
             </Items>
                      
         </f:Panel>        
+        <f:Window ID="window1" runat="server" Hidden="true" EnableIFrame="true" EnableClose="true" EnableMaximize="true"  Width="800px" Height="600px" Target="Top" OnClose="window1_Close"></f:Window>
                                 
     </div>
     </form>

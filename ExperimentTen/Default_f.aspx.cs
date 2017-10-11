@@ -40,6 +40,11 @@ namespace WHMS
             TreeNode node3 = new TreeNode();//工时查询 0,1,2
             TreeNode node4 = new TreeNode();//活动管理 0
             TreeNode node5 = new TreeNode();//班级管理0,1
+            TreeNode node6 = new TreeNode();
+            TreeNode node7 = new TreeNode();
+            TreeNode node8 = new TreeNode();
+            TreeNode node9 = new TreeNode();
+
 
             node1.Text = "权限管理";
             node1.NavigateUrl = "~/Account/Account.aspx";
@@ -48,13 +53,25 @@ namespace WHMS
             node2.NavigateUrl = "~/Infor-Data/Infor.aspx";
 
             node3.Text = "工时管理";
-            node3.NavigateUrl = "~/Infor-Data/Data.aspx";
+          //  node3.NavigateUrl = "~/Infor-Data/Data.aspx";
 
             node4.Text = "活动管理";
             node4.NavigateUrl = "~/Infor-Data/Program.aspx";
 
             node5.Text = "班级管理";
             node5.NavigateUrl = "~/Infor-Data/Class.aspx";
+
+            node6.Text = "个人工时";
+            node6.NavigateUrl = "~/Infor-Data/Data.aspx";
+
+            node7.Text = "班级工时";
+            node7.NavigateUrl= "~/Infor-Data/ClassData.aspx";
+
+            node8.Text = "年级工时";
+            node8.NavigateUrl = "~/Infor-Data/GradeData.aspx";
+
+            node9.Text = "学生导入";
+            node9.NavigateUrl = "~/Infor-Data/Stu.aspx";
 
             if (Common.State == "超级管理员")
             {
@@ -65,7 +82,12 @@ namespace WHMS
                 leftMenuTree.Nodes.Add(node3);
                 leftMenuTree.Nodes.Add(node4);
                 leftMenuTree.Nodes.Add(node5);
-             
+
+                node3.Nodes.Add(node6);
+                node3.Nodes.Add(node7);
+                node3.Nodes.Add(node8);
+                node3.Nodes.Add(node9);
+
 
                 // leftMenuTree.Nodes[0].Nodes[2].NavigateUrl = "~/Account/Account.aspx";
             }
@@ -77,11 +99,17 @@ namespace WHMS
                 leftMenuTree.Nodes.Add(node3);
                 leftMenuTree.Nodes.Add(node4);
                 leftMenuTree.Nodes.Add(node5);
+
+                node3.Nodes.Add(node6);
+                node3.Nodes.Add(node7);
+                node3.Nodes.Add(node8);
+             
                 //  leftMenuTree.Nodes[0].Nodes[2].NavigateUrl = "";
                 // leftMenuTree.Nodes[0].Nodes[2].ToolTip = "没有访问权限！";
             }
             else//组织委员界面
             {
+                leftMenuTree.Nodes.Add(node6);
                 ///todo 组织委员界面
             }
         }

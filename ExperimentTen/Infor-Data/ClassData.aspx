@@ -15,13 +15,13 @@
             <Toolbars>
                 <f:Toolbar ID="tool1" runat="server">
                     <Items>
-                        <f:DropDownList ID="DL1" runat="server" Label="年级" OnSelectedIndexChanged="DL1_SelectedIndexChanged" >
+                        <f:DropDownList ID="DL1" runat="server" Label="年级" Required="true" AutoPostBack="true" OnSelectedIndexChanged="DL1_SelectedIndexChanged">
                                 </f:DropDownList>
-                         <f:DropDownList ID="DL2" runat="server" Label="班级" >
+                         <f:DropDownList ID="DL2" runat="server" Label="班级" Required="true">
                                 </f:DropDownList>
-                        <f:DropDownList ID="DL3" runat="server" Label="学年" >
+                        <f:DropDownList ID="DL3" runat="server" Label="学年" Required="true" >
                                 </f:DropDownList>
-                                <f:DropDownList ID="DL4" runat="server" Label="学期" >
+                                <f:DropDownList ID="DL4" runat="server" Label="学期"  Required="true">
                                 </f:DropDownList>
                         <f:Button ID="btn" runat="server" Text="查看" OnClick="btn_Click"/>
                     </Items>

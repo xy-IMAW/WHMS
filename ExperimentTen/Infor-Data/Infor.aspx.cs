@@ -17,7 +17,6 @@ namespace WHMS.Infor_Data
             {
                 Common.checklogin("../login.aspx");
                 Common.Sid = "";
-                Common.checklogin("../Login.aspx");
                 grade = "";
                 Class1 = "";
               

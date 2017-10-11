@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StuImport.aspx.cs" Inherits="WHMS.Infor_Data.StuImport" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Stu.aspx.cs" Inherits="WHMS.Infor_Data.Stu" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-      <style>
+  <style>
         .tool1 
         {
             text-align:center;
@@ -20,7 +20,7 @@
     <div>
    
       
-        <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" />
+        <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="panelMain" />
         <f:Panel ID="panelMain" runat="server" ShowBorder="false" ShowHeader="false" EnableCollapse="true" Layout="Fit">
             <Items>
                <f:Grid ID="Grid1" runat="server" ShowBorder="true" ShowHeader="true" Title="学生名单导入" AllowPaging="true" PageIndex="0" PageSize="40">

@@ -26,7 +26,7 @@
                     <Items>
                            <f:CPHConnector runat="server" >
                                <asp:FileUpload runat="server" ID="fileupload"  CssClass="tool1"/>
-                         <asp:Button ID="Button2" runat="server" OnClick="btn1_Click" Text="上传" />        
+                         <asp:Button ID="btn1" runat="server" OnClick="btn1_Click" Text="上传" />        
                         </f:CPHConnector>
                     </Items>
                 </f:Toolbar>

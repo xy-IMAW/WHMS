@@ -1,10 +1,14 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using FineUI;
 
 namespace WHMS.Infor_Data
 {
-    public partial class StuImport : System.Web.UI.Page
+    public partial class Stu : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,7 +21,7 @@ namespace WHMS.Infor_Data
 
         protected void btnDownLoad_Click(object sender, EventArgs e)
         {
-            string FN="Student";//模板名
+            string FN = "Student";//模板名
             NPOI_EXCEL.DownLoad(FN);
         }
 

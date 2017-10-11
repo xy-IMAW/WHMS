@@ -8,7 +8,11 @@ namespace WHMS.Infor_Data
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DL1bind();
+            if (!IsPostBack)
+            {
+                DL1bind();
+                btn2.OnClientClick = window1.GetShowReference("GradeImport.aspx");
+            }
         }
         public void DL1bind()
         {

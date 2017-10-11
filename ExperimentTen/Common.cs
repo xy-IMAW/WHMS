@@ -73,7 +73,8 @@ namespace WHMS
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                throw e;
+              //  throw new Exception(e.Message);
             }
             finally
             {
@@ -100,7 +101,8 @@ namespace WHMS
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                throw e;
+             //   throw new Exception(e.Message);
             }
             finally
             {
@@ -155,7 +157,8 @@ namespace WHMS
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                throw e;
+               // throw new Exception(e.Message);
             }
             finally
             {
@@ -179,8 +182,10 @@ namespace WHMS
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
                 Alert.Show(e.Message);
+                throw e;
+             //   throw new Exception(e.Message);
+               
             }
             //finally
             //{

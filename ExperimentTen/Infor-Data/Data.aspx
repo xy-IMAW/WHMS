@@ -10,15 +10,15 @@
 <body>
     <form id="form1" runat="server">
     <f:PageManager ID="PageManager_01" AutoSizePanelID="panelMain" runat="server" />
-        <f:TabStrip runat="server" ActiveTabIndex="0">
+        <f:TabStrip runat="server" ActiveTabIndex="0" ShowBorder="true">
             <Tabs>
-                <f:Tab ID="tab1" Title="年级工时" runat="server" IFrameUrl="GradeData.aspx"/>
-                  <f:Tab ID="tab2" Title="班级工时" runat="server" IFrameUrl="ClassData.aspx"/>
+                <f:Tab ID="tab1" Title="年级工时" EnableIFrame="true" runat="server" IFrameUrl="GradeData.aspx"/>
+                  <f:Tab ID="tab2" Title="班级工时" EnableIFrame="true" runat="server" IFrameUrl="ClassData.aspx"/>
                 <f:Tab ID="tab3" Title="个人工时" runat="server">
                     <Items>
                          <f:Panel ID="panelMain" runat="server" ShowBorder="false" ShowHeader="false" EnableCollapse="true" Layout="Fit">
             <Items>
-                <f:Grid Height="750px" ID="gridExample" Title="工时信息" ShowBorder="false" AllowPaging="true" ShowHeader="true" IsDatabasePaging="true"
+                <f:Grid Height="750px" ID="gridExample" Title="工时信息" ShowBorder="false" AllowPaging="true" ShowHeader="false" IsDatabasePaging="true"
                     DataKeyNames="ID" EnableCollapse="false" EnableCheckBoxSelect="true" PageSize="20"  PageIndex="1" OnPageIndexChange="gridExample_PageIndexChange"
                     EnableMultiSelect="false" OnSort="gridExample_Sort" runat="server">
                    

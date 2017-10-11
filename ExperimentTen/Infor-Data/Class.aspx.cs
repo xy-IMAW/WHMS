@@ -16,6 +16,7 @@ namespace WHMS.Infor_Data
         {
             if (!IsPostBack)
             {
+                Import.OnClientClick = window1.GetShowReference("ClassImport.aspx");
                 GradeBind();
             }
          
@@ -145,9 +146,9 @@ namespace WHMS.Infor_Data
 
         }
 
-        protected void Import_Click(object sender, EventArgs e)
+        protected void window1_Close(object sender, WindowCloseEventArgs e)
         {
-
+            BindGrid3();
         }
     }
 }

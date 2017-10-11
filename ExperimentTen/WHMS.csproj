@@ -3384,6 +3384,8 @@
     <Content Include="extjs\res\theme-triton.css" />
     <Content Include="extjs\version.txt" />
     <Content Include="Default_f.aspx" />
+    <Content Include="image\icon.ico" />
+    <Content Include="image\icon.jpg" />
     <Content Include="image\login.jpg" />
     <Content Include="Infor-Data\AddClass.aspx" />
     <Content Include="Infor-Data\AddStu.aspx" />
@@ -3394,6 +3396,7 @@
     <Content Include="Infor-Data\GradeData.aspx" />
     <Content Include="Infor-Data\Infor.aspx" />
     <Content Include="Infor-Data\Program.aspx" />
+    <Content Include="Infor-Data\Stu.aspx" />
     <Content Include="Infor-Data\StuImport.aspx" />
     <Content Include="login3.aspx" />
     <Content Include="login.aspx" />
@@ -5246,6 +5249,13 @@
     </Compile>
     <Compile Include="Infor-Data\Program.aspx.designer.cs">
       <DependentUpon>Program.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\Stu.aspx.cs">
+      <DependentUpon>Stu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\Stu.aspx.designer.cs">
+      <DependentUpon>Stu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Infor-Data\StuImport.aspx.cs">
       <DependentUpon>StuImport.aspx</DependentUpon>

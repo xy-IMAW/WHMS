@@ -19,5 +19,10 @@ namespace WHMS.Infor_Data
             NPOI_EXCEL.upload(fileupload, GridView1);
           
         }
+
+        protected void btn_Click(object sender, EventArgs e)
+        {
+            DataControl.UpdataClass(GridView1);
+        }
     }
 }

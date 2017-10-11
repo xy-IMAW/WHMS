@@ -10,7 +10,7 @@
 namespace WHMS.Infor_Data {
     
     
-    public partial class Class {
+    public partial class Stu {
         
         /// <summary>
         /// form1 控件。
@@ -31,22 +31,31 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
-        /// panel1 控件。
+        /// panelMain 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel panel1;
+        protected global::FineUI.Panel panelMain;
         
         /// <summary>
-        /// panel11 控件。
+        /// Grid1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel panel11;
+        protected global::FineUI.Grid Grid1;
+        
+        /// <summary>
+        /// btnDownLoad 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnDownLoad;
         
         /// <summary>
         /// tool1 控件。
@@ -58,129 +67,57 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Toolbar tool1;
         
         /// <summary>
-        /// txtClassName 控件。
+        /// fileupload 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox txtClassName;
+        protected global::System.Web.UI.WebControls.FileUpload fileupload;
         
         /// <summary>
-        /// txtGrade 控件。
+        /// btn1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox txtGrade;
+        protected global::System.Web.UI.WebControls.Button btn1;
         
         /// <summary>
-        /// btnAddClass 控件。
+        /// GridView1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button btnAddClass;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// toolbar2 控件。
+        /// table1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Toolbar toolbar2;
+        protected global::System.Web.UI.WebControls.Table table1;
         
         /// <summary>
-        /// DownLoad 控件。
+        /// btn 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button DownLoad;
+        protected global::FineUI.Button btn;
         
         /// <summary>
-        /// Import 控件。
+        /// Grid 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Import;
-        
-        /// <summary>
-        /// panel2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Panel panel2;
-        
-        /// <summary>
-        /// toolbar1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Toolbar toolbar1;
-        
-        /// <summary>
-        /// SelectGrade 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DropDownList SelectGrade;
-        
-        /// <summary>
-        /// btnSearch 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnSearch;
-        
-        /// <summary>
-        /// btnDeleteClass 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnDeleteClass;
-        
-        /// <summary>
-        /// Grid3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Grid Grid3;
-        
-        /// <summary>
-        /// Label1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// window1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Window window1;
+        protected global::FineUI.Grid Grid;
     }
 }
