@@ -15,6 +15,7 @@ namespace WHMS.Account
         {
             if (!IsPostBack)
             {
+                Common.checklogin("../login.aspx");
                 labStuID.Text = Common.ID;
                 if (Common.State == "0")
                 {

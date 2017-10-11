@@ -10,17 +10,42 @@
 <body>
     <form id="form1" runat="server">
     <div>
-             <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="上传" />
-
-               <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                <br />
-      
-                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-    </div>
-        <asp:Button ID="Button2" runat="server" Text="下载模板" OnClick="Button2_Click" />
-        <asp:GridView ID="GridView1" runat="server" BorderStyle="Solid" BorderColor="Silver" ToolTip="132" >
-        </asp:GridView>
+        <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="RegionPanel1" EnableFStateValidation="false" />
+        <f:Panel ID="panel1" runat="server" >
+        
+            <Toolbars>
+                <f:Toolbar runat="server">
+                    <Items>
+                    <%--   <f:FileUpload ID="FileUpload" runat="server" Label="文件" />--%>  
+                       
+                        
+                        <f:ContentPanel runat="server">
+                         
+                                      
+                        </f:ContentPanel>
+                        <f:CPHConnector runat="server">
+                               <asp:FileUpload runat="server" ID="fileupload" />
+                         <asp:Button ID="Button2" runat="server" OnClick="btn1_Click" Text="上传" />        
+                        </f:CPHConnector>
+                       <%--     <f:Button ID="btn" runat="server" Text="上传" OnClick="btn1_Click" />--%>    
+                    </Items>
+                </f:Toolbar>               
+            </Toolbars>
+            <Items>
+                <f:ContentPanel runat="server" Margin="50,,50,">
+                    <div style="align-content:center; align-items:center; text-align:center">
+                           <asp:GridView ID="GridView1" runat="server" />
+                 
+                        <asp:Table ID="table1" runat="server" Width="70%" GridLines="Both" CellPadding="2" />
+                    </div>                       
+                </f:ContentPanel>               
+                <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" />   
+                <f:Grid ID="Grid" runat="server" />
+                
+            </Items>           
+        </f:Panel>      
+    </div>      
     </form>
+
 </body>
 </html>

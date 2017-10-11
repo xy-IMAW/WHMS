@@ -24,7 +24,7 @@ namespace WHMS.Infor_Data
 
             if (!Page.IsPostBack)
             {
-                Common.checklogin("../Login.aspx");
+                Common.checklogin("../login.aspx");
                 //判断是否从学生信息页面跳转过来的
                 if (Common.Sid != "")
                 {
@@ -35,10 +35,9 @@ namespace WHMS.Infor_Data
                     gridExample.DataBind();
                     btnAdd.OnClientClick = windowPop.GetShowReference("");
                 }
-                gridExample.SortField = "SySe";
+       
                 BindGrid3();
-                btnAdd.OnClientClick += windowPop.GetShowReference("EmpAdd.aspx", "增加职工");
-                btnDelete.OnClientClick = gridExample.GetNoSelectionAlertReference("至少选择一项！");
+             
             }
 
         }
@@ -84,31 +83,6 @@ namespace WHMS.Infor_Data
             DL2.DataBind();
 
         }
-      /*  protected void BindGrid3()
-        {
-           
-          
-            //下拉列表框选项设置  手动设置           
-            List<string> list1 = new List<string>();
-            list1.Add("全部");
-            list1.Add("2013-2014");
-            list1.Add("2014-2015");
-            list1.Add("2015-2016");
-            list1.Add("2016-2017");
-            list1.Add("2017-2018");
-            list1.Add("2018-2019");
-            DL1.DataSource = list1;
-            DL1.DataBind();
-
-            List<string> list2 = new List<string>();
-            list2.Add("全部");
-            list2.Add("1");
-            list2.Add("2");
-
-            DL2.DataSource = list2;
-            DL2.DataBind();
-        }
-        */
         protected void btnDelete_Click3(object sender, EventArgs e)
         {
           

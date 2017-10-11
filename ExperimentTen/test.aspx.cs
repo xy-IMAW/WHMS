@@ -15,7 +15,7 @@ namespace WHMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Bind1();
+          //  Bind1();
         }
         public void Bind1()
         {
@@ -67,9 +67,10 @@ namespace WHMS
        
         }
 
-        protected void btnupload_Click(object sender, EventArgs e)
+        protected void btnupload1_Click(object sender, EventArgs e)
         {
-            bool fileOK = true;
+            NPOI_EXCEL.upload(FileUpload1,GridView1);
+         /*   bool fileOK = true;
 
 
             //文件的上传路径
@@ -100,7 +101,7 @@ namespace WHMS
 
                 string name = FileUpload1.FileName;// 获得上传文件的名字.
                 int size = FileUpload1.PostedFile.ContentLength;// 文件大小.
-                if (size > (10 * 1024))
+                if (size > (1000000 * 1024))
                 {
                     fileOK = false;
                     Label2.Text = "文件过大";
@@ -122,19 +123,15 @@ namespace WHMS
 
                         // 在1和1000之间的随机正整数
                         int num = ranNum.Next(1, 1000);
-
-
                         // 获取当前时间
-                        string newname = System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
-
-
+                        string newname = "";
+                        //System.DateTime.Now.ToString("yyyyMMddHHmmssffff");
                         // 声明文件名，防止重复
-                        newname = newname + num + fileExtesion;
+                        newname = newname + num;
 
-
-                        string ipath = Server.MapPath("Files\\upimg") + "\\" + newname; // 取得根目录下面的upimg目录的路径.
-                        string fpath = Server.MapPath("Files\\upfile") + "\\" + newname;
-                        string wpath = "Files\\upimg\\" + newname; // 获得虚拟路径
+                        string ipath = Server.MapPath("~/ExperimentTen/res/Import/") + "\\" + newname; // 取得根目录下面的upimg目录的路径.
+                        string fpath = Server.MapPath("~/ExperimentTen/res/Import/") + "\\" + newname;
+                        string wpath = "~/ExperimentTen/res/Import/\\" + newname; // 获得虚拟路径
                         if (fileExtesion == ".jpg" || fileExtesion == ".gif" || fileExtesion == ".bmp" || fileExtesion == ".png")
                         {
                             FileUpload1.SaveAs(ipath); // 保存方法,参数是一个地址字符串.
@@ -159,6 +156,10 @@ namespace WHMS
                         Label2.Text = "上传成功";
                         fileName.Text = name;
                         filesize.Text = size.ToString();
+                        DataTable dt = new DataTable();
+                        dt = NPOI_EXCEL.ExcelToDataTable(ipath, true);
+                        GridView1.DataSource = dt;
+                        GridView1.DataBind();
                         //lab_upload.Text = "上传成功";
                     }
                     catch (Exception ex)
@@ -175,6 +176,50 @@ namespace WHMS
                 //尚未选择文件
                 Label2.Text = "尚未选择任何文件，请选择文件";
                 return;
+            }
+            */
+        }
+
+        protected void btnupload2_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload, Grid2);
+        }
+
+        protected void btnupload3_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload,GridView1);
+        }
+        protected void btnupload4_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload1, Grid2);
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload1, Grid2);
+            GridToData();
+        }
+        protected void btn2_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload, Grid2);
+            GridToData();
+        }
+        protected void btn3_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(fileupload, Grid2);
+            GridToData();
+        }
+        protected void btn4_Click(object sender, EventArgs e)
+        {
+            NPOI_EXCEL.upload(FileUpload1, Grid2);
+            GridToData();
+        }
+
+        public void GridToData()
+        {
+            for (int i=1;i<Grid2.Rows.Count;i++)
+            {
+                Alert.Show(Grid2.Rows[i].Cells[0].Text);
             }
         }
     }

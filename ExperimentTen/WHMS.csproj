@@ -3388,11 +3388,15 @@
     <Content Include="Infor-Data\AddClass.aspx" />
     <Content Include="Infor-Data\AddStu.aspx" />
     <Content Include="Infor-Data\Class.aspx" />
+    <Content Include="Infor-Data\ClassData.aspx" />
+    <Content Include="Infor-Data\ClassImport.aspx" />
     <Content Include="Infor-Data\Data.aspx" />
+    <Content Include="Infor-Data\GradeData.aspx" />
     <Content Include="Infor-Data\Infor.aspx" />
     <Content Include="Infor-Data\Program.aspx" />
     <Content Include="Infor-Data\StuImport.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="login3.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -5170,7 +5174,7 @@
     <Compile Include="Account\PasswordUpdate.aspx.designer.cs">
       <DependentUpon>PasswordUpdate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Http.cs" />
+    <Compile Include="DataControl.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Default_f.aspx.cs">
       <DependentUpon>Default_f.aspx</DependentUpon>
@@ -5201,12 +5205,33 @@
     <Compile Include="Infor-Data\Class.aspx.designer.cs">
       <DependentUpon>Class.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Infor-Data\ClassData.aspx.cs">
+      <DependentUpon>ClassData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\ClassData.aspx.designer.cs">
+      <DependentUpon>ClassData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\ClassImport.aspx.cs">
+      <DependentUpon>ClassImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\ClassImport.aspx.designer.cs">
+      <DependentUpon>ClassImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Infor-Data\Data.aspx.cs">
       <DependentUpon>Data.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Infor-Data\Data.aspx.designer.cs">
       <DependentUpon>Data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\GradeData.aspx.cs">
+      <DependentUpon>GradeData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\GradeData.aspx.designer.cs">
+      <DependentUpon>GradeData.aspx</DependentUpon>
     </Compile>
     <Compile Include="Infor-Data\Infor.aspx.cs">
       <DependentUpon>Infor.aspx</DependentUpon>
@@ -5229,12 +5254,19 @@
     <Compile Include="Infor-Data\StuImport.aspx.designer.cs">
       <DependentUpon>StuImport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="login3.aspx.cs">
+      <DependentUpon>login3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="login3.aspx.designer.cs">
+      <DependentUpon>login3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowEditDelete.aspx.cs">

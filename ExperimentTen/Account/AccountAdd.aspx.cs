@@ -21,7 +21,7 @@ namespace WHMS.Account
         public string stuname;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Common.checklogin("../login.aspx");
         }
         protected void btnselect_Click(object sender, EventArgs e)
         {

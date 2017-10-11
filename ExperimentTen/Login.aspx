@@ -1,42 +1,33 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WHMS.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="WHMS.login" %>
 
 <!DOCTYPE html>
-<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>登陆</title>   
-</head>   
-<body style="background:url(login.jpg)">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
     <form id="form1" runat="server">
-        <div>
-        <f:PageManager ID="PageManager1" runat="server" />
-        <f:Window ID="Window1" runat="server" Title="工时统计系统" IsModal="false" EnableClose="false"
-            WindowPosition="GoldenSection" Width="350px">
-            <Items>
-                <f:SimpleForm ID="SimpleForm1" runat="server" ShowBorder="false" BodyPadding="10px"
-                    LabelWidth="60px" ShowHeader="false">
-                    <Items>
-                        <f:TextBox ID="tbxStuID" Label="学号" Required="true" runat="server">
-                        </f:TextBox>
-                        <f:TextBox ID="tbxPassword" Label="密码"  Required="true" runat="server" TextMode="Password">
-                        </f:TextBox>
-                                           
-                       
-                     
-                    </Items>
-                </f:SimpleForm>
-            </Items>
-            <Toolbars>
-                <f:Toolbar ID="Toolbar1" runat="server" Position="Bottom" ToolbarAlign="Right">
-                    <Items>
-                        <f:Button ID="btnLogin" Text="登录" Type="Submit" ValidateForms="SimpleForm1" ValidateTarget="Top"
-                            runat="server" OnClick="btnLogin_Click">
-                        </f:Button>
-                    </Items>
-                </f:Toolbar>
-            </Toolbars>
-        </f:Window>
-             </div>
+        <f:PageManager runat="server" />
+        <div  style="background-image:url(BG_inter.png);background-repeat:no-repeat; background-size:cover;  position:absolute; width:100.5%; height:100.9%; margin-left:-1vw;
+margin-top:-1vw;" >           
+            <div style="background-color:rgba(250,253,198,0.7); margin:15vw auto; width:30vw; height:15vw; border-radius:5px;">
+                <h4 style="text-align:center;">自动化青协工时统计</h4>
+                <hr />
+                <div id="img_icon" style="float:left;width:12vw;"><img src="icon.jpg" style="width:9vw;height:9vw;background-repeat:no-repeat; background-size:cover;
+margin-left:2vw;margin-right:5vw; margin-top:1vw;"/></div>
+                <div id="login" style="width:18vw; height:10vw; float:right; margin-top:2vw;">
+                    账户:<asp:TextBox ID="tbxStuID" runat="server" MaxLength="13" Wrap="False" ></asp:TextBox>
+                    <br />
+                    <br />
+                    密码:<asp:TextBox ID="tbxPassword" runat="server" MaxLength="13" Wrap="False"></asp:TextBox>
+                    <br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <asp:Button ID="btnreset" runat="server" Text="重置"/>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>
-

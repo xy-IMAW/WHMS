@@ -6,6 +6,14 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+      <style>
+        .tool1 
+        {
+            text-align:center;
+           align-content:center;
+           margin:50px,0,50px,0;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">   
@@ -20,32 +28,32 @@
                     <Toolbars>
                         <f:Toolbar runat="server">
                             <Items>
-                            <f:FileUpload ID="FL1" runat="server" Label="请选择Excel表"></f:FileUpload>
-                            <f:Button ID="btnImport" runat="server" OnClick="btnImport_Click" Text="导入"></f:Button>
                                 <f:Button ID="btnDownLoad" runat="server" Text="下载模板" OnClick="btnDownLoad_Click"></f:Button>
                             </Items>                             
-                        </f:Toolbar>                       
-                    </Toolbars>
-              <Columns>
-                   <f:TemplateField Width="60px">
-                       <ItemTemplate>
-                          <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                        </ItemTemplate>
-                    </f:TemplateField>
-                  <f:TemplateField >
-                      <ItemTemplate>
-                          <asp:GridView ID="Gridview" runat="server" PageIndex="0" AllowPaging="true" PageSize="50" >
-                            
-                          </asp:GridView>
-                      </ItemTemplate>
-                  </f:TemplateField>
-                    <f:BoundField Width="250px" DataField="StuID" HeaderText="学号" TextAlign="Center"/>
-                    <f:BoundField Width="100px" DataField="StuName" HeaderText="姓名" TextAlign="Center"/>
-                    <f:BoundField Width="150px" DataField="Class" HeaderText="班级" TextAlign="Center"/>
-                    <f:BoundField Width="100px" DataField="Grade" HeaderText="年级" TextAlign="Center"/>
-              </Columns>
+                        </f:Toolbar>        
+                            <f:Toolbar ID="tool1" runat="server" CssClass="tool1">
+                    <Items>
+                           <f:CPHConnector runat="server" >
+                               <asp:FileUpload runat="server" ID="fileupload"  CssClass="tool1"/>
+                         <asp:Button ID="Button2" runat="server" OnClick="btn1_Click" Text="上传" />        
+                        </f:CPHConnector>
+                    </Items>
+                </f:Toolbar>               
+                    </Toolbars>       
             </f:Grid>
            </Items>
+                     <Items>
+                <f:ContentPanel runat="server" Margin="50,,50,">
+                    <div style="align-content:center; align-items:center; text-align:center">
+                           <asp:GridView ID="GridView1" runat="server" />
+                 
+                        <asp:Table ID="table1" runat="server" Width="70%" GridLines="Both" CellPadding="2" />
+                    </div>                       
+                </f:ContentPanel>               
+                <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" CssClass="tool1" />   
+                <f:Grid ID="Grid" runat="server" />
+                
+            </Items>   
         </f:Panel>
     </div>
     </form>

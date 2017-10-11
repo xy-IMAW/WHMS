@@ -14,7 +14,7 @@ namespace WHMS
                 Common.Sid = "";
                 #region 
               
-                Common.checklogin("/Login.aspx");
+                Common.checklogin("/login.aspx");
              //   btnPasswordUpdate.OnClientClick = window1.GetShowReference("Account/PasswordUpdate.aspx", "修改密码");
                 if (Common.State != "超级管理员")
                 {
