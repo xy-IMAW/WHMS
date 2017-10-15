@@ -3387,6 +3387,7 @@
     <Content Include="image\icon.ico" />
     <Content Include="image\icon.jpg" />
     <Content Include="image\login.jpg" />
+    <Content Include="image\logo.ico" />
     <Content Include="Infor-Data\AddClass.aspx" />
     <Content Include="Infor-Data\AddStu.aspx" />
     <Content Include="Infor-Data\Class.aspx" />
@@ -3394,9 +3395,9 @@
     <Content Include="Infor-Data\ClassImport.aspx" />
     <Content Include="Infor-Data\Data.aspx" />
     <Content Include="Infor-Data\GradeData.aspx" />
+    <Content Include="Infor-Data\HoursImport.aspx" />
     <Content Include="Infor-Data\Infor.aspx" />
     <Content Include="Infor-Data\Program.aspx" />
-    <Content Include="Infor-Data\Stu.aspx" />
     <Content Include="Infor-Data\StuImport.aspx" />
     <Content Include="login3.aspx" />
     <Content Include="login.aspx" />
@@ -5236,6 +5237,13 @@
     <Compile Include="Infor-Data\GradeData.aspx.designer.cs">
       <DependentUpon>GradeData.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Infor-Data\HoursImport.aspx.cs">
+      <DependentUpon>HoursImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\HoursImport.aspx.designer.cs">
+      <DependentUpon>HoursImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Infor-Data\Infor.aspx.cs">
       <DependentUpon>Infor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5249,13 +5257,6 @@
     </Compile>
     <Compile Include="Infor-Data\Program.aspx.designer.cs">
       <DependentUpon>Program.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Infor-Data\Stu.aspx.cs">
-      <DependentUpon>Stu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Infor-Data\Stu.aspx.designer.cs">
-      <DependentUpon>Stu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Infor-Data\StuImport.aspx.cs">
       <DependentUpon>StuImport.aspx</DependentUpon>

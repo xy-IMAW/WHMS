@@ -14,6 +14,7 @@ namespace WHMS.Infor_Data
             {
                 Bind();
                 BindClass();
+                btn2.OnClientClick = window1.GetShowReference("HoursImport.aspx","导入工时");
             }
         
         }
@@ -108,6 +109,7 @@ namespace WHMS.Infor_Data
         {
             grade = DL1.SelectedItem.Text;
             DL2.Items.Clear();
+            DL1.SelectedIndex = 0;
             BindClass();
         }
     }

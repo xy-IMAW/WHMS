@@ -10,21 +10,19 @@ namespace WHMS
     public class DataControl
     {
         #region 数据操作
-        /// <summary>
-        /// 把DataTable数据更新到Class表
-        /// </summary>
-        /// <param name="GridView1">需要更新的表</param>
-        public static void UpdataClass(GridView GridView1)
+    
+        public static void UpdataClass(Grid grid)
         {
             bool NoRepeat = true;
             int flag = 0;
             int flag2 = 0;
             string Class;
             string Grade;
-            for (int i = 0; i < GridView1.Rows.Count; i++)
+            for (int i = 0; i < grid.Rows.Count; i++)
             {
-                Class = GridView1.Rows[i].Cells[1].Text;
-                Grade = GridView1.Rows[i].Cells[0].Text;
+                Grade = grid.Rows[i].Values[0].ToString();
+                Class = grid.Rows[i].Values[1].ToString();
+               
                 string sqlstr1 = "select Class from Class";
                 Common.Open();
                 SqlDataReader re = Common.ExecuteRead(sqlstr1);
@@ -62,11 +60,9 @@ namespace WHMS
 
 
         }
-        /// <summary>
-        /// 更新学生名册
-        /// </summary>
-        /// <param name="GridView1"></param>
-        public static void UpdataStudent(GridView GridView1)
+ 
+  
+        public static void UpdataStudent(Grid grid)
         {
             bool NoRepeat = true;
             int flag = 0;
@@ -74,13 +70,13 @@ namespace WHMS
             string StuID;
             string StuName;
             string Class;
-            string Grade;
-            for (int i = 0; i < GridView1.Rows.Count; i++)
+            for (int i = 0; i < grid.Rows.Count; i++)
             {
-                StuID = GridView1.Rows[i].Cells[0].Text;
-                StuName = GridView1.Rows[i].Cells[1].Text;
-                Class = GridView1.Rows[i].Cells[2].Text;
-                Grade = GridView1.Rows[i].Cells[3].Text;
+               
+                StuID = grid.Rows[i].Values[0].ToString();
+               StuName = grid.Rows[i].Values[1].ToString();
+                Class = grid.Rows[i].Values[2].ToString();
+             
                 string sqlstr1 = "select StuID from Student";
                 Common.Open();
                 SqlDataReader re = Common.ExecuteRead(sqlstr1);
@@ -100,7 +96,7 @@ namespace WHMS
                 if (NoRepeat)
                 {
 
-                    string sqlstr = "insert into Student (StuID,StuName,Class,Grade) values ('"+StuID+"','"+StuName+"','" + Class + "','" + Grade + "')";//插入新数据
+                    string sqlstr = "insert into Student (StuID,StuName,Class) values ('" + StuID + "','" + StuName + "','" + Class+ "')";//插入新数据
                     Common.ExecuteSql(sqlstr);
                     flag2++;
                 }
@@ -117,11 +113,8 @@ namespace WHMS
             }
         }
 
-        /// <summary>
-        /// 更新工时记录
-        /// </summary>
-        /// <param name="GridView1"></param>
-        public static void UpdataWorking_hours(GridView GridView1)
+
+        public static void UpdataWorking_hours(Grid grid)
         {
             bool NoRepeat = true;
             int flag = 0;
@@ -132,14 +125,14 @@ namespace WHMS
             string Working_hours;
             string SySe;
             string Date;
-            for (int i = 0; i < GridView1.Rows.Count; i++)
+            for (int i = 0; i < grid.Rows.Count; i++)
             {
-                StuID = GridView1.Rows[i].Cells[0].Text;
-                StuName = GridView1.Rows[i].Cells[1].Text;
-                Program = GridView1.Rows[i].Cells[2].Text;
-                Working_hours = GridView1.Rows[i].Cells[3].Text;
-                SySe = GridView1.Rows[i].Cells[4].Text;
-                Date = GridView1.Rows[i].Cells[5].Text;
+                StuID = grid.Rows[i].Values[0].ToString();
+                StuName = grid.Rows[i].Values[1].ToString();
+                Program = grid.Rows[i].Values[2].ToString();
+                Working_hours = grid.Rows[i].Values[3].ToString();
+                SySe = grid.Rows[i].Values[4].ToString();
+                Date = grid.Rows[i].Values[5].ToString();
 
                 string sqlstr1 = "select StuID from Working_hours where( Program ='" + Program+"' and SySe ='"+SySe+"' and Date = '"+Date+"')";
                 Common.Open();

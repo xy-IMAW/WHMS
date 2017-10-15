@@ -34,6 +34,8 @@
                                         <f:Button ID="btnSearch" Icon="Zoom" runat="server" Text="查看" ToolTip="查看选中学生的工时信息" OnClick="btnSearch_Click"></f:Button>
                                         <f:Button ID="btnadd" Icon="Add" runat="server" Text="新增"></f:Button>
                                             <f:Button ID="btnImport" Icon="Zoom" runat="server" Text="导入名单"></f:Button>
+                                            <f:Button ID="btnDownLoad" Icon="Zoom" runat="server" Text="下载模板" OnClick="btnDownLoad_Click"></f:Button>
+
                                         <f:Button ID="btnDelet" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDelet_Click"></f:Button>
                                         <f:TextBox ID="txtStuID" Label="学号" LabelAlign="Right" runat="server" Text=""></f:TextBox>
                                         <f:Button ID="btnStuSerach" Icon="Zoom" Text="查找" runat="server" OnClick="btnStuSerach_Click"></f:Button>

@@ -70,8 +70,7 @@ namespace WHMS
             node8.Text = "年级工时";
             node8.NavigateUrl = "~/Infor-Data/GradeData.aspx";
 
-            node9.Text = "学生导入";
-            node9.NavigateUrl = "~/Infor-Data/Stu.aspx";
+      
 
             if (Common.State == "超级管理员")
             {
@@ -86,7 +85,7 @@ namespace WHMS
                 node3.Nodes.Add(node6);
                 node3.Nodes.Add(node7);
                 node3.Nodes.Add(node8);
-                node3.Nodes.Add(node9);
+             
 
 
                 // leftMenuTree.Nodes[0].Nodes[2].NavigateUrl = "~/Account/Account.aspx";

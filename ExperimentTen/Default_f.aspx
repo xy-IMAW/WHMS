@@ -6,6 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>青协工时统计系统</title>
+     <link rel="shortcut icon" runat="server" href="~/image/logo.ico" />
     <style>
         #header table {
             width: 100%;

@@ -94,6 +94,15 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Button btn;
         
         /// <summary>
+        /// btn2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btn2;
+        
+        /// <summary>
         /// table1 控件。
         /// </summary>
         /// <remarks>
@@ -101,5 +110,14 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table table1;
+        
+        /// <summary>
+        /// window1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Window window1;
     }
 }

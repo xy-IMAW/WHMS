@@ -24,6 +24,7 @@
                                 <f:DropDownList ID="DL4" runat="server" Label="学期"  Required="true">
                                 </f:DropDownList>
                         <f:Button ID="btn" runat="server" Text="查看" OnClick="btn_Click"/>
+                        <  <f:Button ID="btn2" runat="server" Text="导入工时" />
                     </Items>
                 </f:Toolbar>
             </Toolbars>
@@ -35,7 +36,7 @@
                 </f:ContentPanel>     
             </Items>
             </f:panel>
-        
+            <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true" EnableMaximize="true" ></f:Window>
     </div>
     </form>
 </body>

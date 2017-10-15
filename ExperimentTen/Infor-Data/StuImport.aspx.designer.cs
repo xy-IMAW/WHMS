@@ -31,49 +31,22 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
-        /// panelMain 控件。
+        /// panel1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel panelMain;
+        protected global::FineUI.Panel panel1;
         
         /// <summary>
-        /// Grid1 控件。
+        /// FileUpload1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Grid Grid1;
-        
-        /// <summary>
-        /// btnDownLoad 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnDownLoad;
-        
-        /// <summary>
-        /// tool1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Toolbar tool1;
-        
-        /// <summary>
-        /// fileupload 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileupload;
+        protected global::FineUI.FileUpload FileUpload1;
         
         /// <summary>
         /// btn1 控件。
@@ -82,25 +55,7 @@ namespace WHMS.Infor_Data {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn1;
-        
-        /// <summary>
-        /// GridView1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// table1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table table1;
+        protected global::FineUI.Button btn1;
         
         /// <summary>
         /// btn 控件。
@@ -112,12 +67,12 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Button btn;
         
         /// <summary>
-        /// Grid 控件。
+        /// grid 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Grid Grid;
+        protected global::FineUI.Grid grid;
     }
 }

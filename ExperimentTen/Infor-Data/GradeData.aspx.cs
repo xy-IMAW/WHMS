@@ -11,7 +11,7 @@ namespace WHMS.Infor_Data
             if (!IsPostBack)
             {
                 DL1bind();
-                btn2.OnClientClick = window1.GetShowReference("GradeImport.aspx");
+                btn2.OnClientClick = window1.GetShowReference("HoursImport.aspx","导入工时");
             }
         }
         public void DL1bind()

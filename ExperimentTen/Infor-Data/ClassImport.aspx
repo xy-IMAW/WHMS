@@ -6,14 +6,6 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style>
-        .tool1 
-        {
-            text-align:center;
-           align-content:center;
-           margin:50px,0,50px,0;
-        }
-    </style>
 </head>
  
 <body>
@@ -22,26 +14,21 @@
     <f:PageManager ID="pagemanager1" runat="server" />
         <f:Panel ID="panel1" runat="server">
             <Toolbars>
-                <f:Toolbar ID="tool1" runat="server" CssClass="tool1">
+                <f:Toolbar ID="tool1" runat="server">
                     <Items>
-                           <f:CPHConnector runat="server" >
-                               <asp:FileUpload runat="server" ID="fileupload"  CssClass="tool1"/>
-                         <asp:Button ID="btn1" runat="server" OnClick="btn1_Click" Text="上传" />        
-                        </f:CPHConnector>
+                         <f:FileUpload ID="FileUpload1" runat="server" Label="文件" />
+                         <f:Button ID="btn1" runat="server" Text="上传" OnClick="btn1_Click" />  
+                         <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" />   
                     </Items>
                 </f:Toolbar>
             </Toolbars>
                 <Items>
-                <f:ContentPanel runat="server" Margin="50,,50,">
-                    <div style="align-content:center; align-items:center; text-align:center">
-                           <asp:GridView ID="GridView1" runat="server" />
-                 
-                        <asp:Table ID="table1" runat="server" Width="70%" GridLines="Both" CellPadding="2" />
-                    </div>                       
-                </f:ContentPanel>               
-                <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" CssClass="tool1" />   
-                <f:Grid ID="Grid" runat="server" />
-                
+                 <f:Grid ID="grid" runat="server">
+                     <Columns>                         
+                          <f:BoundField DataField="年级" Width="100px" HeaderText="年级" runat="server"></f:BoundField>
+                          <f:BoundField DataField="班级" Width="100px" HeaderText="班级" runat="server"></f:BoundField>
+                     </Columns>
+                 </f:Grid>                
             </Items>     
         </f:Panel>
     </div>

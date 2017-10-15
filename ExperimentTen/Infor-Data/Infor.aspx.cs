@@ -304,5 +304,11 @@ namespace WHMS.Infor_Data
         {
             bind();
         }
+
+        protected void btnDownLoad_Click(object sender, EventArgs e)
+        {
+            string FN = "Student";//模板名
+            NPOI_EXCEL.DownLoad(FN);
+        }
     }
 }

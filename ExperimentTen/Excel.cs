@@ -573,10 +573,10 @@ namespace WHMS
             }
         }
 
-        public static void upload(FineUI.FileUpload FileUpload1, FineUI.Grid grid)
+        public static DataTable upload(FineUI.FileUpload FileUpload1)
         {
             bool fileOK = true;
-
+            DataTable datatable=new DataTable();
 
             //文件的上传路径
             string path = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/Import/");
@@ -661,26 +661,37 @@ namespace WHMS
                         //   fileName.Text = name;
                         //  filesize.Text = size.ToString();
                         DataTable dt = new DataTable();
-                        dt = NPOI_EXCEL.ExcelToDataTable(ipath, true);
-                        grid.DataSource = dt;
-                        grid.DataBind();
+                      datatable= NPOI_EXCEL.ExcelToDataTable(ipath, true);
+                     //   grid.DataSource = dt;
+                     //   grid.DataBind();
                         //lab_upload.Text = "上传成功";
+                    //    return datatable;
                     }
                     catch (Exception ex)
                     {
 
-
+                   //     return null;
                         //   Label2.Text = "上传失败";
                         throw ex;
                     }
+                   
                 }
             }
             else
             {
                 //尚未选择文件
                 //  Label2.Text = "尚未选择任何文件，请选择文件";
-                return;
+            //    return null;
             }
+            return datatable;
+        }
+
+        public static DataTable getDataTable(FineUI.FileUpload FileUpload1)
+        {
+            DataTable datatable;
+          datatable=  upload(FileUpload1);
+          
+            return datatable;
         }
         /* public bool ImportExcel(string form)
          {

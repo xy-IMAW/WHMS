@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>工时管理系统——登录</title>
-    <link rel="icon" runat="server" href="~/image/icon.ico" />
+    <link rel="icon" runat="server" href="~/image/logo.ico" />
 </head>
 <body>
     <form id="form1" runat="server">
