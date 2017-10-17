@@ -29,6 +29,11 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Columns>
+                            <f:TemplateField Width="60px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+                                    </ItemTemplate>
+                                </f:TemplateField>
                         <f:BoundField Width="150px" ColumnID="StuID" SortField="StuID" DataField="StuID"
                                     TextAlign="Center" HeaderText="学号"></f:BoundField>
                         <f:BoundField Width="120px" ColumnID="StuName" SortField="StuName" DataField="StuName"

@@ -46,10 +46,11 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Columns>
-                        <f:WindowField Width="60px" WindowID="windowPop" TextAlign="Center" HeaderText="编辑" Icon="ApplicationEdit"
-                            ToolTip="工时信息-编辑" DataTextFormatString="{0}" DataIFrameUrlFields="ID" DataIFrameUrlFormatString="EmpModify.aspx?id={0}"
-                            DataWindowTitleField="MaterialName" DataWindowTitleFormatString="编辑 - {0}" />
-                      
+                          <f:TemplateField Width="60px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+                                    </ItemTemplate>
+                                </f:TemplateField>
                         <f:BoundField Width="150px" ColumnID="SySe" SortField="SySe" DataField="SySe"
                                     TextAlign="Center" HeaderText="学年学期"></f:BoundField>
                         <f:BoundField Width="150px" ColumnID="Program" SortField="Program" DataField="Program"

@@ -24,8 +24,8 @@
                 <Items>
        <f:Grid ID="grid" runat="server">
            <Columns>
-                   <f:BoundField DataField="年级" runat="server"></f:BoundField>
-                          <f:BoundField DataField="班级" runat="server"></f:BoundField>
+                   <f:BoundField DataField="学号" runat="server"></f:BoundField>
+                          <f:BoundField DataField="姓名" runat="server"></f:BoundField>
                                  <f:BoundField DataField="活动" runat="server"></f:BoundField>
                           <f:BoundField DataField="工时" runat="server"></f:BoundField>
                          <f:BoundField DataField="学年学期" runat="server"></f:BoundField>

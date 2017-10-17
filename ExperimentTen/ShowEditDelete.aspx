@@ -54,7 +54,9 @@
             <Items>
                 <f:ContentPanel runat="server" Margin="50,,50,">
                     <div style="align-content:center; align-items:center; text-align:center">
-                           <asp:GridView ID="GridView1" runat="server" />
+                           <asp:GridView ID="GridView1" runat="server" Width="800px" Caption="工时信息" ShowFooter="true" ShowHeader="true" OnRowCreated="GridView1_RowCreated" >
+                               
+                           </asp:GridView>
                  
                         <asp:Table ID="table1" runat="server" Width="70%" GridLines="Both" CellPadding="2" />
                     </div>                       

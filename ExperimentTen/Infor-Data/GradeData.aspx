@@ -35,7 +35,7 @@
                 </f:ContentPanel>     
             </Items>
             </f:panel>
-        <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true" EnableMaximize="true" ></f:Window>
+        <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
     </div>
     </form>
 </body>
