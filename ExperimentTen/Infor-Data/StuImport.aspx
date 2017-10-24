@@ -20,9 +20,9 @@
                        
                         
                     
-                           <f:Button ID="btn1" runat="server" Text="上传" OnClick="btn1_Click" />    
-                         <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" />   
-              
+                          
+                         <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="上传" />   
+               <f:Button ID="btn1" runat="server" Text="更新" OnClick="btn1_Click" />    
                     </Items>
                 </f:Toolbar>               
             </Toolbars>

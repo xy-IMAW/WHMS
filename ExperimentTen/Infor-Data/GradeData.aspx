@@ -12,27 +12,23 @@
     <div>
      <f:PageManager ID="pagemanager1" runat="server" />
         <f:panel ID="panel1" runat="server">
-            <Toolbars>
+      <Toolbars>
                 <f:Toolbar ID="tool1" runat="server">
                     <Items>
-                        <f:DropDownList ID="DL1" runat="server" Label="年级" >
-                                </f:DropDownList>
-                         <f:DropDownList ID="DL2" runat="server" Label="学年" >
-                                </f:DropDownList>
-                                <f:DropDownList ID="DL3" runat="server" Label="学期" >
-                                </f:DropDownList>
-                        <f:Button ID="btn" runat="server" Text="查看" OnClick="btn_Click"/>
-                        <f:Button ID="btn2" runat="server" Text="导入工时" />
-
+                        <f:Button ID="Button2" runat="server" Text="导出" OnClick="Button2_Click" />
                     </Items>
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                   <f:ContentPanel runat="server" Margin="50,,50,">
-                    <div style="align-content:center; align-items:center; text-align:center">               
+                   <f:CPHConnector runat="server">
+                       <div style="align-content:center; align-items:center; text-align:center">   
+                          <asp:GridView ID="GridView1" runat="server" Width="800px" Caption="" ShowFooter="true" ShowHeader="true" OnRowCreated="GridView1_RowCreated"  >
+                               
+                           </asp:GridView>            
                         <asp:Table ID="table1" runat="server" Width="70%" GridLines="Both" CellPadding="2" />
-                    </div>                       
-                </f:ContentPanel>     
+                    </div>  
+
+                      </f:CPHConnector>   
             </Items>
             </f:panel>
         <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>

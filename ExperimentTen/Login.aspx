@@ -22,7 +22,7 @@ margin-left:2vw;margin-right:5vw; margin-top:1vw;"/></div>
                     账户:<asp:TextBox ID="tbxStuID" runat="server" MaxLength="13" Wrap="False" ></asp:TextBox>
                     <br />
                     <br />
-                    密码:<asp:TextBox ID="tbxPassword" runat="server" MaxLength="13" Wrap="False"></asp:TextBox>
+                    密码:<asp:TextBox ID="tbxPassword" runat="server" MaxLength="13" Wrap="False" TextMode="Password"></asp:TextBox>
                     <br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <asp:Button ID="btnreset" runat="server" Text="重置"/>

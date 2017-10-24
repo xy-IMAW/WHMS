@@ -49,49 +49,22 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Toolbar tool1;
         
         /// <summary>
-        /// DL1 控件。
+        /// Button2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList DL1;
+        protected global::FineUI.Button Button2;
         
         /// <summary>
-        /// DL2 控件。
+        /// GridView1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList DL2;
-        
-        /// <summary>
-        /// DL3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DropDownList DL3;
-        
-        /// <summary>
-        /// btn 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btn;
-        
-        /// <summary>
-        /// btn2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btn2;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// table1 控件。

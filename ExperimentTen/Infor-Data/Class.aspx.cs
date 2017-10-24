@@ -16,7 +16,11 @@ namespace WHMS.Infor_Data
         {
             if (!IsPostBack)
             {
+                Common.Class = "";
+                Common.SySe = "";
                 Import.OnClientClick = window1.GetShowReference("ClassImport.aspx");
+                 btn3.OnClientClick = window1.GetShowReference("HoursImport.aspx", "导入工时");
+               
                 GradeBind();
             }
          
@@ -47,6 +51,48 @@ namespace WHMS.Infor_Data
                     SelectGrade.Items.Add(li);
                 }
             }
+
+            //学期绑定。九月为分界
+            year = DateTime.Now.Year;
+            int year2 = DateTime.Now.Year + 1;
+            if (DateTime.Now.Month < 9)
+            {
+                List<string> list = new List<string>();
+
+                for (int i = 1; i < 5; i++)
+                {
+                    string y1 = (--year).ToString();
+                    string y2 = (--year2).ToString();
+
+                    FineUI.ListItem li = new FineUI.ListItem();
+                    li.Text = li.Value = (y1).ToString() + "-" + (y2).ToString()+"-1";
+                    DL3.Items.Add(li);
+
+                  li = new FineUI.ListItem();
+                    li.Text = li.Value = (y1).ToString() + "-" + (y2).ToString() + "-2";
+                    DL3.Items.Add(li);
+                }
+            }
+            else
+            {
+                List<string> list = new List<string>();
+
+                for (int i = 1; i < 5; i++)
+                {
+                    string y1 = (year--).ToString();
+                    string y2 = (year2--).ToString();
+
+                    FineUI.ListItem li = new FineUI.ListItem();
+                    li.Text = li.Value = (y1).ToString() + "-" + (y2).ToString()+"-1";
+                    DL3.Items.Add(li);
+
+                   li = new FineUI.ListItem();
+                    li.Text = li.Value = (y1).ToString() + "-" + (y2).ToString() + "-2";
+                    DL3.Items.Add(li);
+                }
+            }
+
+
         }
         //删除班级
         protected void btnDeleteClass_Click(object sender, EventArgs e)
@@ -143,12 +189,27 @@ namespace WHMS.Infor_Data
 
         protected void DownLoad_Click(object sender, EventArgs e)
         {
-
+            string fn = "Working_hours";
+            NPOI_EXCEL.DownLoad(fn);
         }
 
         protected void window1_Close(object sender, WindowCloseEventArgs e)
         {
             BindGrid3();
+        }
+
+        protected void btn_Click(object sender, EventArgs e)
+        {
+            Common.Class = Grid3.SelectedRow.Values[2].ToString();
+            Common.SySe = DL3.SelectedText;
+            PageContext.RegisterStartupScript(window1.GetShowReference("ClassData.aspx"));
+        }
+
+        protected void btn2_Click(object sender, EventArgs e)
+        {
+            Common.grade =Convert.ToInt32( SelectGrade.SelectedValue);
+            Common.SySe = DL3.SelectedValue.ToString();
+            PageContext.RegisterStartupScript(window1.GetShowReference("GradeData.aspx"));
         }
     }
 }

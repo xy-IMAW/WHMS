@@ -41,6 +41,11 @@ namespace WHMS
             get { return name; }
         }
         public static bool IsLogin=false;
+
+
+        public static int grade;
+        public static string Class;
+        public static string SySe;
         #endregion
         public static void checklogin( string url)
         {

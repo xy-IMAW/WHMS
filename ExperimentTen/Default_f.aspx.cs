@@ -52,41 +52,26 @@ namespace WHMS
             node2.Text = "学生信息管理";
             node2.NavigateUrl = "~/Infor-Data/Infor.aspx";
 
-            node3.Text = "工时管理";
-          //  node3.NavigateUrl = "~/Infor-Data/Data.aspx";
+            node3.Text = "个人工时";
+            node3.NavigateUrl = "~/Infor-Data/Data.aspx";
 
             node4.Text = "活动管理";
             node4.NavigateUrl = "~/Infor-Data/Program.aspx";
 
-            node5.Text = "班级管理";
+            node5.Text = "年级班级工时";
             node5.NavigateUrl = "~/Infor-Data/Class.aspx";
 
-            node6.Text = "个人工时";
-            node6.NavigateUrl = "~/Infor-Data/Data.aspx";
-
-            node7.Text = "班级工时";
-            node7.NavigateUrl= "~/Infor-Data/ClassData.aspx";
-
-            node8.Text = "年级工时";
-            node8.NavigateUrl = "~/Infor-Data/GradeData.aspx";
-
-      
+            node6.Text = "工时管理";
+     
 
             if (Common.State == "超级管理员")
             {
                
-
                 leftMenuTree.Nodes.Add(node1);
                 leftMenuTree.Nodes.Add(node2);
                 leftMenuTree.Nodes.Add(node3);
                 leftMenuTree.Nodes.Add(node4);
                 leftMenuTree.Nodes.Add(node5);
-
-                node3.Nodes.Add(node6);
-                node3.Nodes.Add(node7);
-                node3.Nodes.Add(node8);
-             
-
 
                 // leftMenuTree.Nodes[0].Nodes[2].NavigateUrl = "~/Account/Account.aspx";
             }
@@ -99,9 +84,8 @@ namespace WHMS
                 leftMenuTree.Nodes.Add(node4);
                 leftMenuTree.Nodes.Add(node5);
 
-                node3.Nodes.Add(node6);
-                node3.Nodes.Add(node7);
-                node3.Nodes.Add(node8);
+               
+      
              
                 //  leftMenuTree.Nodes[0].Nodes[2].NavigateUrl = "";
                 // leftMenuTree.Nodes[0].Nodes[2].ToolTip = "没有访问权限！";

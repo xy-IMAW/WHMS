@@ -24,7 +24,7 @@
                                     <f:Button ID="btnAddClass" Icon="Add" runat="server" Text="新增" OnClick="btnAddClass_Click"></f:Button>
                             </Items>                         
                         </f:Toolbar>
-                        <f:Toolbar ID="toolbar2" runat="server">
+                        <f:Toolbar ID="tool2" runat="server">
                          <Items>
                              <f:Button ID="DownLoad" Text="下载模板" Icon="Accept" runat="server" OnClick="DownLoad_Click" ></f:Button>
                              <f:Button ID="Import" Text="导入班级" runat="server" ></f:Button>
@@ -37,17 +37,27 @@
         <f:Panel ID="panel2" runat="server" EnableCollapse="false" Title="班级信息" ShowHeader="true" ShowBorder="true">            
                  <Toolbars >
                                 <f:Toolbar ID="toolbar1" runat="server">
-                                    <Items>                                                                          
-                                        
+                                    <Items>                                                                                                                  
                                    <f:DropDownList ID="SelectGrade" runat="server" Label="年级" LabelAlign="Right" ></f:DropDownList>
                                         <f:Button ID="btnSearch" runat="server" Text="查找" Icon="Zoom" OnClick="btnSearch_Click"></f:Button>  
                                         <f:Button ID="btnDeleteClass" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDeleteClass_Click"></f:Button>                                     
                                      </Items>
-                                </f:Toolbar>
-                                       
+                                </f:Toolbar>  
+                     <f:Toolbar ID="toolbar2" runat="server">
+                         <Items>
+                              <f:DropDownList ID="DL3" runat="server" Label="学期" Required="true" >
+                                </f:DropDownList>
+                             
+                        <f:Button ID="btn" runat="server" Text="查看班级工时" OnClick="btn_Click"/>
+                        <f:Button ID="btn2" runat="server" Text="查看年级工时" OnClick="btn2_Click"/>
+
+                         <f:Button ID="btn3" runat="server" Text="导入工时" />
+                         </Items>
+                                
+                     </f:Toolbar>                                   
                     </Toolbars>         
             <Items>
-                 <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true">
+                 <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="50px">
                            <Columns>
                                 <f:TemplateField Width="60px" HeaderText="序号" TextAlign="Center">
                                     <ItemTemplate>
@@ -62,7 +72,7 @@
                      
         </f:Panel>        
         <f:Window ID="window1" runat="server" Hidden="true" EnableIFrame="true" EnableClose="true" EnableMaximize="true"  Width="800px" Height="600px" Target="Top" OnClose="window1_Close"></f:Window>
-                                
+       
     </div>
     </form>
 </body>

@@ -9,24 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-              <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Button ID="Button1" runat="server" OnClick="btnupload1_Click" Text="上传1" />
-           <asp:Button ID="Button5" runat="server" OnClick="btnupload2_Click" Text="上传2" />
-           <asp:Button ID="Button6" runat="server" OnClick="btnupload3_Click" Text="上传3" />
-           <asp:Button ID="Button7" runat="server" OnClick="btnupload4_Click" Text="上传4" />
-                <br />
-                <br />
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                <br />
-                <asp:Image ID="Image1" runat="server" Visible="False" />
-                <asp:Label ID="fileUrl" runat="server" Text="Label" Visible="false"></asp:Label>
-                <asp:Label ID="fileName" runat="server" Text="Label" Visible="false"></asp:Label>
-                <asp:Label ID="filesize" runat="server" Text="Label" Visible="false"></asp:Label>
-                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-        <asp:GridView ID="GridView1" runat="server" BorderStyle="Solid" BorderColor="Silver" ToolTip="132" >
-        </asp:GridView>
-    </div>
+ 
         
         <div>
             <f:PageManager runat="server" />
@@ -45,8 +28,8 @@
                     </f:Toolbar>
                 </Toolbars>
                 <Items>
-                    <f:ContentPanel runat="server">
-                         <asp:GridView ID="Grid2" runat="server" AllowPaging="true" PageIndex="0" PageSize="50"/>
+                    <f:ContentPanel runat="server" BodyPadding="100px" RegionPosition="Center" >
+                         <asp:GridView ID="GridView1" runat="server" OnRowCreated="GridView1_RowCreated"/>
                     </f:ContentPanel>
                     <f:Grid ID="grid" runat="server" ShowBorder="true" />
                 </Items>

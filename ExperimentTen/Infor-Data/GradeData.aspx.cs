@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using FineUI;
+using System.Data;
+using System.Web.UI.WebControls;
+using System.IO;
+using System.Web.UI;
+using AspNet = System.Web.UI.WebControls;
 
 namespace WHMS.Infor_Data
 {
@@ -10,77 +15,216 @@ namespace WHMS.Infor_Data
         {
             if (!IsPostBack)
             {
-                DL1bind();
-                btn2.OnClientClick = window1.GetShowReference("HoursImport.aspx","导入工时");
+                BindGrid();
+                GridView1.Caption=Common.grade+"年级"+Common.SySe+"学期工时表";
             }
         }
-        public void DL1bind()
+
+        public void Bind(DataTable data)
         {
-            int year = DateTime.Now.Year;
-            int year2 = DateTime.Now.Year - 1;
+            // DataTable data = new DataTable();
+            DataRow dr;
 
-            if (DateTime.Now.Month < 9)
+            string sql1 = "select * from [Working_hoursInfor] where SySe like '%" + Common.SySe + "%'";
+            string sql2 = "select StuID,StuName,Class from Student where Grade='" + Common.grade + "' order by Class,StuID";
+            string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%" + Common.SySe + "%'";
+            DataTable dt = Common.datatable(sql1);
+            DataTable student = Common.datatable(sql2);
+            DataTable program = Common.datatable(sql3);
+
+            data.Columns.Add("学号", typeof(string));
+            data.Columns.Add("姓名", typeof(string));
+            data.Columns.Add("班级", typeof(string));
+
+            for (int i = 0; i <= program.Rows.Count; i++)
             {
-                List<string> list = new List<string>();
 
-                for (int i = 1; i < 5; i++)
+                if (i < program.Rows.Count)
                 {
-                    ListItem li = new ListItem();
-                    li.Text = li.Value = (--year).ToString();
-                    DL1.Items.Add(li);
+                    //   string time = (Convert.ToDateTime(program.Rows[i][1].ToString()).Date).ToString();
+                    data.Columns.Add(program.Rows[i][0].ToString(), typeof(string));
+                }
+
+                else
+                {
+                    data.Columns.Add("合计", typeof(int));
                 }
             }
-            else
-            {
-                List<string> list = new List<string>();
+            //构建活动行
+            /*     dr = data.NewRow();
+                 for (int i=0;i<program.Rows.Count;i++)
+                 {
 
-                for (int i = 1; i < 5; i++)
+                     dr[i] = program.Rows[i][0].ToString();
+                 }
+                 data.Rows.Add(dr);
+     */
+
+            for (int i = 0; i < student.Rows.Count; i++)
+            {
+                dr = data.NewRow();
+                dr[0] = student.Rows[i][0].ToString();
+                dr[1] = student.Rows[i][1].ToString();
+                dr[2] = student.Rows[i][2].ToString();
+
+                int total = 0;
+                for (int j = 0; j < program.Rows.Count; j++)
                 {
-                    ListItem li = new ListItem();
-                    li.Text = li.Value = (year--).ToString();
-                    DL1.Items.Add(li);
+                    for (int t = 0; t < dt.Rows.Count; t++)
+                    {
+                        string t1 = dt.Rows[t][0].ToString();
+                        string t2 = student.Rows[i][0].ToString();
+                        string t3 = dt.Rows[t][2].ToString();
+                        string t4 = program.Rows[j][0].ToString();
+                        if (dt.Rows[t][0].ToString() == student.Rows[i][0].ToString() && dt.Rows[t][2].ToString() == program.Rows[j][0].ToString())
+                        {
+                            // dr[program.Rows[j][0].ToString()]= dt.Rows[t][3].ToString();
+                            dr[3 + j] = dt.Rows[t][3].ToString();
+                            total += Convert.ToInt32(dt.Rows[t][3].ToString());
+                        }
+                    }
                 }
+                dr["合计"] = total;
+                data.Rows.Add(dr);
             }
 
-
-            //学期绑定。九月为分界
-             year= DateTime.Now.Year;
-            if (DateTime.Now.Month < 9)
-            {
-                List<string> list = new List<string>();
-
-                for (int i = 1; i < 5; i++)
-                {
-                    ListItem li = new ListItem();
-                    li.Text = li.Value = (--year2).ToString() + "-" + (--year).ToString();
-                    DL2.Items.Add(li);
-                }
-            }
-            else
-            {
-                List<string> list = new List<string>();
-
-                for (int i = 1; i < 5; i++)
-                {
-                    ListItem li = new ListItem();
-                    li.Text = li.Value = (year2--).ToString() + "-" + (year--).ToString();
-                    DL2.Items.Add(li);
-                }
-            }
-
-
-            List<string> list2 = new List<string>();
-            list2.Add("全部");
-            list2.Add("1");
-            list2.Add("2");
-
-            DL3.DataSource = list2;
-            DL3.DataBind();
+            //   GridView1.DataSource = data;
+            //  GridView1.DataBind();
         }
 
-        protected void btn_Click(object sender, EventArgs e)
+
+        private void BindGrid()
         {
-            DataControl.GradeData(table1,DL2.SelectedItem.Text,DL3.SelectedItem.Text,DL1.SelectedItem.Text);
+            #region  添加动态列   
+            /*    GridView1.Columns.Clear();
+                 GridView1.Width = new Unit(0);
+
+                 string sql1 = "select * from [Working_hoursInfor] where SySe like '%%'";
+                 string sql2 = "select StuID,StuName,Class from Student where Class='' order by Class,StuID";
+                 string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%%'";
+                 DataTable dt = Common.datatable(sql1);                                                                                                                                          
+                 DataTable student = Common.datatable(sql2);
+                 DataTable program = Common.datatable(sql3);
+
+                 CreateGridColumn("学号", "学号", 150);
+                 CreateGridColumn("姓名", "姓名", 150);
+                 CreateGridColumn("班级", "班级", 150);
+
+
+                 for (int i=0;i<=program.Rows.Count;i++)
+                 {
+                     if (i < program.Rows.Count)
+                     {
+                   //      DateTime time = Convert.ToDateTime(program.Rows[i][1].ToString()).Date;
+                         CreateGridColumn(program.Rows[i][0].ToString(), program.Rows[i][0].ToString(), 150);
+                     }
+                     else
+                     {
+                        AspNet. TemplateField count = new AspNet. TemplateField();
+                         GridView1.Columns.Add(count);
+                     }
+                 }*/
+            #endregion
+
+
+
+            DataTable data = new DataTable();
+            Bind(data);
+            //dt：数据源  
+            GridView1.DataSource = data;
+            GridView1.DataBind();
         }
+
+        protected void GridView1_RowCreated(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%" + Common.SySe + "%'";
+                DataTable program = Common.datatable(sql3);
+
+                TableCellCollection header = e.Row.Cells;
+
+                header.Clear();
+
+                string headtxt = "学号</th><th rowspan='2'>姓名</th>";
+                // headtxt += "<th colspan='"+program.Rows.Count+"'></th>";  //跨四列  
+                headtxt += "<th rowspan='2'>班级</th>";
+                for (int i = 0; i < program.Rows.Count; i++)
+                {
+                    DateTime Time = Convert.ToDateTime(program.Rows[i][1].ToString());
+                    DateTime time = Time.Date;
+                    headtxt += "<th>" + time.ToString("yyyy-MM-dd");
+                    //  headtxt = headtxt.Substring(0, headtxt.Length - 5);  //移除掉最后一个</th>  
+                }
+                headtxt += "<th rowspan='2'>合计</th>";
+                headtxt += "<tr>";
+                for (int i = 0; i < program.Rows.Count; i++)
+                {
+                    headtxt += "<th>" + program.Rows[i][0].ToString() + "</th>";
+                }
+
+                headtxt += "</tr>";
+
+                TableHeaderCell cell = new TableHeaderCell();
+                cell.Attributes.Add("rowspan", "2");  //跨两行   
+                cell.Text = (headtxt);
+                header.Add(cell);
+
+            }
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+
+            ResolveGridView(GridView1);
+
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
+            Response.ContentType = "application/excel";
+            Response.ContentEncoding = System.Text.Encoding.UTF8;
+
+            StringWriter sw = new StringWriter();
+            System.Web.UI.HtmlTextWriter htw = new HtmlTextWriter(sw);
+            GridView1.RenderControl(htw);
+
+            Response.Write(sw.ToString());
+            Response.End();
+        }
+
+
+        private void ResolveGridView(Control ctrl)
+        {
+            for (int i = 0; i < ctrl.Controls.Count; i++)
+            {
+                // 图片的完整URL
+                if (ctrl.Controls[i].GetType() == typeof(AspNet.Image))
+                {
+                    AspNet.Image img = ctrl.Controls[i] as AspNet.Image;
+                    img.ImageUrl = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, Page.ResolveUrl(img.ImageUrl));
+                }
+
+                // 将CheckBox控件转化为静态文本
+                if (ctrl.Controls[i].GetType() == typeof(AspNet.CheckBox))
+                {
+                    Literal lit = new Literal();
+                    lit.Text = (ctrl.Controls[i] as AspNet.CheckBox).Checked ? "√" : "×";
+                    ctrl.Controls.RemoveAt(i);
+                    ctrl.Controls.AddAt(i, lit);
+                }
+
+                if (ctrl.Controls[i].HasControls())
+                {
+                    ResolveGridView(ctrl.Controls[i]);
+                }
+
+            }
+
+        }
+
     }
 }
