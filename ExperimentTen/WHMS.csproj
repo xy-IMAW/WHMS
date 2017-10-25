@@ -3399,7 +3399,6 @@
     <Content Include="Infor-Data\Infor.aspx" />
     <Content Include="Infor-Data\Program.aspx" />
     <Content Include="Infor-Data\StuImport.aspx" />
-    <Content Include="login3.aspx" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -5265,13 +5264,6 @@
     <Compile Include="Infor-Data\StuImport.aspx.designer.cs">
       <DependentUpon>StuImport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="login3.aspx.cs">
-      <DependentUpon>login3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="login3.aspx.designer.cs">
-      <DependentUpon>login3.aspx</DependentUpon>
-    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5299,15 +5291,6 @@
     <Folder Include="extjs\src\" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="ExcelClientPkgLib">
-      <Guid>{2AEB050F-097F-4969-8E95-685279032F9B}</Guid>
-      <VersionMajor>12</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>

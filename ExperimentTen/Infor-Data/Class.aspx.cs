@@ -200,16 +200,27 @@ namespace WHMS.Infor_Data
 
         protected void btn_Click(object sender, EventArgs e)
         {
-            Common.Class = Grid3.SelectedRow.Values[2].ToString();
-            Common.SySe = DL3.SelectedText;
-            PageContext.RegisterStartupScript(window1.GetShowReference("ClassData.aspx"));
+            if (Grid3.SelectedRowIndex < 0)
+            {
+                Alert.Show("请选择要查看的班级", "提示", MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Common.Class = Grid3.SelectedRow.Values[2].ToString();
+                Common.SySe = DL3.SelectedText;
+                //    PageContext.RegisterStartupScript(window1.GetShowReference("ClassData.aspx"));
+                //   Response.Redirect("ClassData.aspx");
+                PageContext.RegisterStartupScript(window1.GetShowReference("../ShowEditDelete.aspx"));
+            }
+         
         }
 
         protected void btn2_Click(object sender, EventArgs e)
         {
             Common.grade =Convert.ToInt32( SelectGrade.SelectedValue);
             Common.SySe = DL3.SelectedValue.ToString();
-            PageContext.RegisterStartupScript(window1.GetShowReference("GradeData.aspx"));
+              PageContext.RegisterStartupScript(window1.GetShowReference("GradeData.aspx"));
+          //  Response.Redirect("GradeData.aspx");
         }
     }
 }

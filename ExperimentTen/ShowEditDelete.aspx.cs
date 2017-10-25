@@ -20,7 +20,7 @@ namespace WHMS
         {
             if (!IsPostBack)
             {
-                // BindGrid();
+                 BindGrid();
                 //   bind();
                 //  Bind();
                 // InitGrid2();
@@ -36,9 +36,9 @@ namespace WHMS
            // DataTable data = new DataTable();
             DataRow dr;
 
-            string sql1 = "select * from [Working_hoursInfor] where SySe like '%2016-2017-1%'";
-            string sql2 = "select StuID,StuName,Class from Student where Grade='2015' order by Class,StuID";
-            string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2016-2017-1%'";
+            string sql1 = "select * from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
+            string sql2 = "select StuID,StuName,Class from Student where Grade='2016' order by Class,StuID";
+            string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
             DataTable dt = Common.datatable(sql1);
             DataTable student = Common.datatable(sql2);
             DataTable program = Common.datatable(sql3);
@@ -103,17 +103,7 @@ namespace WHMS
           GridView1.DataBind();
         }
 
-        protected void btn1_Click(object sender, EventArgs e)
-        {
-            // NPOI_EXCEL.upload(FileUpload,GridView1);
-       //     NPOI_EXCEL.upload(fileupload, GridView1);
-            //   GridToData();
-            DataTable dt = new DataTable();
-            dt = NPOI_EXCEL.getDataTable(FileUpload1);
-            grid.DataSource = dt;
-            grid.DataBind();
-       //     Alert.Show(grid.Rows[0].Values[0].ToString());
-        }
+   
 
 
 
@@ -166,13 +156,7 @@ namespace WHMS
 
         }*/
 
-        protected void btn_Click(object sender, EventArgs e)
-        {
-            // Updata();
-            //   DataControl.UpdataClass(GridView1);
-            //  DataControl.UpdataWorking_hours(GridView1);
-            DataControl.UpdataStudent(grid);
-        }
+
 
 //table
         public void bind()
@@ -595,15 +579,16 @@ namespace WHMS
 
 
 
-      /*  public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
+        public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
         {
         }
-*/
+
         protected void Button2_Click(object sender, EventArgs e)
         {
             //  BindGrid();
-
-            ResolveGridView(GridView1);
+        //    string fn = "tets";
+           // ExportExcel(fn,GridView1);
+           ResolveGridView(GridView1);
 
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
@@ -616,6 +601,7 @@ namespace WHMS
 
             Response.Write(sw.ToString());
             Response.End();
+            
         }
 
 
@@ -663,7 +649,7 @@ namespace WHMS
 
         public void ExportExcel(string fileName, GridView dgv)
         {
-            string saveFileName = "";
+            string saveFileName = DateTime.Now.ToString(); ;
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.DefaultExt = "xls";
             saveDialog.Filter = "Excel文件|*.xls";

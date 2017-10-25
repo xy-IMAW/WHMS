@@ -15,7 +15,8 @@ namespace WHMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindGrid();
+         //   BindGrid();
+          //  btn2.OnClientClick = window1.GetShowReference("ShowEditDelete.aspx");
         }
         public void Bind1()
         {
@@ -196,8 +197,9 @@ namespace WHMS
 
         protected void btn1_Click(object sender, EventArgs e)
         {
-         //   NPOI_EXCEL.upload(FileUpload1, Grid2);
-            GridToData();
+            //   NPOI_EXCEL.upload(FileUpload1, Grid2);
+            //     GridToData();
+            PageContext.RegisterStartupScript(window1.GetShowReference("ShowEditDelete.aspx"));
         }
         protected void btn2_Click(object sender, EventArgs e)
         {

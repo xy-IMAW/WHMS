@@ -22,64 +22,7 @@ namespace WHMS.Infor_Data
             }
 
         }
-  
-
-
-
-
-        public override void VerifyRenderingInServerForm(Control control)
-        {
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-
-
-            ResolveGridView(GridView1);
-
-            Response.ClearContent();
-            Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
-            Response.ContentType = "application/excel";
-            Response.ContentEncoding = System.Text.Encoding.UTF8;
-
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            GridView1.RenderControl(htw);
-
-            Response.Write(sw.ToString());
-            Response.End();
-        }
-
-
-        private void ResolveGridView(Control ctrl)
-        {
-            for (int i = 0; i < ctrl.Controls.Count; i++)
-            {
-                // 图片的完整URL
-                if (ctrl.Controls[i].GetType() == typeof(AspNet.Image))
-                {
-                    AspNet.Image img = ctrl.Controls[i] as AspNet.Image;
-                    img.ImageUrl = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, Page.ResolveUrl(img.ImageUrl));
-                }
-
-                // 将CheckBox控件转化为静态文本
-                if (ctrl.Controls[i].GetType() == typeof(AspNet.CheckBox))
-                {
-                    Literal lit = new Literal();
-                    lit.Text = (ctrl.Controls[i] as AspNet.CheckBox).Checked ? "√" : "×";
-                    ctrl.Controls.RemoveAt(i);
-                    ctrl.Controls.AddAt(i, lit);
-                }
-
-                if (ctrl.Controls[i].HasControls())
-                {
-                    ResolveGridView(ctrl.Controls[i]);
-                }
-
-            }
-
-        }
-
+ 
 
         public void Bind(DataTable data)
         {
@@ -233,5 +176,118 @@ namespace WHMS.Infor_Data
 
             }
         }
+
+
+
+        #region
+        /* protected void btnOutExcel_Click(object sender, EventArgs e)
+         {
+             if (GridView1.Rows.Count > 0)
+             {
+                 //调用导出方法  
+                 ExportGridViewForUTF8(GridView1, DateTime.Now.ToShortDateString() + ".xls");
+             }
+             else
+             {
+                 Alert.Show("没有数据可以导出","提示",MessageBoxIcon.Information);
+             }
+         }
+
+         /// <summary>  
+         /// 重载，否则出现“类型“GridView”的控件“GridView1”必须放在具有 runat=server 的窗体标... ”的错误  
+         /// </summary>  
+         /// <param name="control"></param>  
+         public override void VerifyRenderingInServerForm(Control control)
+         {
+             //base.VerifyRenderingInServerForm(control);  
+         }
+
+         /// <summary>  
+         /// 导出方法  
+         /// </summary>  
+         /// <param name="GridView"></param>  
+         /// <param name="filename">保存的文件名称</param>  
+         private void ExportGridViewForUTF8(GridView GridView, string filename)
+         {
+
+             string attachment = "attachment; filename=" + filename;
+
+             Response.ClearContent();
+             Response.Buffer = true;
+             Response.AddHeader("content-disposition", attachment);
+
+             Response.Charset = "UTF-8";
+             Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
+             Response.ContentType = "application/ms-excel";
+             System.IO.StringWriter sw = new System.IO.StringWriter();
+
+             HtmlTextWriter htw = new HtmlTextWriter(sw);
+             GridView.RenderControl(htw);
+
+             Response.Output.Write(sw.ToString());
+             Response.Flush();
+             Response.End();
+
+         }*/
+        #endregion
+
+
+        #region
+        public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
+        {
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //  BindGrid();
+            //    string fn = "tets";
+            // ExportExcel(fn,GridView1);
+            ResolveGridView(GridView1);
+
+            Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
+            Response.ContentType = "application/excel";
+            Response.ContentEncoding = System.Text.Encoding.UTF8;
+
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            GridView1.RenderControl(htw);
+
+            Response.Write(sw.ToString());
+            Response.End();
+
+        }
+
+
+        private void ResolveGridView(System.Web.UI.Control ctrl)
+        {
+            for (int i = 0; i < ctrl.Controls.Count; i++)
+            {
+                // 图片的完整URL
+                if (ctrl.Controls[i].GetType() == typeof(AspNet.Image))
+                {
+                    AspNet.Image img = ctrl.Controls[i] as AspNet.Image;
+                    img.ImageUrl = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, Page.ResolveUrl(img.ImageUrl));
+                }
+
+                // 将CheckBox控件转化为静态文本
+                if (ctrl.Controls[i].GetType() == typeof(AspNet.CheckBox))
+                {
+                    Literal lit = new Literal();
+                    lit.Text = (ctrl.Controls[i] as AspNet.CheckBox).Checked ? "√" : "×";
+                    ctrl.Controls.RemoveAt(i);
+                    ctrl.Controls.AddAt(i, lit);
+                }
+
+                if (ctrl.Controls[i].HasControls())
+                {
+                    ResolveGridView(ctrl.Controls[i]);
+                }
+
+            }
+
+        }
+
+        #endregion
     }
 }

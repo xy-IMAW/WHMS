@@ -31,33 +31,6 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.PageManager PageManager_01;
         
         /// <summary>
-        /// tab1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Tab tab1;
-        
-        /// <summary>
-        /// tab2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Tab tab2;
-        
-        /// <summary>
-        /// tab3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Tab tab3;
-        
-        /// <summary>
         /// panelMain 控件。
         /// </summary>
         /// <remarks>
@@ -76,13 +49,13 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Grid gridExample;
         
         /// <summary>
-        /// toolbar_01 控件。
+        /// infor 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Toolbar toolbar_01;
+        protected global::FineUI.Toolbar infor;
         
         /// <summary>
         /// StuID 控件。
@@ -101,6 +74,24 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Label StuName;
+        
+        /// <summary>
+        /// hourcount 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label hourcount;
+        
+        /// <summary>
+        /// toolbar_01 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Toolbar toolbar_01;
         
         /// <summary>
         /// txtId 控件。

@@ -173,14 +173,15 @@ namespace WHMS.Infor_Data
             }
         }
 
-        public override void VerifyRenderingInServerForm(Control control)
+        public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
         {
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
-
+            //  BindGrid();
+            //    string fn = "tets";
+            // ExportExcel(fn,GridView1);
             ResolveGridView(GridView1);
 
             Response.ClearContent();
@@ -189,15 +190,16 @@ namespace WHMS.Infor_Data
             Response.ContentEncoding = System.Text.Encoding.UTF8;
 
             StringWriter sw = new StringWriter();
-            System.Web.UI.HtmlTextWriter htw = new HtmlTextWriter(sw);
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
             GridView1.RenderControl(htw);
 
             Response.Write(sw.ToString());
             Response.End();
+
         }
 
 
-        private void ResolveGridView(Control ctrl)
+        private void ResolveGridView(System.Web.UI.Control ctrl)
         {
             for (int i = 0; i < ctrl.Controls.Count; i++)
             {
@@ -225,6 +227,7 @@ namespace WHMS.Infor_Data
             }
 
         }
+
 
     }
 }

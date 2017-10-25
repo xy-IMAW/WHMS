@@ -6,6 +6,13 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style>
+        .mybutton {
+            text-align:center;
+            margin-top:auto;
+            padding-left:50px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,19 +22,19 @@
             <Items>
                 <f:Panel ID="panel11" runat="server" Title="班级添加" ShowHeader="true" ShowBorder="true">
                     <Toolbars>
-                        <f:Toolbar ID="tool1" runat="server">
+                        <f:Toolbar ID="tool1" runat="server" >
                             <Items>                                
                                    <f:TextBox ID="txtClassName" runat="server" Label="班级" Text="" ShowRedStar="true" LabelAlign="Right" Required="true" Width="300px"></f:TextBox>                                    
                             </Items>  
                               <Items>
-                                 <f:TextBox ID="txtGrade" runat="server" Label="年级" Text="" ShowRedStar="true" LabelAlign="Right" Required="true" Width="300px"></f:TextBox>
-                                    <f:Button ID="btnAddClass" Icon="Add" runat="server" Text="新增" OnClick="btnAddClass_Click"></f:Button>
+                                 <f:TextBox ID="txtGrade" runat="server" Label="年级" Text="" ShowRedStar="true" LabelAlign="Right" Required="true" AbsoluteX="200px"></f:TextBox>
+                                    <f:Button ID="btnAddClass" Icon="Add" runat="server" Text="新增" OnClick="btnAddClass_Click" AbsoluteX="600px"></f:Button>
                             </Items>                         
                         </f:Toolbar>
-                        <f:Toolbar ID="tool2" runat="server">
+                        <f:Toolbar ID="tool2" runat="server" ToolbarAlign="Center">
                          <Items>
-                             <f:Button ID="DownLoad" Text="下载模板" Icon="Accept" runat="server" OnClick="DownLoad_Click" ></f:Button>
-                             <f:Button ID="Import" Text="导入班级" runat="server" ></f:Button>
+                             <f:Button ID="DownLoad" Text="下载模板" Icon="Accept" runat="server" OnClick="DownLoad_Click" CssClass="mybutton" AbsoluteX="100px"></f:Button>
+                             <f:Button ID="Import" Text="导入班级" runat="server" CssClass="mybutton" AbsoluteX="500px"></f:Button>
                          </Items>
                      </f:Toolbar>  
                     </Toolbars>
@@ -45,7 +52,7 @@
                                 </f:Toolbar>  
                      <f:Toolbar ID="toolbar2" runat="server">
                          <Items>
-                              <f:DropDownList ID="DL3" runat="server" Label="学期" Required="true" >
+                              <f:DropDownList ID="DL3" runat="server" Label="学期" Required="true" LabelAlign="Right" >
                                 </f:DropDownList>
                              
                         <f:Button ID="btn" runat="server" Text="查看班级工时" OnClick="btn_Click"/>
@@ -57,7 +64,7 @@
                      </f:Toolbar>                                   
                     </Toolbars>         
             <Items>
-                 <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="50px">
+                 <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="0px">
                            <Columns>
                                 <f:TemplateField Width="60px" HeaderText="序号" TextAlign="Center">
                                     <ItemTemplate>
@@ -71,8 +78,8 @@
             </Items>
                      
         </f:Panel>        
-        <f:Window ID="window1" runat="server" Hidden="true" EnableIFrame="true" EnableClose="true" EnableMaximize="true"  Width="800px" Height="600px" Target="Top" OnClose="window1_Close"></f:Window>
-       
+                 <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
+
     </div>
     </form>
 </body>

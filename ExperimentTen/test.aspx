@@ -20,10 +20,7 @@
                     <f:Toolbar runat="server">
                         <Items>
                             <f:FileUpload ID="fileupload" runat="server" Label="上传"></f:FileUpload>
-                            <f:Button ID="btn2" Text="test1" OnClick="btn1_Click" runat="server"></f:Button>
-                              <f:Button ID="Button2" Text="test2" OnClick="btn2_Click" runat="server"></f:Button>
-                              <f:Button ID="Button3" Text="test3" OnClick="btn3_Click" runat="server"></f:Button>
-                              <f:Button ID="Button4" Text="test4" OnClick="btn4_Click" runat="server"></f:Button>
+                            <f:Button ID="btn2" Text="窗体" OnClick="btn1_Click" runat="server"></f:Button>
                         </Items>
                     </f:Toolbar>
                 </Toolbars>
@@ -34,7 +31,8 @@
                     <f:Grid ID="grid" runat="server" ShowBorder="true" />
                 </Items>
             </f:Panel>
-   
+           <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
+
         </div>
     </form>
 </body>

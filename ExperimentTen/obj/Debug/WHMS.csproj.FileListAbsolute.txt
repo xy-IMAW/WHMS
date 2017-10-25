@@ -30,7 +30,6 @@ G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\Microsoft.Appl
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\obj\Debug\ExperimentTen.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\obj\Debug\ExperimentTen.pdb
-G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\obj\Debug\Interop.ExcelClientPkgLib.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\obj\Debug\WHMS.csproj.ResolveComReference.cache
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\DevAge.Core.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\DevAge.Windows.Forms.dll
@@ -46,4 +45,3 @@ G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.OOXML.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.OpenXml4Net.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.OpenXmlFormats.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.xml
-G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\obj\Debug\WHMS.csprojResolveAssemblyReference.cache

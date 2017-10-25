@@ -16,37 +16,17 @@
             <Toolbars>
                 <f:Toolbar runat="server">
                     <Items>
-                     <f:FileUpload ID="FileUpload1" runat="server" Label="文件" />
-                      
-                         <f:Button ID="btn1" runat="server" Text="上传" OnClick="btn1_Click" />  
-                            <f:Button ID="btn" runat="server" OnClick="btn_Click" Text="更新" /> 
-                <f:Button ID="OUT" runat="server" OnClick="OUT_Click" Text="导出" />
+                           
+               
                            <f:Button ID="Button1" runat="server" Text="导出" OnClick="Button2_Click" /> 
                          <f:Button ID="Button2" runat="server" Text="查看" OnClick="Button2_Click1" /> 
                     </Items>
                 </f:Toolbar>               
             </Toolbars>
             <Items>
-                       <f:Panel ID="panel2" runat="server" ShowBorder="true">
-                    <Items>
-                          <f:Grid ID="grid" runat="server" >
-                              <Columns>
-                                  <f:BoundField DataField="学号" runat="server"></f:BoundField>
-                                  <f:BoundField DataField="姓名" runat="server"></f:BoundField>
-                                  <f:BoundField DataField="班级" runat="server"></f:BoundField>
-                                  <f:BoundField DataField="年级" runat="server"></f:BoundField>
-                                  <f:BoundField DataField="" runat="server"></f:BoundField>
-
-                              </Columns>
-                              </f:Grid>
-                          <f:Grid ID="grid2" runat="server" ShowBorder="true" ShowHeader="true"></f:Grid>
-                    </Items>
-                </f:Panel> 
-            </Items>
-            <Items>
                 <f:ContentPanel runat="server" Margin="50,,50,">
                     <div style="align-content:center; align-items:center; text-align:center">
-                           <asp:GridView ID="GridView1" runat="server" Width="800px" Caption="工时信息" ShowFooter="true" ShowHeader="true" >
+                           <asp:GridView ID="GridView1" runat="server" Width="800px" Caption="工时信息" ShowFooter="true" ShowHeader="true" OnRowCreated="GridView1_RowCreated" >
                                
                            </asp:GridView>
                  
