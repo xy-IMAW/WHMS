@@ -3392,6 +3392,7 @@
     <Content Include="Infor-Data\AddStu.aspx" />
     <Content Include="Infor-Data\Class.aspx" />
     <Content Include="Infor-Data\ClassData.aspx" />
+    <Content Include="Infor-Data\ClassDataOut.aspx" />
     <Content Include="Infor-Data\ClassImport.aspx" />
     <Content Include="Infor-Data\Data.aspx" />
     <Content Include="Infor-Data\GradeData.aspx" />
@@ -5214,6 +5215,13 @@
     </Compile>
     <Compile Include="Infor-Data\ClassData.aspx.designer.cs">
       <DependentUpon>ClassData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\ClassDataOut.aspx.cs">
+      <DependentUpon>ClassDataOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\ClassDataOut.aspx.designer.cs">
+      <DependentUpon>ClassDataOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Infor-Data\ClassImport.aspx.cs">
       <DependentUpon>ClassImport.aspx</DependentUpon>

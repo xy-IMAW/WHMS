@@ -4,15 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style>
-        .mybutton {
-            text-align:center;
-            margin-top:auto;
-            padding-left:50px;
-        }
-    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,7 +34,7 @@
                 </f:Panel>
             </Items>
         </f:Panel>
-        <f:Panel ID="panel2" runat="server" EnableCollapse="false" Title="班级信息" ShowHeader="true" ShowBorder="true">            
+        <f:Panel ID="panel2" runat="server" EnableCollapse="true" Title="班级信息" ShowHeader="true" ShowBorder="true">            
                  <Toolbars >
                                 <f:Toolbar ID="toolbar1" runat="server">
                                     <Items>                                                                                                                  
@@ -50,7 +43,12 @@
                                         <f:Button ID="btnDeleteClass" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDeleteClass_Click"></f:Button>                                     
                                      </Items>
                                 </f:Toolbar>  
-                     <f:Toolbar ID="toolbar2" runat="server">
+                                              
+                    </Toolbars>         
+            <Items>
+                 <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="0px">
+                     <Toolbars>
+                               <f:Toolbar ID="toolbar2" runat="server">
                          <Items>
                               <f:DropDownList ID="DL3" runat="server" Label="学期" Required="true" LabelAlign="Right" >
                                 </f:DropDownList>
@@ -59,13 +57,12 @@
                         <f:Button ID="btn2" runat="server" Text="查看年级工时" OnClick="btn2_Click"/>
 
                          <f:Button ID="btn3" runat="server" Text="导入工时" />
+                              
                          </Items>
                                 
-                     </f:Toolbar>                                   
-                    </Toolbars>         
-            <Items>
-                 <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="0px">
-                           <Columns>
+                     </f:Toolbar>    
+                     </Toolbars>   
+                        <Columns>
                                 <f:TemplateField Width="60px" HeaderText="序号" TextAlign="Center">
                                     <ItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
@@ -75,10 +72,9 @@
                                 <f:BoundField Width ="100px" DataField="Class" HeaderText="班级" TextAlign="Center" />                              
                             </Columns>
                   </f:Grid>    
-            </Items>
-                     
-        </f:Panel>        
-                 <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
+            </Items>                   
+        </f:Panel>           
+             <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="500px" Height="800px" Target="Top"  EnableMaximize="true" ></f:Window>
 
     </div>
     </form>

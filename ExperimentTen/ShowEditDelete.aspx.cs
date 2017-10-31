@@ -9,7 +9,7 @@ using NPOI.HSSF.UserModel;
 //using System.Windows.Forms;
 using System.Web.UI;
 using AspNet = System.Web.UI.WebControls;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 
 namespace WHMS
@@ -37,7 +37,7 @@ namespace WHMS
             DataRow dr;
 
             string sql1 = "select * from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
-            string sql2 = "select StuID,StuName,Class from Student where Grade='2016' order by Class,StuID";
+            string sql2 = "select StuID,StuName,Class from Student where Class='信管1501' order by Class,StuID";
             string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
             DataTable dt = Common.datatable(sql1);
             DataTable student = Common.datatable(sql2);
@@ -536,6 +536,8 @@ namespace WHMS
             //dt：数据源  
             GridView1.DataSource = data;
             GridView1.DataBind();
+            //   output(GridView1);
+         //   NPOItest.Batch_Updat e(data);
         }
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
@@ -585,10 +587,32 @@ namespace WHMS
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+                DataTable dt = new DataTable();
+                Bind(dt);
+              NPOItest.Batch_Update(dt);
+            //     NPOIHelper.ExportByWeb(dt,"信管1501工时表", "信管1501工时表");
             //  BindGrid();
-        //    string fn = "tets";
-           // ExportExcel(fn,GridView1);
-           ResolveGridView(GridView1);
+            //    string fn = "tets";
+            // ExportExcel(fn,GridView1);
+            //   ResolveGridView(GridView1);
+          //  output(GridView1);
+      /*     Response.ClearContent();
+            Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
+            Response.ContentType = "application/excel";
+            Response.ContentEncoding = System.Text.Encoding.UTF8;
+
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            GridView1.RenderControl(htw);
+
+            Response.Write(sw.ToString());
+            Response.End();*/
+           
+        }
+
+        public void output(GridView GridView1)
+        {
+            ResolveGridView(GridView1);
 
             Response.ClearContent();
             Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
@@ -601,10 +625,7 @@ namespace WHMS
 
             Response.Write(sw.ToString());
             Response.End();
-            
         }
-
-
         private void ResolveGridView(System.Web.UI.Control ctrl)
         {
             for (int i = 0; i < ctrl.Controls.Count; i++)
@@ -647,47 +668,7 @@ namespace WHMS
 
 
 
-        public void ExportExcel(string fileName, GridView dgv)
-        {
-            string saveFileName = DateTime.Now.ToString(); ;
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.DefaultExt = "xls";
-            saveDialog.Filter = "Excel文件|*.xls";
-            saveDialog.FileName = fileName;
-            saveDialog.ShowDialog();
-            saveFileName = saveDialog.FileName;
-
-            HSSFWorkbook workbook = new HSSFWorkbook();
-            MemoryStream ms = new MemoryStream();
-
-            NPOI.SS.UserModel.ISheet sheet = workbook.CreateSheet("Sheet1");
-
-            int rowCount = dgv.Rows.Count;
-            int colCount = dgv.Columns.Count;
-
-            for (int i = 0; i < rowCount; i++)
-            {
-                NPOI.SS.UserModel.IRow dataRow = sheet.CreateRow(i);
-                for (int j = 0; j < colCount; j++)
-                {
-                    if (dgv.Columns[j].Visible && dgv.Rows[i].Cells[j] != null)
-                    {
-                        NPOI.SS.UserModel.ICell cell = dataRow.CreateCell(j);
-                        cell.SetCellValue(dgv.Rows[i].Cells[j].ToString());
-                    }
-                }
-            }
-
-            workbook.Write(ms);
-            FileStream file = new FileStream(saveFileName, FileMode.Create);
-            workbook.Write(file);
-            file.Close();
-            workbook = null;
-            ms.Close();
-            ms.Dispose();
-
-            MessageBox.Show(fileName + " 保存成功", "提示", MessageBoxButtons.OK);
-        }
+   
 
      
     }

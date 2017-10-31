@@ -24,6 +24,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
+         <div>
+            <asp:Button ID="btn1" runat="server" Text="测试" OnClick="Button2_Click" />
+        </div>
     <f:PageManager ID="pagemanager1" runat="server"  EnableFStateValidation="false" />
            <f:panel ID="panel1" runat="server">
             <Toolbars>
@@ -33,19 +36,30 @@
                     </Items>
                 </f:Toolbar>
             </Toolbars>
-            <Items>
-                 
-                 <f:ContentPanel runat="server" Margin="50,,50,">
-                    <div style="align-content:center; align-items:center; text-align:center">
-                           <asp:GridView ID="GridView1" runat="server" Width="800px" Caption="工时信息" ShowFooter="true" ShowHeader="true" OnRowCreated="GridView1_RowCreated" >
-                               
-                           </asp:GridView>
-                 
-                     
-                    </div>                       
+               <Items>
+                    <f:Panel ID="panel2" runat="server">
+                       <Items>
+                           <f:ContentPanel runat="server" Margin="50,,50,"> 
+                                  <asp:GridView ID="GridView1" runat="server"  Caption="工时信息" ShowFooter="true" ShowHeader="true" AutoGenerateColumns="true" OnRowCreated="GridView1_RowCreated">                              
+                           </asp:GridView>    
+                                                                  
                 </f:ContentPanel>   
+                                        
+                    
+                       </Items>
+                        <Items>
+                            <f:Label ID="infor" runat="server" Text="" RegionPosition="Center" Readonly="true" Margin="20px"></f:Label>
+                        </Items>
+                   </f:Panel>
+               </Items>
+           
+            <Items>                 
+             <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="500px" Height="800px" Target="Top"  EnableMaximize="true"></f:Window>
+                
             </Items>
+
             </f:panel>
+       
            
 
     </div>

@@ -4,25 +4,21 @@ using System.Data;
 using System.Web.UI;
 using System.IO;
 using AspNet = System.Web.UI.WebControls;
-using FineUI;
 
 namespace WHMS.Infor_Data
 {
-    public partial class ClassData : System.Web.UI.Page
+    public partial class ClassDataOut : System.Web.UI.Page
     {
-       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 BindGrid(GridView1);
-                infor.Text= Common.Class + "班" + Common.SySe + "学期 工时表";
+                GridView1.Caption = Common.Class + "班" + Common.SySe + "学期 工时表";
             }
-          
 
-           GridView1.Caption = Common.Class + "班" + Common.SySe + "学期 工时表";
         }
- 
+
 
         public void Bind(DataTable data)
         {
@@ -130,13 +126,15 @@ namespace WHMS.Infor_Data
                  }*/
             #endregion
 
+
+
             DataTable data = new DataTable();
             Bind(data);
             //dt：数据源  
             GridView1.DataSource = data;
             GridView1.DataBind();
+            output(GridView1);
 
-         //   output(GridView1);
         }
 
 
@@ -144,7 +142,7 @@ namespace WHMS.Infor_Data
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
+                string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%" + Common.SySe + "%'";
                 DataTable program = Common.datatable(sql3);
 
                 TableCellCollection header = e.Row.Cells;
@@ -167,120 +165,47 @@ namespace WHMS.Infor_Data
                 {
                     headtxt += "<th>" + program.Rows[i][0].ToString() + "</th>";
                 }
-
                 headtxt += "</tr>";
-
                 TableHeaderCell cell = new TableHeaderCell();
                 cell.Attributes.Add("rowspan", "2");  //跨两行   
                 cell.Text = (headtxt);
                 header.Add(cell);
-
             }
         }
 
 
-
         public void output(GridView GridView1)
         {
-
-
-         //   BindGrid(GridView1);
-          ///  GridView1.Caption = Common.Class + "班" + Common.SySe + "学期 工时表";
-
             ResolveGridView(GridView1);
 
             Response.ClearContent();
-             Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
+            Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile"+DateTime.Now.Date.ToString()+".xls");
             Response.ContentType = "application/excel";
             Response.ContentEncoding = System.Text.Encoding.UTF8;
-            
+
             StringWriter sw = new StringWriter();
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             GridView1.RenderControl(htw);
 
-
-            Response.Output.Write(sw.ToString());
-            Response.Flush();
+            Response.Write(sw.ToString());
             Response.End();
+
+            /*
+                Response.Charset = "GB2312";
+        Response.ContentEncoding = System.Text.Encoding.UTF7;
+        Response.AppendHeader("Content-Disposition", "attachment;filename=MyExcelFile.xls");
+        Response.ContentType = "application/excel";
+        this.EnableViewState = false;
+        StringWriter tw = new StringWriter();
+        HtmlTextWriter hw = new HtmlTextWriter(tw);
+        GridView1.RenderControl(hw);
+        Response.Write(tw.ToString());
+        Response.End();
+             */
         }
-        #region
-        /* protected void btnOutExcel_Click(object sender, EventArgs e)
-         {
-             if (GridView1.Rows.Count > 0)
-             {
-                 //调用导出方法  
-                 ExportGridViewForUTF8(GridView1, DateTime.Now.ToShortDateString() + ".xls");
-             }
-             else
-             {
-                 Alert.Show("没有数据可以导出","提示",MessageBoxIcon.Information);
-             }
-         }
-
-         /// <summary>  
-         /// 重载，否则出现“类型“GridView”的控件“GridView1”必须放在具有 runat=server 的窗体标... ”的错误  
-         /// </summary>  
-         /// <param name="control"></param>  
-         public override void VerifyRenderingInServerForm(Control control)
-         {
-             //base.VerifyRenderingInServerForm(control);  
-         }
-
-         /// <summary>  
-         /// 导出方法  
-         /// </summary>  
-         /// <param name="GridView"></param>  
-         /// <param name="filename">保存的文件名称</param>  
-         private void ExportGridViewForUTF8(GridView GridView, string filename)
-         {
-
-             string attachment = "attachment; filename=" + filename;
-
-             Response.ClearContent();
-             Response.Buffer = true;
-             Response.AddHeader("content-disposition", attachment);
-
-             Response.Charset = "UTF-8";
-             Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
-             Response.ContentType = "application/ms-excel";
-             System.IO.StringWriter sw = new System.IO.StringWriter();
-
-             HtmlTextWriter htw = new HtmlTextWriter(sw);
-             GridView.RenderControl(htw);
-
-             Response.Output.Write(sw.ToString());
-             Response.Flush();
-             Response.End();
-
-         }*/
-        #endregion
-
-
-        #region
-        public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
-        {
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-
-            //   LBindGrid(GridView1);
-            //    string str = "";
-            //   str = GridView1.Rows[0].Cells[0].Text;
-            //  Alert.Show(str);
-            //BindGrid(GridView1);
-            //   output(this.GridView1);
-            //   PageContext.RegisterStartupScript(window1.GetShowReference("ClassDataOut.aspx"));
-            DataTable dt = new DataTable();
-            Bind(dt);
-           // NPOItest.Batch_Update(dt);
-                NPOIHelper.ExportByWeb(dt, Common.Class + "班" + Common.SySe + "学期 工时表", Common.Class + "班" + Common.SySe + "学期 工时表");
-        }
-
-
         private void ResolveGridView(System.Web.UI.Control ctrl)
         {
-            ctrl.Page.EnableViewState = false;
+
             for (int i = 0; i < ctrl.Controls.Count; i++)
             {
                 // 图片的完整URL
@@ -307,7 +232,5 @@ namespace WHMS.Infor_Data
             }
 
         }
-
-        #endregion 
     }
 }
