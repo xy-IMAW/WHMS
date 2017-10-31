@@ -15,7 +15,7 @@
             <Items>
                 <f:Panel ID="panel11" runat="server" Title="班级添加" ShowHeader="true" ShowBorder="true">
                     <Toolbars>
-                        <f:Toolbar ID="tool1" runat="server" >
+                        <f:Toolbar ID="tool1" runat="server" ToolbarAlign="Center" >
                             <Items>                                
                                    <f:TextBox ID="txtClassName" runat="server" Label="班级" Text="" ShowRedStar="true" LabelAlign="Right" Required="true" Width="300px"></f:TextBox>                                    
                             </Items>  
@@ -42,8 +42,7 @@
                                         <f:Button ID="btnSearch" runat="server" Text="查找" Icon="Zoom" OnClick="btnSearch_Click"></f:Button>  
                                         <f:Button ID="btnDeleteClass" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDeleteClass_Click"></f:Button>                                     
                                      </Items>
-                                </f:Toolbar>  
-                                              
+                                </f:Toolbar>                                              
                     </Toolbars>         
             <Items>
                  <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="0px">
@@ -58,8 +57,7 @@
 
                          <f:Button ID="btn3" runat="server" Text="导入工时" />
                               
-                         </Items>
-                                
+                         </Items>                                
                      </f:Toolbar>    
                      </Toolbars>   
                         <Columns>
@@ -74,7 +72,7 @@
                   </f:Grid>    
             </Items>                   
         </f:Panel>           
-             <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="500px" Height="800px" Target="Top"  EnableMaximize="true" ></f:Window>
+             <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
 
     </div>
     </form>

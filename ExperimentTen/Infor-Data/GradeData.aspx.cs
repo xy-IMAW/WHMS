@@ -16,7 +16,7 @@ namespace WHMS.Infor_Data
             if (!IsPostBack)
             {
                 BindGrid();
-                GridView1.Caption=Common.grade+"年级"+Common.SySe+"学期工时表";
+                GridView1.Caption=Common.grade+"年级 "+Common.SySe+"学期工时表";
             }
         }
 
@@ -87,9 +87,6 @@ namespace WHMS.Infor_Data
                 dr["合计"] = total;
                 data.Rows.Add(dr);
             }
-
-            //   GridView1.DataSource = data;
-            //  GridView1.DataBind();
         }
 
 
@@ -173,60 +170,21 @@ namespace WHMS.Infor_Data
             }
         }
 
-        public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
+       /* public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
         {
         }
-
+*/
         protected void Button2_Click(object sender, EventArgs e)
         {
-            //  BindGrid();
-            //    string fn = "tets";
-            // ExportExcel(fn,GridView1);
-            ResolveGridView(GridView1);
 
-            Response.ClearContent();
-            Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
-            Response.ContentType = "application/excel";
-            Response.ContentEncoding = System.Text.Encoding.UTF8;
-
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            GridView1.RenderControl(htw);
-
-            Response.Write(sw.ToString());
-            Response.End();
+            DataTable dt = new DataTable();
+            Bind(dt);
+            NPOIHelper.ExportByWeb(dt, GridView1.Caption, GridView1.Caption);
 
         }
 
 
-        private void ResolveGridView(System.Web.UI.Control ctrl)
-        {
-            for (int i = 0; i < ctrl.Controls.Count; i++)
-            {
-                // 图片的完整URL
-                if (ctrl.Controls[i].GetType() == typeof(AspNet.Image))
-                {
-                    AspNet.Image img = ctrl.Controls[i] as AspNet.Image;
-                    img.ImageUrl = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, Page.ResolveUrl(img.ImageUrl));
-                }
-
-                // 将CheckBox控件转化为静态文本
-                if (ctrl.Controls[i].GetType() == typeof(AspNet.CheckBox))
-                {
-                    Literal lit = new Literal();
-                    lit.Text = (ctrl.Controls[i] as AspNet.CheckBox).Checked ? "√" : "×";
-                    ctrl.Controls.RemoveAt(i);
-                    ctrl.Controls.AddAt(i, lit);
-                }
-
-                if (ctrl.Controls[i].HasControls())
-                {
-                    ResolveGridView(ctrl.Controls[i]);
-                }
-
-            }
-
-        }
+    
 
 
     }

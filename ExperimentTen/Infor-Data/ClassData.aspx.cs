@@ -16,11 +16,8 @@ namespace WHMS.Infor_Data
             if (!IsPostBack)
             {
                 BindGrid(GridView1);
-                infor.Text= Common.Class + "班" + Common.SySe + "学期 工时表";
-            }
-          
-
-           GridView1.Caption = Common.Class + "班" + Common.SySe + "学期 工时表";
+                GridView1.Caption = Common.Class + "班" + Common.SySe + "学期工时表";
+            }        
         }
  
 
@@ -45,7 +42,7 @@ namespace WHMS.Infor_Data
 
                 if (i < program.Rows.Count)
                 {
-                    //   string time = (Convert.ToDateTime(program.Rows[i][1].ToString()).Date).ToString();
+                   
                     data.Columns.Add(program.Rows[i][0].ToString(), typeof(string));
                 }
 
@@ -144,7 +141,7 @@ namespace WHMS.Infor_Data
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
+                string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%" + Common.SySe + "%'";
                 DataTable program = Common.datatable(sql3);
 
                 TableCellCollection header = e.Row.Cells;
@@ -179,135 +176,19 @@ namespace WHMS.Infor_Data
         }
 
 
-
-        public void output(GridView GridView1)
-        {
-
-
-         //   BindGrid(GridView1);
-          ///  GridView1.Caption = Common.Class + "班" + Common.SySe + "学期 工时表";
-
-            ResolveGridView(GridView1);
-
-            Response.ClearContent();
-             Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
-            Response.ContentType = "application/excel";
-            Response.ContentEncoding = System.Text.Encoding.UTF8;
-            
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            GridView1.RenderControl(htw);
-
-
-            Response.Output.Write(sw.ToString());
-            Response.Flush();
-            Response.End();
-        }
-        #region
-        /* protected void btnOutExcel_Click(object sender, EventArgs e)
-         {
-             if (GridView1.Rows.Count > 0)
-             {
-                 //调用导出方法  
-                 ExportGridViewForUTF8(GridView1, DateTime.Now.ToShortDateString() + ".xls");
-             }
-             else
-             {
-                 Alert.Show("没有数据可以导出","提示",MessageBoxIcon.Information);
-             }
-         }
-
-         /// <summary>  
-         /// 重载，否则出现“类型“GridView”的控件“GridView1”必须放在具有 runat=server 的窗体标... ”的错误  
-         /// </summary>  
-         /// <param name="control"></param>  
-         public override void VerifyRenderingInServerForm(Control control)
-         {
-             //base.VerifyRenderingInServerForm(control);  
-         }
-
-         /// <summary>  
-         /// 导出方法  
-         /// </summary>  
-         /// <param name="GridView"></param>  
-         /// <param name="filename">保存的文件名称</param>  
-         private void ExportGridViewForUTF8(GridView GridView, string filename)
-         {
-
-             string attachment = "attachment; filename=" + filename;
-
-             Response.ClearContent();
-             Response.Buffer = true;
-             Response.AddHeader("content-disposition", attachment);
-
-             Response.Charset = "UTF-8";
-             Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
-             Response.ContentType = "application/ms-excel";
-             System.IO.StringWriter sw = new System.IO.StringWriter();
-
-             HtmlTextWriter htw = new HtmlTextWriter(sw);
-             GridView.RenderControl(htw);
-
-             Response.Output.Write(sw.ToString());
-             Response.Flush();
-             Response.End();
-
-         }*/
-        #endregion
-
-
-        #region
-        public override void VerifyRenderingInServerForm(System.Web.UI.Control control)
-        {
-        }
-
         protected void Button2_Click(object sender, EventArgs e)
         {
 
-            //   LBindGrid(GridView1);
-            //    string str = "";
-            //   str = GridView1.Rows[0].Cells[0].Text;
-            //  Alert.Show(str);
-            //BindGrid(GridView1);
-            //   output(this.GridView1);
-            //   PageContext.RegisterStartupScript(window1.GetShowReference("ClassDataOut.aspx"));
+        
             DataTable dt = new DataTable();
             Bind(dt);
-           // NPOItest.Batch_Update(dt);
-                NPOIHelper.ExportByWeb(dt, Common.Class + "班" + Common.SySe + "学期 工时表", Common.Class + "班" + Common.SySe + "学期 工时表");
+         //   NPOItest.Batch_Update(dt);
+                NPOIHelper.ExportByWeb(dt, GridView1.Caption, GridView1.Caption);
         }
 
 
-        private void ResolveGridView(System.Web.UI.Control ctrl)
-        {
-            ctrl.Page.EnableViewState = false;
-            for (int i = 0; i < ctrl.Controls.Count; i++)
-            {
-                // 图片的完整URL
-                if (ctrl.Controls[i].GetType() == typeof(AspNet.Image))
-                {
-                    AspNet.Image img = ctrl.Controls[i] as AspNet.Image;
-                    img.ImageUrl = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, Page.ResolveUrl(img.ImageUrl));
-                }
+     
 
-                // 将CheckBox控件转化为静态文本
-                if (ctrl.Controls[i].GetType() == typeof(AspNet.CheckBox))
-                {
-                    Literal lit = new Literal();
-                    lit.Text = (ctrl.Controls[i] as AspNet.CheckBox).Checked ? "√" : "×";
-                    ctrl.Controls.RemoveAt(i);
-                    ctrl.Controls.AddAt(i, lit);
-                }
-
-                if (ctrl.Controls[i].HasControls())
-                {
-                    ResolveGridView(ctrl.Controls[i]);
-                }
-
-            }
-
-        }
-
-        #endregion 
+    
     }
 }

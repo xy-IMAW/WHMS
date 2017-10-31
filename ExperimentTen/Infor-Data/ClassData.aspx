@@ -15,54 +15,52 @@
         }
 
             .mypanel .mybutton {
-                display: inline-block;
-                *display: inline;
-                margin-right: 10px;
+             display: inline-block;
+    padding: .3em .5em;
+  background: -webkit-linear-gradient(top,#42a4e0,#2e88c0);
+background: -moz-linear-gradient(top,#42a4e0,#2e88c0);
+background: linear-gradient(top,#42a4e0,#2e88c0);
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3em;
+    box-shadow: 0 1px white inset;
+    text-align: center;
+    text-shadow: 0 1px 1px black;
+    color:white;
+    font-weight: bold;
+               width:50px;
+            }
+            .mybutton:active{
+                box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+    border-color: rgba(0,0,0,.3);
+    background: #bbb;
             }
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-         <div>
-            <asp:Button ID="btn1" runat="server" Text="测试" OnClick="Button2_Click" />
+         <div class="mypanel">
+            <asp:Button ID="btn1" runat="server" Text="导出" CssClass="mybutton" OnClick="Button2_Click" />
         </div>
+                                       
     <f:PageManager ID="pagemanager1" runat="server"  EnableFStateValidation="false" />
            <f:panel ID="panel1" runat="server">
-            <Toolbars>
-                <f:Toolbar ID="tool1" runat="server" ToolbarAlign="Center" CssClass="mypanel" Position="Top">
-                    <Items>
-                        <f:Button ID="Button2" runat="server" Text="导出"  OnClick="Button2_Click" CssClass="mybutton" />
-                    </Items>
-                </f:Toolbar>
-            </Toolbars>
                <Items>
                     <f:Panel ID="panel2" runat="server">
                        <Items>
-                           <f:ContentPanel runat="server" Margin="50,,50,"> 
-                                  <asp:GridView ID="GridView1" runat="server"  Caption="工时信息" ShowFooter="true" ShowHeader="true" AutoGenerateColumns="true" OnRowCreated="GridView1_RowCreated">                              
-                           </asp:GridView>    
-                                                                  
-                </f:ContentPanel>   
-                                        
-                    
+                           <f:ContentPanel runat="server"> 
+                               <div style="align-content:center;align-items:center;padding-left:150px;padding-top:10px">
+                                    <asp:GridView ID="GridView1" runat="server"  ShowFooter="true" ShowHeader="true" OnRowCreated="GridView1_RowCreated" >                              
+                           </asp:GridView>  
+                               </div>
+                                                                                                    
+                          </f:ContentPanel>                                                       
                        </Items>
-                        <Items>
-                            <f:Label ID="infor" runat="server" Text="" RegionPosition="Center" Readonly="true" Margin="20px"></f:Label>
-                        </Items>
                    </f:Panel>
                </Items>
-           
-            <Items>                 
-             <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="500px" Height="800px" Target="Top"  EnableMaximize="true"></f:Window>
-                
-            </Items>
-
             </f:panel>
-       
-           
-
-    </div>
+       </div>
     </form>
-</body>
+  </body>
 </html>

@@ -12,6 +12,7 @@ using NPOI.SS.Util;
 
 namespace WHMS
 {
+    
     public class NPOI_EXCEL
     {
         /// <summary>  
@@ -817,82 +818,74 @@ namespace WHMS
                         sheet = workbook.CreateSheet();
                     } 
 
-                    #region 表头及样式
+                    #region 表头
                     {
-                        IRow headerRow = sheet.CreateRow(0);
-                        headerRow.HeightInPoints = 25;
-                        headerRow.CreateCell(0).SetCellValue(strHeaderText);
 
-                        ICellStyle headStyle = workbook.CreateCellStyle();
-                        headStyle.Alignment = HorizontalAlignment.Center;
-                        IFont font = workbook.CreateFont();
-                        font.FontHeightInPoints = 20;
-                        font.Boldweight = 700;
-                        headStyle.SetFont(font);
-                        headerRow.GetCell(0).CellStyle = headStyle;
-                        CellRangeAddress region = new CellRangeAddress(0, 0, 0, program.Rows.Count+3);
-                        sheet.AddMergedRegion(region);
+                        IRow row1 = sheet.CreateRow(0);
+                        ICell cell = row1.CreateCell(0);
+                        cell.SetCellValue(strHeaderText);
+                        sheet.AddMergedRegion(new CellRangeAddress(0, 0, 0, program.Rows.Count + 3));//合并列  该方法的参数次序是：开始行号，结束行号，开始列号，结束列号。  
+                                                                                                     //  row1.Height = 30 * 30; //行高  
+                        cell.CellStyle = HeadStyle(workbook);
 
-                       
-                        headerRow = sheet.CreateRow(1);
+                        IRow row2 = sheet.CreateRow(1);
+                        ICell cell2 = row2.CreateCell(0);
+                        cell2.SetCellValue("学号");
+                        sheet.AddMergedRegion(new CellRangeAddress(1, 2, 0, 0));
+                        cell2.CellStyle = Sub_HeadStyle(workbook);
+                      
+                        ICell cell3 = row2.CreateCell(1);
+                        cell3.SetCellValue("姓名");
+                        sheet.AddMergedRegion(new CellRangeAddress(1, 2, 1, 1));
+                       cell3.CellStyle = Sub_HeadStyle(workbook);
 
-                         region = new CellRangeAddress(1, 2, 0,0);
-                        sheet.AddMergedRegion(region);
-                        headerRow.CreateCell(0).SetCellValue("学号");
-                        headerRow.GetCell(0).CellStyle = headStyle;
+                        ICell cell4 = row2.CreateCell(2);
+                        cell4.SetCellValue("班级");
+                        sheet.AddMergedRegion(new CellRangeAddress(1, 2, 2, 2));
+                        cell4.CellStyle = Sub_HeadStyle(workbook);
 
-                        region = new CellRangeAddress(1, 2, 1, 1);
-                        sheet.AddMergedRegion(region);
-                        headerRow.CreateCell(1).SetCellValue("姓名");
-                        headerRow.GetCell(1).CellStyle = headStyle;
+                        ICell cell5 = row2.CreateCell(program.Rows.Count + 3);
+                        cell5.SetCellValue("合计");
+                        sheet.AddMergedRegion(new CellRangeAddress(1, 2, program.Rows.Count + 3, program.Rows.Count + 3));
+                         cell5.CellStyle = Sub_HeadStyle(workbook);
+                      
 
-                        region = new CellRangeAddress(1, 2, 2, 2);
-                        sheet.AddMergedRegion(region);
-                        headerRow.CreateCell(2).SetCellValue("班级");
-                        headerRow.GetCell(2).CellStyle = headStyle;
 
-                        region = new CellRangeAddress(1, 2, program.Rows.Count + 2, program.Rows.Count + 3);
-                        sheet.AddMergedRegion(region);
-                        headerRow.CreateCell(program.Rows.Count + 2).SetCellValue("合计");
-                        headerRow.GetCell(program.Rows.Count + 2).CellStyle = headStyle;
-
-                        region = new CellRangeAddress(1, 2, 3, program.Rows.Count + 2);
-                        sheet.AddMergedRegion(region);
-                        for (int i=3,j=0;j<program.Rows.Count;i++,j++)
-                        {
-                            headerRow.CreateCell(i).SetCellValue(program.Rows[j][0].ToString());
-                            headerRow.GetCell(i).CellStyle = headStyle;
-                        }
-
-                        headerRow = sheet.CreateRow(2);
                         for (int i = 3, j = 0; j < program.Rows.Count; i++, j++)
                         {
-                            headerRow.CreateCell(i).SetCellValue(program.Rows[j][1].ToString());
-                            headerRow.GetCell(i).CellStyle = headStyle;
+                            ICell cell_1 = row2.CreateCell(i);
+
+                            cell_1.SetCellValue(Convert.ToDateTime(program.Rows[j][1]).Date);
+                         
+                             cell_1.CellStyle = Sub_HeadStyle(workbook);
+                            ICellStyle cstyle = cell_1.CellStyle;
+                            cstyle.Alignment = HorizontalAlignment.Center;
+                            cstyle.DataFormat = dateStyle.DataFormat;
+                            
+                           // cell_1.CellStyle = dateStyle;
+
                         }
-                        //       headerRow.Dispose();
+
+                        IRow row3 = sheet.CreateRow(2);
+                        for (int i = 3, j = 0; j < program.Rows.Count; i++, j++)
+                        {
+                            ICell cell_2 = row3.CreateCell(i);
+                            cell_2.SetCellValue(program.Rows[j][0].ToString());
+                           cell_2.CellStyle = Sub_HeadStyle(workbook);
+                        }
                     }
                     #endregion
 
 
                     #region 列头及样式
                     {
-                      /*  IRow headerRow = sheet.CreateRow(2);
-                        ICellStyle headStyle = workbook.CreateCellStyle();
-                        headStyle.Alignment = HorizontalAlignment.Center;
-                        IFont font = workbook.CreateFont();
-                        font.FontHeightInPoints = 10;
-                        font.Boldweight = 700;
-                        headStyle.SetFont(font);
-                        foreach (DataColumn column in dtSource.Columns)
+                       
+                        for (int columnNum = 0; columnNum <= 26; columnNum++)
                         {
-                            headerRow.CreateCell(column.Ordinal).SetCellValue(column.ColumnName);
-                            headerRow.GetCell(column.Ordinal).CellStyle = headStyle;
-
-                            //设置列宽
-                            sheet.SetColumnWidth(column.Ordinal, (arrColWidth[column.Ordinal] + 1) * 256);
-                        }*/
-                   //     headerRow.Dispose();
+                            int columnWidth = sheet.GetColumnWidth(columnNum) / 256;//获取当前列宽度  
+                            columnWidth = 20;
+                            sheet.SetColumnWidth(columnNum, columnWidth * 256);
+                        }
                     }
                     #endregion
 
@@ -947,6 +940,8 @@ namespace WHMS
                             newCell.SetCellValue("");
                             break;
                     }
+                    ICellStyle cstyle = newCell.CellStyle;
+                    cstyle.Alignment = HorizontalAlignment.Center;
 
                 }
                 #endregion
@@ -956,11 +951,9 @@ namespace WHMS
             using (MemoryStream ms = new MemoryStream())
             {
                 workbook.Write(ms);
-                ms.Flush();
-                ms.Position = 0;
-
-             //   sheet.Dispose();
-            //    workbook.Dispose();//一般只用写这一个就OK了，他会遍历并释放所有资源，但当前版本有问题所以只释放sheet
+              
+               // ms.Flush();
+              //  ms.Position = 0;
                 return ms;
             }
         }
@@ -974,16 +967,41 @@ namespace WHMS
         public static void ExportByWeb(DataTable dtSource, string strHeaderText, string strFileName)
         {
             HttpContext curContext = HttpContext.Current;
-
+            strFileName += DateTime.Now.Date.ToString();
             // 设置编码和附件格式
             curContext.Response.ContentType = "application/vnd.ms-excel";
             curContext.Response.ContentEncoding = Encoding.UTF8;
             curContext.Response.Charset = "";
-            curContext.Response.AppendHeader("Content-Disposition",
-                "attachment;filename=" + HttpUtility.UrlEncode(strFileName, Encoding.UTF8));
-
+            curContext.Response.AddHeader("Content-Disposition", string.Format("attachment; filename="+ strFileName +".xls"));
             curContext.Response.BinaryWrite(Export(dtSource, strHeaderText).GetBuffer());
             curContext.Response.End();
+        }
+
+        public static ICellStyle HeadStyle(HSSFWorkbook hwb)
+        {
+            ICellStyle tstyle = hwb.CreateCellStyle();
+            tstyle.Alignment = HorizontalAlignment.Center;
+            tstyle.VerticalAlignment = VerticalAlignment.Center;
+            IFont tfont = hwb.CreateFont();
+            tfont.FontHeight = 20 * 20;
+            tfont.FontName = "华文宋体";
+            //      tfont.Color = ;
+            tfont.Boldweight = short.MaxValue;
+            tstyle.SetFont(tfont);
+            return tstyle;
+        }
+        public static ICellStyle Sub_HeadStyle(HSSFWorkbook hwb)
+        {
+            ICellStyle cstyle = hwb.CreateCellStyle();
+            cstyle.Alignment = HorizontalAlignment.Center;
+            cstyle.VerticalAlignment = VerticalAlignment.Center;
+            IFont cfont = hwb.CreateFont();
+            cstyle.WrapText = true; // 换行 要配合\n使用  
+            cfont.FontHeight = 16 * 16;
+            cfont.FontName = "华文楷体";
+            cfont.Boldweight = short.MaxValue;
+            cstyle.SetFont(cfont);
+            return cstyle;
         }
     }
 
@@ -992,7 +1010,7 @@ namespace WHMS
     {
         public static void Batch_Update(DataTable dtSource)
         {
-            string sql1 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2016-2017-1%'";
+            string sql1 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%" + Common.SySe + "%'";
             DataTable program = Common.datatable(sql1);
 
             HSSFWorkbook hwb = new HSSFWorkbook();
@@ -1054,7 +1072,7 @@ namespace WHMS
             foreach (DataRow row in dtSource.Rows)
             {
                 #region 填充内容
-                IRow dataRow = sheet.CreateRow(3);
+                IRow dataRow = sheet.CreateRow(rowindex);
                 foreach (DataColumn column in dtSource.Columns)
                 {
                     ICell newCell = dataRow.CreateCell(column.Ordinal);
@@ -1099,28 +1117,22 @@ namespace WHMS
                             newCell.SetCellValue("");
                             break;
                     }
-
+                   
                 }
                 #endregion
                 rowindex++;
             }
-            string str ="工时表"+DateTime.Now.ToString("yy-mm-dd-hh-MM");
-           // var filePath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/DownLoad/"+str+".xls");
-            FileStream fileXSSF = new FileStream(@"G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\ExperimentTen\res\DownLoad\" + str + ".xls", FileMode.Create);
-            hwb.Write(fileXSSF);
-            fileXSSF.Close();
-              NPOI_EXCEL.DownLoad(str);
+       
             
-            /* 
          
              hwb.Write(ms);
              HttpContext curContext = HttpContext.Current;
              curContext.Response.AddHeader("Content-Disposition", string.Format("attachment; filename=工时-"+DateTime.Now.Date+".xls"));
-             curContext.Response.ContentType = "application/excel";
-             curContext.Response.ContentEncoding = System.Text.Encoding.UTF8;
+            curContext.Response.ContentType = "application/vnd.ms-excel";
+            curContext.Response.ContentEncoding = System.Text.Encoding.UTF8;
              curContext.Response.BinaryWrite(ms.ToArray());
              hwb = null;
-             ms.Close(); ms.Dispose();*/
+             ms.Close(); ms.Dispose();
         }
         /// <summary>  
         /// 大标题  
