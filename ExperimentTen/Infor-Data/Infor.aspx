@@ -17,7 +17,7 @@
                     Width="200px" RegionPosition="Left" Layout="Fit"
                     runat="server">                    
                    <Items>                                           
-                       <f:Tree ID="Tree1" Width="150px" EnableCollapse="true"  Title="年级与班级" runat="server" Icon="Anchor" OnExpand="Tree1_Expand" OnNodeCommand="Tree1_NodeCommand" EnableTextSelection="true"> 
+                       <f:Tree ID="Tree1" Width="150px" EnableCollapse="true"  Title="年级与班级" runat="server" Icon="Theme" OnExpand="Tree1_Expand" OnNodeCommand="Tree1_NodeCommand" EnableTextSelection="true"> 
                        </f:Tree>                                        
                     </Items>
                 </f:Region>
@@ -26,7 +26,7 @@
                     <Items>
                            <f:Panel ID="panel2" ShowBorder="false" ShowHeader="false" runat="server" >
                             <Items>                              
-                             <f:Grid ID="Grid1" Height="570px" BoxFlex="1" ShowBorder="false" runat="server" ShowGridHeader="true"
+                             <f:Grid ID="Grid1" Height="620px" BoxFlex="1" ShowBorder="false" runat="server" ShowGridHeader="true"
                                   DataKeyNames="Id,Name" EnableRowClickEvent="true" AllowPaging="true" PageSize="40" PageIndex="0" OnPageIndexChange="Grid1_PageIndexChange" EnableCollapse="true">
                             <Toolbars >
                                 <f:Toolbar ID="toolbar1" runat="server">
@@ -34,8 +34,10 @@
                                         <f:Button ID="btnSearch" Icon="Zoom" runat="server" Text="查看" ToolTip="查看选中学生的工时信息" OnClick="btnSearch_Click"></f:Button>
                                         <f:Button ID="btnadd" Icon="Add" runat="server" Text="新增"></f:Button>
                                             <f:Button ID="btnImport" Icon="Zoom" runat="server" Text="导入名单"></f:Button>
-                                            <f:Button ID="btnDownLoad" Icon="Zoom" runat="server" Text="下载模板" OnClick="btnDownLoad_Click"></f:Button>
-
+                                           <f:ContentPanel runat="server">
+                                    
+                                     <asp:Button ID="btntest" runat="server" CssClass="mybutton" Text="下载模板" OnClick="DownLoad_Click" />
+                                </f:ContentPanel>
                                         <f:Button ID="btnDelet" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDelet_Click"></f:Button>
                                         <f:TextBox ID="txtStuID" Label="学号" LabelAlign="Right" runat="server" Text=""></f:TextBox>
                                         <f:Button ID="btnStuSerach" Icon="Zoom" Text="查找" runat="server" OnClick="btnStuSerach_Click"></f:Button>

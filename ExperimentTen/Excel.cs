@@ -212,23 +212,37 @@ namespace WHMS
         /// </summary>
         public static  void DownLoad(string FN)
         {
-            string fileName =FN+ ".xls";//客户端保存的文件名
-          //  string filePath = Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
-            string filePath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/DownLoad/"+fileName);//路径
+            /*
+                //  string fileName =FN+ ".xls";//客户端保存的文件名
+              //  string filePath = Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
+                string filePath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/DownLoad/"+FN);//路径
 
-            //以字符流的形式下载文件
-            FileStream fs = new FileStream(filePath, FileMode.Open);
-            byte[] bytes = new byte[(int)fs.Length];
-            fs.Read(bytes, 0, bytes.Length);
-            fs.Close();
-            //  Response.ContentType = "application/octet-stream";
-          HttpContext.Current.Response.ContentType = "application/excel";
+                //以字符流的形式下载文件
+                FileStream fs = new FileStream(filePath, FileMode.Open);
+                byte[] bytes = new byte[(int)fs.Length];
+                fs.Read(bytes, 0, bytes.Length);
+                fs.Close();
+                //  Response.ContentType = "application/octet-stream";
+              HttpContext.Current.Response.ContentType = "application/excel";
 
-            //通知浏览器下载文件而不是打开
-            HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment;  filename=" + HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8));
-            HttpContext.Current.Response.BinaryWrite(bytes);
-            HttpContext.Current.Response.Flush();
-            HttpContext.Current.Response.End();
+                //通知浏览器下载文件而不是打开
+                HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment;  filename=" + HttpUtility.UrlEncode(FN, System.Text.Encoding.UTF8));
+                HttpContext.Current.Response.BinaryWrite(bytes);
+                HttpContext.Current.Response.Flush();
+                HttpContext.Current.Response.End();
+                */
+
+
+
+
+
+            HttpContext.Current.Response.ContentType = "application/excel";
+            HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=" + HttpUtility.UrlEncode(FN, System.Text.Encoding.UTF8));
+    string filename = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/DownLoad/"+FN);
+            //指定编码 防止中文文件名乱码  
+            //HttpContext.Current.Response.HeaderEncoding = System.Text.Encoding.GetEncoding("UTF8");
+            HttpContext.Current.Response.TransmitFile(filename);  
+             
         }
 
         /// <summary>

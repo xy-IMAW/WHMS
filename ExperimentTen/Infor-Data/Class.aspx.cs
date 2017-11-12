@@ -7,6 +7,7 @@ using FineUI;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace WHMS.Infor_Data
 {
@@ -189,8 +190,9 @@ namespace WHMS.Infor_Data
 
         protected void DownLoad_Click(object sender, EventArgs e)
         {
-            string fn = "Working_hours";
+            string fn = "Working_hours.xlsx";
             NPOI_EXCEL.DownLoad(fn);
+
         }
 
         protected void window1_Close(object sender, WindowCloseEventArgs e)

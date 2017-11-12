@@ -182,7 +182,7 @@
                 <f:Region ID="Region2" Split="true" Width="200px" ShowHeader="true" Title="菜单"
                     EnableCollapse="true" Layout="Fit" Position="Left" runat="server">
                     <Items>
-                        <f:Tree runat="server" ShowBorder="false" ShowHeader="false" EnableArrows="true" EnableLines="true" ID="leftMenuTree" OnLoad="leftMenuTree_Load" >
+                        <f:Tree runat="server" ShowBorder="false" ShowHeader="false" EnableArrows="true" EnableLines="true" ID="leftMenuTree" OnLoad="leftMenuTree_Load" Icon="House" >
                        <%--         <Nodes>
                               <f:TreeNode Text="菜单" Expanded="true">
                                  
@@ -203,7 +203,11 @@
                             <Tabs>
                                 <f:Tab ID="Tab1" Title="首页" Layout="Fit" Icon="House" runat="server">
                                     <Items>
-                                        <f:ContentPanel ID="ContentPanel2" ShowBorder="false" BodyPadding="10px" ShowHeader="false" AutoScroll="true"
+                                        <f:RegionPanel runat="server" ShowBorder="false">
+                                            <Regions>
+                                                <f:Region runat="server" ShowBorder="false" Position="Left">
+                                                    <Items>
+                                                           <f:ContentPanel ID="ContentPanel2" ShowBorder="false" BodyPadding="10px" ShowHeader="false" AutoScroll="true"
                                             runat="server">
 
                                             <h1>工时信息管理</h1>
@@ -214,6 +218,18 @@
                                           <f:Button ID="btnPasswordUpdate" Text="修改密码" OnClick="btnPasswordUpdate_Click"  runat="server" Icon="BasketEdit"></f:Button>
                                             
                                         </f:ContentPanel>
+                                                    </Items>
+                                                </f:Region>
+                                                <f:Region runat="server" Position="Right" ShowBorder="false">
+                                                    <Items>
+                                                        <f:ContentPanel runat="server">
+                                                            <asp:GridView runat="server" ID="gridview"></asp:GridView>
+                                                        </f:ContentPanel>
+                                                    </Items>
+                                                </f:Region>
+                                            </Regions>
+                                        </f:RegionPanel>
+                                     
                                     </Items>
                                 </f:Tab>
                             </Tabs>

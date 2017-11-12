@@ -26,14 +26,6 @@
                     EnableMultiSelect="false"  runat="server" EnableSummary="true" SummaryPosition="Bottom">
                    
                     <Toolbars>                        
-                        <f:Toolbar ID="infor" runat="server">
-                              <Items>
-                                
-                                <f:Label ID="StuID" Text="" runat="server"  AbsoluteX="100px" LabelWidth="200px"></f:Label>
-                                 <f:Label ID="StuName" text="" runat="server" LabelAlign="Right" AbsoluteX="200px"></f:Label>
-                                  <f:Label ID="hourcount" Text="" runat="server" AbsoluteX="300px"></f:Label>
-                            </Items>
-                        </f:Toolbar>
                         <f:Toolbar ID="toolbar_01" runat="server">
                           
                             <Items>

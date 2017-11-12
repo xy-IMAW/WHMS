@@ -1,6 +1,7 @@
 ﻿using System;
 using FineUI;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace WHMS
 {
@@ -13,7 +14,7 @@ namespace WHMS
                 //Response.Redirect("http://sso.jwc.whut.edu.cn/Certification//login.do");///test
                 Common.Sid = "";
                 #region 
-              
+                Account_Login();
                 Common.checklogin("/login.aspx");
              //   btnPasswordUpdate.OnClientClick = window1.GetShowReference("Account/PasswordUpdate.aspx", "修改密码");
                 if (Common.State != "超级管理员")
@@ -26,7 +27,7 @@ namespace WHMS
                     handler.Text = "超级管理员/Administrator";
                 }
                 #endregion
-                
+                bind();
             }
 
         }
@@ -45,24 +46,40 @@ namespace WHMS
             TreeNode node8 = new TreeNode();
             TreeNode node9 = new TreeNode();
 
+            Icon icon=new Icon();
 
             node1.Text = "权限管理";
             node1.NavigateUrl = "~/Account/Account.aspx";
+            icon = Icon.AsteriskYellow;
+            node1.Icon = icon;
+           
+
 
             node2.Text = "学生信息管理";
             node2.NavigateUrl = "~/Infor-Data/Infor.aspx";
+            icon = Icon.Page;
+            node2.Icon = icon;
 
             node3.Text = "个人工时";
             node3.NavigateUrl = "~/Infor-Data/Data.aspx";
+            icon = Icon.User;
+            node3.Icon = icon;
+
 
             node4.Text = "活动管理";
             node4.NavigateUrl = "~/Infor-Data/Program.aspx";
+            icon = Icon.Table;
+            node4.Icon = icon;
+
 
             node5.Text = "年级班级工时";
             node5.NavigateUrl = "~/Infor-Data/Class.aspx";
+            icon = Icon.Group;
+            node5.Icon = icon;
 
-            node6.Text = "工时管理";
-     
+
+
+
 
             if (Common.State == "超级管理员")
             {
@@ -111,6 +128,22 @@ namespace WHMS
                 Common.Name = re.GetString(re.GetOrdinal("StuName"));
             }
             Common.close();
+        }
+
+        protected void bind()
+        {
+
+            string sql = "select * from Account_Login ";
+            DataTable dt = Common.datatable(sql);
+            gridview.DataSource = dt;
+            gridview.DataBind();
+        }
+
+       public void Account_Login()
+        {
+            DateTime date = System.DateTime.Now;
+            string sql = "insert into Login (StuID,Date) values ('" + Common.ID + "','" + date + "')";
+            Common.ExecuteSql(sql);
         }
         #endregion
     }

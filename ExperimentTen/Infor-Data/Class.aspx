@@ -5,6 +5,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+     <style>
+                .mypanel {
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: solid 1px #ccc;
+        }
+
+            .mypanel .mybutton {
+             display: inline-block;
+    padding: .3em .5em;
+  background: -webkit-linear-gradient(top,#42a4e0,#2e88c0);
+background: -moz-linear-gradient(top,#42a4e0,#2e88c0);
+background: linear-gradient(top,#42a4e0,#2e88c0);
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3em;
+    box-shadow: 0 1px white inset;
+    text-align: center;
+    text-shadow: 0 1px 1px black;
+    color:white;
+    font-weight: bold;
+               width:50px;
+            }
+            .mybutton:active{
+                box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;
+    border-color: rgba(0,0,0,.3);
+    background: #bbb;
+            }
+    </style>
 
 </head>
 <body>
@@ -15,21 +44,26 @@
             <Items>
                 <f:Panel ID="panel11" runat="server" Title="班级添加" ShowHeader="true" ShowBorder="true">
                     <Toolbars>
-                        <f:Toolbar ID="tool1" runat="server" ToolbarAlign="Center" >
+                        <f:Toolbar ID="tool1" runat="server">
                             <Items>                                
                                    <f:TextBox ID="txtClassName" runat="server" Label="班级" Text="" ShowRedStar="true" LabelAlign="Right" Required="true" Width="300px"></f:TextBox>                                    
                             </Items>  
                               <Items>
                                  <f:TextBox ID="txtGrade" runat="server" Label="年级" Text="" ShowRedStar="true" LabelAlign="Right" Required="true" AbsoluteX="200px"></f:TextBox>
                                     <f:Button ID="btnAddClass" Icon="Add" runat="server" Text="新增" OnClick="btnAddClass_Click" AbsoluteX="600px"></f:Button>
-                            </Items>                         
+                            </Items>  
+                            <Items>
+                                
+                                <f:Button ID="Import" Text="导入班级" Icon="Accept" runat="server"></f:Button>
+                           
+                                <f:ContentPanel runat="server">
+                                    
+                                     <asp:Button ID="btntest" runat="server" CssClass="mybutton" Text="下载模板" OnClick="DownLoad_Click" />
+                                </f:ContentPanel>
+                            </Items> 
+                                            
                         </f:Toolbar>
-                        <f:Toolbar ID="tool2" runat="server" ToolbarAlign="Center">
-                         <Items>
-                             <f:Button ID="DownLoad" Text="下载模板" Icon="Accept" runat="server" OnClick="DownLoad_Click" CssClass="mybutton" AbsoluteX="100px"></f:Button>
-                             <f:Button ID="Import" Text="导入班级" runat="server" CssClass="mybutton" AbsoluteX="500px"></f:Button>
-                         </Items>
-                     </f:Toolbar>  
+                    
                     </Toolbars>
                 </f:Panel>
             </Items>

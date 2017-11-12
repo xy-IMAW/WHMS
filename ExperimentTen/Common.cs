@@ -81,7 +81,7 @@ namespace WHMS
             catch (Exception e)
             {
                 Alert.Show(e.Message);
-                throw e;
+                //throw e;
               //  throw new Exception(e.Message);
             }
             finally

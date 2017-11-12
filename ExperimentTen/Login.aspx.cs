@@ -43,10 +43,13 @@ namespace WHMS
             {
                 string dbpassword = reader.GetString(reader.GetOrdinal("Password"));
                 if (tbxPassword.Text == dbpassword)
+
                 {
+                  
                     Alert.ShowInTop("成功登录！", "提示", MessageBoxIcon.Information);
                     Common.close();
                     Common.ID = tbxStuID.Text;//绑定登陆者ID
+                  
                     Response.Redirect("Default_f.aspx");
                 }
                 else
@@ -63,6 +66,8 @@ namespace WHMS
                 Common.close();
             }
         }
+
+     
 
     }
 }

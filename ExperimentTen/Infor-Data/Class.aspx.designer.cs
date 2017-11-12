@@ -85,24 +85,6 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Button btnAddClass;
         
         /// <summary>
-        /// tool2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Toolbar tool2;
-        
-        /// <summary>
-        /// DownLoad 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button DownLoad;
-        
-        /// <summary>
         /// Import 控件。
         /// </summary>
         /// <remarks>
@@ -110,6 +92,15 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Button Import;
+        
+        /// <summary>
+        /// btntest 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btntest;
         
         /// <summary>
         /// panel2 控件。

@@ -45,4 +45,3 @@ G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.OOXML.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.OpenXml4Net.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.OpenXmlFormats.dll
 G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\bin\NPOI.xml
-G:\青协工时系统\Working-hoursMS\WHMS\WHMS\ExperimentTen\obj\Debug\WHMS.csprojResolveAssemblyReference.cache

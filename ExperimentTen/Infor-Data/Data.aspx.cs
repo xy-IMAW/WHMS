@@ -113,10 +113,8 @@ namespace WHMS.Infor_Data
             t2 = DL2.SelectedItem.Text;
             Common.Sid = txtId.Text;
             int count=0;
-            StuID.Text = txtId.Text;
             string sql = "select StuName from Student where StuID='"+txtId.Text+"'";
             DataTable name = Common.datatable(sql);
-            StuName.Text = name.Rows[0][0].ToString();
 
             if (t1 == "全部")
             {
@@ -126,7 +124,6 @@ namespace WHMS.Infor_Data
                 gridExample.DataSource = dt;
                 gridExample.DataBind();
                 count = OutPutSummaryData(dt);
-                hourcount.Text = "获得的总工时为："+count;
             }
             else
             {
@@ -137,7 +134,6 @@ namespace WHMS.Infor_Data
                     gridExample.DataSource = dt;
                     gridExample.DataBind();
                     count = OutPutSummaryData(dt);
-                    hourcount.Text =t1+ "学年获得的总工时为：" + count;
 
                 }
                 else
@@ -147,7 +143,6 @@ namespace WHMS.Infor_Data
                     gridExample.DataSource = dt;
                     gridExample.DataBind();
                     count = OutPutSummaryData(dt);
-                    hourcount.Text =t1+"-"+t2+ "学期获得的总工时为：" + count;
 
                 }
 

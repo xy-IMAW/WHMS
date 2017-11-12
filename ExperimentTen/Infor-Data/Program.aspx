@@ -18,10 +18,10 @@
                     <Toolbars>
                         <f:Toolbar ID="tool1" runat="server" >
                             <Items>
-                                <f:TextBox ID="txtProgram" runat="server" Label="活动名" Required="true"></f:TextBox>
+                                <f:TextBox ID="txtProgram" runat="server" Label="活动名" LabelAlign="Right" Required="true"></f:TextBox>
                             </Items>
                           </f:Toolbar>
-                        <f:Toolbar ID="tool2" runat="server">  
+                        <f:Toolbar ID="tool2" runat="server" ToolbarAlign="Center">  
                             <Items>
                                 <f:Button ID="btnAddProgram" runat="server" Text="添加" Icon="Add" OnClick="btnAddProgram_Click" BoxConfigAlign="Center"></f:Button>
                              <f:Button ID="btnDeleteProgram" runat="server" Text="删除" Icon="Add" OnClick="btnDeleteProgram_Click" RegionPosition="Center"></f:Button>
@@ -58,10 +58,6 @@
                             <Items>
                                   <f:DropDownList ID="selectPro" Text="" Label="活动选择" LabelAlign="Right" runat="server" Required="true" Width="300px" EnableEdit="false" MatchFieldWidth="true" ></f:DropDownList>
                                   <f:DatePicker ID="date" Label="日期" LabelAlign="Right" runat="server" Required="true" ></f:DatePicker>
-                            </Items>
-                        </f:Toolbar>
-                        <f:Toolbar ID="toolbar3" runat="server">
-                            <Items>
                                   <f:Button ID="btnAdd" Text="新增" Icon="Add" runat="server" OnClick="btnAdd_Click" ></f:Button>
                             </Items>
                         </f:Toolbar>
@@ -104,10 +100,7 @@
                     </Items>
                 </f:Region>
             </Regions>
-        </f:RegionPanel>
-        
-      
-        
+        </f:RegionPanel>       
     </form>
 </body>
 </html>
