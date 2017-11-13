@@ -56,7 +56,7 @@ namespace WHMS
 
 
             node2.Text = "学生信息管理";
-            node2.NavigateUrl = "~/Infor-Data/Infor.aspx";
+            node2.NavigateUrl = "~/Infor-Data/StuInfor.aspx";
             icon = Icon.Page;
             node2.Icon = icon;
 
@@ -146,5 +146,12 @@ namespace WHMS
             Common.ExecuteSql(sql);
         }
         #endregion
+
+      
+
+        protected void gridview_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {
+            gridview.PageIndex = e.NewPageIndex;
+        }
     }
 }

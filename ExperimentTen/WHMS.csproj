@@ -3399,6 +3399,7 @@
     <Content Include="Infor-Data\Infor.aspx" />
     <Content Include="Infor-Data\Program.aspx" />
     <Content Include="Infor-Data\StuImport.aspx" />
+    <Content Include="Infor-Data\StuInfor.aspx" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -5263,6 +5264,13 @@
     </Compile>
     <Compile Include="Infor-Data\StuImport.aspx.designer.cs">
       <DependentUpon>StuImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infor-Data\StuInfor.aspx.cs">
+      <DependentUpon>StuInfor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Infor-Data\StuInfor.aspx.designer.cs">
+      <DependentUpon>StuInfor.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

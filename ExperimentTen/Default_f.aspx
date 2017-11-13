@@ -205,7 +205,7 @@
                                     <Items>
                                         <f:RegionPanel runat="server" ShowBorder="false">
                                             <Regions>
-                                                <f:Region runat="server" ShowBorder="false" Position="Left">
+                                                <f:Region runat="server" ShowBorder="false" Position="Left" Width="400px">
                                                     <Items>
                                                            <f:ContentPanel ID="ContentPanel2" ShowBorder="false" BodyPadding="10px" ShowHeader="false" AutoScroll="true"
                                             runat="server">
@@ -220,10 +220,23 @@
                                         </f:ContentPanel>
                                                     </Items>
                                                 </f:Region>
-                                                <f:Region runat="server" Position="Right" ShowBorder="false">
+                                                <f:Region runat="server" ShowBorder="false">
                                                     <Items>
-                                                        <f:ContentPanel runat="server">
-                                                            <asp:GridView runat="server" ID="gridview"></asp:GridView>
+                                                        <f:ContentPanel runat="server" ShowBorder="false" RegionPosition="Center">
+                                                            <asp:GridView runat="server" ID="gridview" AllowPaging="true" PageSize="20" OnPageIndexChanging="gridview_PageIndexChanging">
+                                                                <Columns>
+                                                                    <asp:TemplateField>
+                                                                        <ItemTemplate>
+                                                                          <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
+                                                                    <asp:BoundField DataField="StuID" HeaderText="学号" />
+                                                                    <asp:BoundField DataField="StuName" HeaderText="姓名" />
+                                                                    <asp:BoundField DataField="State" HeaderText="权限" />
+                                                                    <asp:BoundField DataField="Date" HeaderText="登陆时间" />
+
+                                                                </Columns>
+                                                            </asp:GridView>
                                                         </f:ContentPanel>
                                                     </Items>
                                                 </f:Region>
