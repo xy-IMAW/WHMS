@@ -1,0 +1,15 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/ExperimentTen/obj/Debug/WHMS.csprojResolveAssemblyReference.cache
+/ExperimentTen/Infor-Data/test.aspx.designer.cs
+/ExperimentTen/Infor-Data/test.aspx.cs
+/ExperimentTen/Infor-Data/test.aspx
+/ExperimentTen/Infor-Data/StuInfor.aspx.designer.cs
+/ExperimentTen/Infor-Data/StuInfor.aspx.cs
+/ExperimentTen/Infor-Data/StuInfor.aspx
+/ExperimentTen/Infor-Data/ClassDataOut.aspx.cs
+/ExperimentTen/ExperimentTen/res/Import/201711130803Working_hours.xlsx.xlsx
+/ExperimentTen/ExperimentTen/res/Import/201711130803Class.xlsx.xlsx
+/ExperimentTen/ClassDiagram1.cd
