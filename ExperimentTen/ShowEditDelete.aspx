@@ -26,7 +26,7 @@
             <Items>
                 <f:ContentPanel runat="server" Margin="50,,50,">
                     <div style="align-content:center; align-items:center; text-align:center">
-                           <asp:GridView ID="GridView1" runat="server" Width="800px" Caption="工时信息" ShowFooter="true" ShowHeader="true" OnRowCreated="GridView1_RowCreated" EnableViewState="false" >
+                           <asp:GridView ID="GridView1" runat="server" Width="800px" Caption="工时信息" ShowFooter="true" ShowHeader="true" OnRowCreated="GridView1_RowCreated" >
                                
                            </asp:GridView>
                  
@@ -38,9 +38,6 @@
         <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
                 
     </div>      
-        <div>
-            <asp:Button ID="btn1" runat="server" Text="测试" OnClick="Button2_Click" />
-        </div>
     </form>
 
 </body>

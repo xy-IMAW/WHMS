@@ -5,9 +5,16 @@ using NPOI.XSSF.UserModel;
 using System.IO;
 using System.Data;
 using System.Web;
+using System.Data.SqlClient;
+
+using System.Collections.Generic;
+using System.Linq;
+
+using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Text;
-using NPOI.SS.Util;
+using FineUI;
+using System.Configuration;
+
 
 
 namespace WHMS
@@ -212,6 +219,7 @@ namespace WHMS
         /// </summary>
         public static  void DownLoad(string FN)
         {
+<<<<<<< HEAD
             /*
                 //  string fileName =FN+ ".xls";//客户端保存的文件名
               //  string filePath = Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
@@ -243,6 +251,25 @@ namespace WHMS
             //HttpContext.Current.Response.HeaderEncoding = System.Text.Encoding.GetEncoding("UTF8");
             HttpContext.Current.Response.TransmitFile(filename);  
              
+=======
+            string fileName =FN+ ".xls";//客户端保存的文件名
+          //  string filePath = Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
+            string filePath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
+
+            //以字符流的形式下载文件
+            FileStream fs = new FileStream(filePath, FileMode.Open);
+            byte[] bytes = new byte[(int)fs.Length];
+            fs.Read(bytes, 0, bytes.Length);
+            fs.Close();
+            //  Response.ContentType = "application/octet-stream";
+          HttpContext.Current.Response.ContentType = "application/excel";
+
+            //通知浏览器下载文件而不是打开
+            HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment;  filename=" + HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8));
+            HttpContext.Current.Response.BinaryWrite(bytes);
+            HttpContext.Current.Response.Flush();
+            HttpContext.Current.Response.End();
+>>>>>>> parent of 8ea990a... 导出功能完成，继续完善
         }
 
         /// <summary>
@@ -701,6 +728,7 @@ namespace WHMS
           
             return datatable;
         }
+<<<<<<< HEAD
 
 
         public static Stream RenderDataTableToExcel(DataTable SourceTable)
@@ -1185,5 +1213,38 @@ namespace WHMS
             cstyle.SetFont(cfont);
             return cstyle;
         }
+=======
+        /* public bool ImportExcel(string form)
+         {
+             string UserID = Session["UserID"].ToString();
+
+             string size = System.Web.HttpContext.Current.Request.Files[0].ContentLength.ToString();//文件大小
+             string type = System.Web.HttpContext.Current.Request.Files[0].ContentType;//文件类型
+             string _name = System.Web.HttpContext.Current.Request.Files[0].FileName;//原文件名
+             string name = UserID + "_" + DateTime.Now.ToString("yyyyMMdd") + "_" + _name.Substring(_name.LastIndexOf("."));//文件名字
+             string path = Server.MapPath("~/Areas/Import/res/Import/") + name; //服务器端保存路径
+             if (Convert.ToInt32(size) > 2097152)
+             {
+                 //ViewBag.msg = "上传失败文件大于2m";
+                 Alert.Show("上传失败。文件大于2M");
+                 return View();//上传失败页面
+             }
+
+             if (type == "application/vnd.ms-excel" || type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+             {
+                 HttpPostedFileBase files = Request.Files[0];
+                 files.SaveAs(path);
+
+                 //处理Excel 返回DateTable
+                 //ImportExcelToDataTable(name);
+                 return PartialView("_StudentInfo", DateTableToList(ImportExcelToDataTable(name)));
+             }
+             else
+             {
+                 return null;
+             }
+         }
+         */
+>>>>>>> parent of 8ea990a... 导出功能完成，继续完善
     }
-    }
+}

@@ -15,7 +15,7 @@ namespace WHMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindGrid();
+         //   BindGrid();
           //  btn2.OnClientClick = window1.GetShowReference("ShowEditDelete.aspx");
         }
         public void Bind1()
@@ -199,8 +199,7 @@ namespace WHMS
         {
             //   NPOI_EXCEL.upload(FileUpload1, Grid2);
             //     GridToData();
-            //   PageContext.RegisterStartupScript(window1.GetShowReference("ShowEditDelete.aspx"));
-            output(GridView1);
+            PageContext.RegisterStartupScript(window1.GetShowReference("ShowEditDelete.aspx"));
         }
         protected void btn2_Click(object sender, EventArgs e)
         {
@@ -231,22 +230,7 @@ namespace WHMS
 
 
 
-        public void output(GridView GridView1)
-        {
-            //ResolveGridView(GridView1);
 
-            Response.ClearContent();
-            Response.AddHeader("content-disposition", "attachment; filename=MyExcelFile.xls");
-            Response.ContentType = "application/excel";
-            Response.ContentEncoding = System.Text.Encoding.UTF8;
-
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            GridView1.RenderControl(htw);
-
-            Response.Write(sw.ToString());
-            Response.End();
-        }
 
 
 
@@ -256,9 +240,9 @@ namespace WHMS
             // DataTable data = new DataTable();
             DataRow dr;
 
-            string sql1 = "select * from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
-            string sql2 = "select StuID,StuName,Class from Student where Grade='2016' order by Class,StuID";
-            string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
+            string sql1 = "select * from [Working_hoursInfor] where SySe like '%"+Common.SySe+"%'";
+            string sql2 = "select StuID,StuName,Class from Student where Grade='"+Common.grade+"' order by Class,StuID";
+            string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%"+Common.SySe+"%'";
             DataTable dt = Common.datatable(sql1);
             DataTable student = Common.datatable(sql2);
             DataTable program = Common.datatable(sql3);
@@ -370,7 +354,7 @@ namespace WHMS
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%2017-2018-1%'";
+                string sql3 = "select distinct Program,Date from [Working_hoursInfor] where SySe like '%"+Common.SySe+"%'";
                 DataTable program = Common.datatable(sql3);
 
                 TableCellCollection header = e.Row.Cells;

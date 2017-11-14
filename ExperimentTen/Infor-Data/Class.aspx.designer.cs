@@ -148,15 +148,6 @@ namespace WHMS.Infor_Data {
         protected global::FineUI.Button btnDeleteClass;
         
         /// <summary>
-        /// Grid3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Grid Grid3;
-        
-        /// <summary>
         /// toolbar2 控件。
         /// </summary>
         /// <remarks>
@@ -200,6 +191,15 @@ namespace WHMS.Infor_Data {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Button btn3;
+        
+        /// <summary>
+        /// Grid3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Grid Grid3;
         
         /// <summary>
         /// Label1 控件。

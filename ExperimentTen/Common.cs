@@ -46,8 +46,6 @@ namespace WHMS
         public static int grade;
         public static string Class;
         public static string SySe;
-
-        public static string path;
         #endregion
         public static void checklogin( string url)
         {
