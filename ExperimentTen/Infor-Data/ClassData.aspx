@@ -40,7 +40,7 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
 <body>
     <form id="form1" runat="server">
     <div>
-<<<<<<< HEAD
+
          <div class="mypanel">
             <asp:Button ID="btn1" runat="server" Text="导出" CssClass="mybutton" OnClick="Button2_Click" />
         </div>
@@ -62,7 +62,7 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
                </Items>
             </f:panel>
        </div>
-=======
+<%-- 
     <f:PageManager ID="pagemanager1" runat="server"  EnableFStateValidation="false" />
            <f:panel ID="panel1" runat="server">
             <Toolbars>
@@ -88,7 +88,7 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
            
 
     </div>
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+    --%>
     </form>
   </body>
 </html>

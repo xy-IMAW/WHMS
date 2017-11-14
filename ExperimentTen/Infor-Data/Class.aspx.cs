@@ -6,11 +6,10 @@ using System.Web.UI;
 using FineUI;
 using System.Data;
 using System.Data.SqlClient;
-<<<<<<< HEAD
 using System.Web.UI.WebControls;
 using System.IO;
-=======
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
+
 
 namespace WHMS.Infor_Data
 {
@@ -25,10 +24,7 @@ namespace WHMS.Infor_Data
                 Common.SySe = "";
                 Import.OnClientClick = window1.GetShowReference("ClassImport.aspx");
                  btn3.OnClientClick = window1.GetShowReference("HoursImport.aspx", "导入工时");
-<<<<<<< HEAD
-=======
-               
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
                 GradeBind();
             }
          
@@ -43,7 +39,7 @@ namespace WHMS.Infor_Data
 
                 for (int i = 1; i < 5; i++)
                 {
-                    ListItem li = new ListItem();
+                    FineUI.ListItem li = new FineUI.ListItem();
                     li.Text = li.Value = (--year).ToString();
                     SelectGrade.Items.Add(li);
                 }
@@ -54,7 +50,7 @@ namespace WHMS.Infor_Data
 
                 for (int i = 1; i < 5; i++)
                 {
-                    ListItem li = new ListItem();
+                    FineUI.ListItem li = new FineUI.ListItem();
                     li.Text = li.Value = (year--).ToString();
                     SelectGrade.Items.Add(li);
                 }
@@ -216,16 +212,15 @@ namespace WHMS.Infor_Data
             else
             {
                 Common.Class = Grid3.SelectedRow.Values[2].ToString();
-<<<<<<< HEAD
+
                 Common.SySe = DL3.SelectedText.ToString();
                 PageContext.RegisterStartupScript(window1.GetShowReference("ClassData.aspx"));
-         
-=======
+
                 Common.SySe = DL3.SelectedText;
                 //    PageContext.RegisterStartupScript(window1.GetShowReference("ClassData.aspx"));
                 //   Response.Redirect("ClassData.aspx");
                 PageContext.RegisterStartupScript(window1.GetShowReference("../ShowEditDelete.aspx"));
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
             }
          
         }
@@ -235,13 +230,13 @@ namespace WHMS.Infor_Data
             Common.grade =Convert.ToInt32( SelectGrade.SelectedValue);
             Common.SySe = DL3.SelectedValue.ToString();
               PageContext.RegisterStartupScript(window1.GetShowReference("GradeData.aspx"));
-<<<<<<< HEAD
+
     
         }
 
-=======
+
           //  Response.Redirect("GradeData.aspx");
         }
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
-    }
+
+    
 }

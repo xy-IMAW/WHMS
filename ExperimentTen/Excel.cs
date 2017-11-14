@@ -14,8 +14,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FineUI;
 using System.Configuration;
-
-
+using NPOI.SS.Util;
+using System.Text;
 
 namespace WHMS
 {
@@ -219,7 +219,7 @@ namespace WHMS
         /// </summary>
         public static  void DownLoad(string FN)
         {
-<<<<<<< HEAD
+
             /*
                 //  string fileName =FN+ ".xls";//客户端保存的文件名
               //  string filePath = Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
@@ -250,11 +250,10 @@ namespace WHMS
             //指定编码 防止中文文件名乱码  
             //HttpContext.Current.Response.HeaderEncoding = System.Text.Encoding.GetEncoding("UTF8");
             HttpContext.Current.Response.TransmitFile(filename);  
-             
-=======
-            string fileName =FN+ ".xls";//客户端保存的文件名
+
+            string fileName =FN;//客户端保存的文件名
           //  string filePath = Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
-            string filePath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/DownLoad/muban.xls");//路径
+            string filePath = HttpContext.Current.Server.MapPath("~/ExperimentTen/res/DownLoad/"+FN);//路径
 
             //以字符流的形式下载文件
             FileStream fs = new FileStream(filePath, FileMode.Open);
@@ -269,7 +268,7 @@ namespace WHMS
             HttpContext.Current.Response.BinaryWrite(bytes);
             HttpContext.Current.Response.Flush();
             HttpContext.Current.Response.End();
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
         }
 
         /// <summary>
@@ -728,7 +727,6 @@ namespace WHMS
           
             return datatable;
         }
-<<<<<<< HEAD
 
 
         public static Stream RenderDataTableToExcel(DataTable SourceTable)
@@ -1213,7 +1211,7 @@ namespace WHMS
             cstyle.SetFont(cfont);
             return cstyle;
         }
-=======
+
         /* public bool ImportExcel(string form)
          {
              string UserID = Session["UserID"].ToString();
@@ -1245,6 +1243,6 @@ namespace WHMS
              }
          }
          */
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
     }
 }

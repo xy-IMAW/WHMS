@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-<<<<<<< HEAD
+
      <style>
                 .mypanel {
             text-align: center;
@@ -37,7 +37,7 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
             }
     </style>
 
-=======
+
     <style>
         .mybutton {
             text-align:center;
@@ -45,7 +45,7 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
             padding-left:50px;
         }
     </style>
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -87,17 +87,10 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
                                         <f:Button ID="btnSearch" runat="server" Text="查找" Icon="Zoom" OnClick="btnSearch_Click"></f:Button>  
                                         <f:Button ID="btnDeleteClass" Icon="Delete" runat="server" Text="删除" ConfirmTitle="注意" ConfirmIcon="Question" ConfirmText="确认删除？" ConfirmTarget="Self" OnClick="btnDeleteClass_Click"></f:Button>                                     
                                      </Items>
-<<<<<<< HEAD
-                                </f:Toolbar>                                              
-                    </Toolbars>         
-            <Items>
-                 <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="0px">
-                     <Toolbars>
-                               <f:Toolbar ID="toolbar2" runat="server">
-=======
-                                </f:Toolbar>  
+                                </f:Toolbar>                                                            
+                    
                      <f:Toolbar ID="toolbar2" runat="server">
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
                          <Items>
                               <f:DropDownList ID="DL3" runat="server" Label="学期" Required="true" LabelAlign="Right" >
                                 </f:DropDownList>
@@ -106,21 +99,16 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
                         <f:Button ID="btn2" runat="server" Text="查看年级工时" OnClick="btn2_Click"/>
 
                          <f:Button ID="btn3" runat="server" Text="导入工时" />
-<<<<<<< HEAD
+
                               
                          </Items>                                
                      </f:Toolbar>    
                      </Toolbars>   
-                        <Columns>
-=======
-                         </Items>
-                                
-                     </f:Toolbar>                                   
-                    </Toolbars>         
+                         
             <Items>
                  <f:Grid ID="Grid3" Height="550px" BoxFlex="1" ShowBorder="false" ShowGridHeader="true"  runat="server" DataKeyNames="Id,Name" EnableRowClickEvent="true" BodyPadding="0px">
                            <Columns>
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+
                                 <f:TemplateField Width="60px" HeaderText="序号" TextAlign="Center">
                                     <ItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
@@ -130,16 +118,12 @@ background: linear-gradient(top,#42a4e0,#2e88c0);
                                 <f:BoundField Width ="100px" DataField="Class" HeaderText="班级" TextAlign="Center" />                              
                             </Columns>
                   </f:Grid>    
-<<<<<<< HEAD
+
             </Items>                   
         </f:Panel>           
              <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
-=======
-            </Items>
-                     
-        </f:Panel>        
-                 <f:Window ID="window1" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
->>>>>>> parent of 8ea990a... 导出功能完成，继续完善
+             <f:Window ID="window2" Hidden="true" EnableIFrame="true" runat="server" EnableClose="true"  Width="800px" Height="600px" Target="Top"  EnableMaximize="true" ></f:Window>
+
 
     </div>
     </form>
