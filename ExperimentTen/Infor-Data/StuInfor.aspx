@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Infor.aspx.cs" Inherits="WHMS.Infor_Data.Infor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StuInfor.aspx.cs" Inherits="WHMS.Infor_Data.StuInfor" %>
 
 <!DOCTYPE html>
 
@@ -74,4 +74,3 @@
     </form>
 </body>
 </html>
-
